@@ -1,0 +1,311 @@
+# Translation of Themes - Twenty Fifteen in Persian
+# This file is distributed under the same license as the Themes - Twenty Fifteen package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2018-01-16 14:05:50+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: fa\n"
+"Project-Id-Version: Themes - Twenty Fifteen\n"
+
+#. Description of the plugin/theme
+msgid "Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer."
+msgstr "Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer."
+
+#. Theme Name of the plugin/theme
+msgid "Twenty Fifteen"
+msgstr "دو هزار و پانزده"
+
+#. translators: %s: post title
+#: comments.php:31
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "یک دیدگاه در &ldquo;%s&rdquo;"
+
+#. translators: %s: post title
+#: inc/template-tags.php:130
+msgid "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "<span class=\"screen-reader-text\"> برای %s</span> دیدگاهی بنویسید"
+
+#: single.php:39
+msgid "Previous post:"
+msgstr "نوشته قبلی:"
+
+#: single.php:38
+msgid "Previous"
+msgstr "پیشین"
+
+#: single.php:36
+msgid "Next post:"
+msgstr "نوشته بعدی:"
+
+#: single.php:35
+msgid "Next"
+msgstr "بعد"
+
+#: search.php:18
+msgid "Search Results for: %s"
+msgstr "نتایج جستجوی: %s"
+
+#: inc/template-tags.php:120
+msgctxt "Used before full size attachment link."
+msgid "Full size"
+msgstr "اندازه کامل"
+
+#: inc/template-tags.php:108
+msgctxt "Used before tag names."
+msgid "Tags"
+msgstr "برچسب‌ها"
+
+#: inc/template-tags.php:99
+msgctxt "Used before category names."
+msgid "Categories"
+msgstr "دسته‌ها"
+
+#: inc/template-tags.php:95 inc/template-tags.php:104
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:89
+msgctxt "Used before post author name."
+msgid "Author"
+msgstr "نویسنده"
+
+#: inc/template-tags.php:79
+msgctxt "Used before publish date."
+msgid "Posted on"
+msgstr "ارسال شده در"
+
+#: inc/template-tags.php:56
+msgctxt "Used before post format."
+msgid "Format"
+msgstr "ساختار"
+
+#: inc/template-tags.php:49
+msgid "Featured"
+msgstr "شاخص"
+
+#: inc/template-tags.php:30
+msgid "Newer Comments"
+msgstr "دیدگاه‌های تازه‌تر"
+
+#: inc/template-tags.php:26
+msgid "Older Comments"
+msgstr "دیدگاه‌های کهنه‌تر"
+
+#: inc/template-tags.php:23
+msgid "Comment navigation"
+msgstr "ناوبری دیدگاه"
+
+#: inc/customizer.php:226
+msgid "Blue"
+msgstr "آبی"
+
+#: inc/customizer.php:215
+msgid "Purple"
+msgstr "بنفش"
+
+#: inc/customizer.php:204
+msgid "Pink"
+msgstr "صورتی"
+
+#: inc/customizer.php:193
+msgid "Yellow"
+msgstr "زرد"
+
+#: inc/customizer.php:182
+msgid "Dark"
+msgstr "تیره"
+
+#: inc/customizer.php:171
+msgid "Default"
+msgstr " پیش‌فرض"
+
+#: inc/customizer.php:93
+msgid "Header and Sidebar Background Color"
+msgstr "رنگ پس‌زمینه‌ی سربرگ و ستون‌کناری"
+
+#: inc/customizer.php:72 inc/customizer.php:94 inc/customizer.php:101
+msgid "Applied to the header on small screens and the sidebar on wide screens."
+msgstr "در نمایشگرهای کوچک روی سربرگ اعمال می‌شود و در نمایشگرهای بزرگ روی ستون‌کناری."
+
+#: inc/customizer.php:71
+msgid "Header and Sidebar Text Color"
+msgstr "رنگ متن سربرگ و ستون‌کناری"
+
+#: inc/customizer.php:51
+msgid "Base Color Scheme"
+msgstr "شمای رنگ پایه"
+
+#: inc/back-compat.php:37 inc/back-compat.php:48 inc/back-compat.php:62
+msgid "Twenty Fifteen requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again."
+msgstr "پوسته‌ی دو هزار و پانزده حداقل به وردپرس ۴,۱ احتیاج دارد. شما از نگارش %s استفاده می‌کنید. لطفاً پس از به‌روزرسانی دوباره تلاش کنید."
+
+#: image.php:88
+msgctxt "Parent post link"
+msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
+msgstr "<span class=\"meta-nav\">منتشره در</span><span class=\"post-title\">%title</span>"
+
+#: image.php:25
+msgid "Next Image"
+msgstr "عکس بعدی"
+
+#: image.php:25
+msgid "Previous Image"
+msgstr "عکس پیشین"
+
+#: header.php:49
+msgid "Menu and widgets"
+msgstr "فهرست و ابزارک‌ها"
+
+#: header.php:26
+msgid "Skip to content"
+msgstr "رفتن به نوشته‌ها"
+
+#: functions.php:312
+msgid "collapse child menu"
+msgstr "بستن زیرفهرست"
+
+#: functions.php:311
+msgid "expand child menu"
+msgstr "بازکردن زیرفهرست"
+
+#. Translators: To add an additional character subset specific to your
+#. language, translate this to 'greek', 'cyrillic', 'devanagari' or
+#. 'vietnamese'. Do not translate into your own language.
+#: functions.php:238
+msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
+msgid "no-subset"
+msgstr " "
+
+#. Translators: If there are characters in your language that are not supported
+#. by Inconsolata, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:230
+msgctxt "Inconsolata font: on or off"
+msgid "on"
+msgstr "off"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Noto Serif, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:222
+msgctxt "Noto Serif font: on or off"
+msgid "on"
+msgstr "off"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Noto Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:214
+msgctxt "Noto Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:187
+msgid "Add widgets here to appear in your sidebar."
+msgstr "برای نمایش ابزارک‌ها در ستون‌کناری سایت‌تان، آن‌ها را به اینجا بکشید."
+
+#: functions.php:185
+msgid "Widget Area"
+msgstr "محدوده ابزارک"
+
+#: functions.php:87
+msgid "Social Links Menu"
+msgstr "فهرست شبکه‌های اجتماعی"
+
+#: functions.php:86
+msgid "Primary Menu"
+msgstr "فهرست اصلی"
+
+#: footer.php:31
+msgid "Proudly powered by %s"
+msgstr "با افتخار نیرو گرفته از %s"
+
+#. #-#-#-#-#  twentyfifteen.pot (Twenty Fifteen 2.0)  #-#-#-#-#
+#. Author URI of the plugin/theme
+#: footer.php:30
+msgid "https://wordpress.org/"
+msgstr "http://wp-persian.com/"
+
+#: content-none.php:31
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "این‌طور به‌نظر می‌رسد که ما نمی‌توانیم چیزی که شما به‌دنبالش هستید پیدا کنیم. شاید جستجو کردن راه بهتری باشد."
+
+#: content-none.php:26
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "بدبختانه جستجوی شما نتیجه‌ای در بر نداشت. با واژگانی دیگر جستجو کنید."
+
+#: content-none.php:22
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "میخواهید اولین نوشته‌ی خود را منتشر کنید؟ <a href=\"%1$s\">از اینجا آغاز کنید</a>. "
+
+#: content-none.php:15
+msgid "Nothing Found"
+msgstr "چیزی پیدا نشد"
+
+#: content-link.php:60 content-page.php:37 content-search.php:28
+#: content-search.php:33 content.php:61 image.php:74
+msgid "Edit"
+msgstr "ویرایش"
+
+#: content-link.php:39 content-page.php:26 content.php:41 image.php:61
+msgid "Pages:"
+msgstr "برگه‌ها :"
+
+#. translators: %s: Name of current post
+#: content-link.php:32 content.php:34 inc/template-tags.php:249
+msgid "Continue reading %s"
+msgstr "ادامه خواندن %s"
+
+#: comments.php:71
+msgid "Comments are closed."
+msgstr "دیدگاه‌ها غیرفعال هستند."
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:35
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s دیدگاه در &ldquo;%2$s&rdquo;"
+
+#: author-bio.php:34
+msgid "View all posts by %s"
+msgstr "نمایش همه‌ی نوشته‌های %s"
+
+#: author-bio.php:12
+msgid "Published by"
+msgstr "منتشرشده توسط"
+
+#: archive.php:53 content-link.php:43 content-page.php:30 content.php:45
+#: image.php:65 index.php:50 search.php:43
+msgid "Page"
+msgstr "برگه"
+
+#: archive.php:52 index.php:49 search.php:42
+msgid "Next page"
+msgstr "برگه بعد"
+
+#: archive.php:51 index.php:48 search.php:41
+msgid "Previous page"
+msgstr "برگه قبل"
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "به نظر می‌رسد که چیزی که میخواهید در اینجا پیدا نشد. می‌خواهید جستجو کنید؟"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "اوه! این برگه پیدا نمی‌شه."
+
+#. Author of the plugin/theme
+msgid "the WordPress team"
+msgstr "گروه وردپرس فارسی"
+
+#. Theme URI of the plugin/theme
+msgid "https://wordpress.org/themes/twentyfifteen/"
+msgstr "https://wordpress.org/themes/twentyfifteen/"

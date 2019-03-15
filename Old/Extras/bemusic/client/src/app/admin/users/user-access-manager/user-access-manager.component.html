@@ -1,0 +1,35 @@
+<div class="panel-outter">
+    <div class="header">
+        <div class="title" trans>User Groups</div>
+        <div class="add-button" *ngIf="!readonly">
+            <button class="button flat select-groups-modal-button" (click)="openSelectGroupsModal()" type="button" trans>Add</button
+        ></div>
+    </div>
+    <div class="panel-body groups">
+        <div class="panel-item group" *ngFor="let group of user.groups">
+            <span>{{group.name}}</span>
+            <button class="round-close-button detach-group-button" (click)="detachGroups([group.id])" type="button" *ngIf="!readonly">
+                <svg-icon name="close"></svg-icon>
+            </button>
+        </div>
+        <div class="no-permissions" *ngIf="!user.groups || !user.groups.length" trans>No groups yet.</div>
+    </div>
+</div>
+
+<div class="panel-outter">
+    <div class="header">
+        <div class="title" trans>User Permissions</div>
+        <div class="add-button" *ngIf="!readonly">
+            <button class="button flat select-permissions-modal-button" (click)="openSelectPermissionsModal()" type="button" trans>Add</button>
+        </div>
+    </div>
+    <div class="panel-body permissions-panel">
+        <div class="panel-item permission" *ngFor="let permission of user.permissions | mapToIterable">
+            <span>{{permission.key}}</span>
+            <button class="round-close-button remove-permission-button" (click)="removePermissions([permission.key])" type="button" *ngIf="!readonly">
+                <svg-icon name="close"></svg-icon>
+            </button>
+        </div>
+        <div class="no-permissions" *ngIf="!(user.permissions | mapToIterable).length" trans>No permissions yet.</div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+@import "../../../scss/variables";
+
+toast {
+  position: fixed;
+  display: flex;
+  height: 48px;
+  align-items: center;
+  padding: 0 24px;
+  bottom: 10px;
+  right: 10px;
+  border-radius: $toast-border-radius;
+  min-width: $toast-min-width;
+  max-width: $toast-max-width;
+  font-size: $toast-font-size;
+  box-shadow: $toast-box-shadow;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateY(125%);
+  opacity: 0;
+  z-index: 15;
+
+  &.toast-open {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  .message {
+    max-width: 85%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .actions {
+    margin-left: auto;
+
+    > .action {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .close-button {
+    margin-left: auto;
+    padding: 4px;
+  }
+
+  &.default {
+    background-color: $toast-default-background-color;
+    color: $toast-default-text-color;
+
+    .close-button:hover {
+      background-color: lighten($toast-default-background-color, 10%);
+    }
+  }
+
+  &.error {
+    background-color: $toast-error-background-color;
+    color: $toast-error-text-color;
+
+    .close-button:hover {
+      background-color: darken($toast-error-background-color, 10%);
+    }
+  }
+
+  &.success {
+    background-color: $toast-success-background-color;
+    color: $toast-success-text-color;
+
+    .close-button:hover {
+      background-color: darken($toast-success-background-color, 10%);
+    }
+  }
+}

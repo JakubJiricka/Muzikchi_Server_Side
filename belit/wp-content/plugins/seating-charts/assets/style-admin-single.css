@@ -1,0 +1,84 @@
+.tc_seatings_sold_count {
+    background-color: #fff;
+    color: #000;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 5px 10px;
+    top: calc(50% - 5px);
+    position: absolute;
+    left: calc(50% - 60px);
+    margin-right: auto;
+    width: 100px;
+}
+
+#postdivrich,
+.tc-seat-chart-single .wrap h1,
+.post-new-php.post-type-tc_seat_charts .wrap h1,
+.post-type-tc_seat_charts #title-prompt-text,
+.post-type-tc_seat_charts #title,
+.post-type-tc_seat_charts #screen-meta-links,
+.post-type-tc_seat_charts .postbox-container,
+.post-type-tc_seat_charts #wpfooter,
+.tc-seat-chart-single .page-title-action{
+    display: none;
+}
+
+.post-type-tc_seat_charts #poststuff,
+.post-type-tc_seat_charts #post-body-content,
+.post-type-tc_seat_charts .edit-form-section,
+.post-type-tc_seat_charts #wpbody-content,
+.post-type-tc_seat_charts #poststuff #post-body.columns-2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#message{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    border-radius: 3px;
+}
+
+.notice-success, div.updated{
+    border-left-color: #72678f;
+    background: #efea50;
+    color: #000;
+}
+
+.updated a {
+    padding-bottom: 2px;
+    color: #6b5f89;
+    cursor: pointer;
+}
+
+.tc-seat-chart-single #message.updated,
+.tc-seat-chart-single div.updated,
+.post-type-tc_seat_charts #message.updated,
+.post-type-tc_seat_charts div.updated,
+.post-type-tc_seat_charts .update-nag,
+.tc-seat-chart-single .update-nag,
+.post-new-php.post-type-tc_seat_charts .update-nag {
+    display: none;
+}
+
+.tc-seat-chart-single .tc-tickera-show {
+    display: block !important;
+}
+
+
+.form-table td .notice p, .notice p, .notice-title, div.error p, div.updated p{
+    padding: 5px;
+}
+
+#message{
+    display: block;
+}
+
+.notice-dismiss{
+    top: 3px;
+}
+
+.tc-seat-chart-single .settings-error {
+    display: none;
+}

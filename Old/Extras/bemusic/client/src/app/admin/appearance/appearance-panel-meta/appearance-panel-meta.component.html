@@ -1,0 +1,14 @@
+<div class="back-button" (click)="backClick.emit()">
+    <svg-icon name="keyboard-arrow-left" class="align-middle"></svg-icon>
+</div>
+<div class="title">
+    <div class="static" trans>Customizing</div>
+    <div class="path">
+        <ng-container *ngFor="let item of path; last as isLast; first as isFirst;">
+            <span *ngIf="item">
+                <svg-icon name="keyboard-arrow-right" class="separator align-middle size-18" *ngIf="!isFirst"></svg-icon>
+                <span class="name" [class.last]="isLast">{{prettifyName(item)}}</span>
+            </span>
+        </ng-container>
+    </div>
+</div>

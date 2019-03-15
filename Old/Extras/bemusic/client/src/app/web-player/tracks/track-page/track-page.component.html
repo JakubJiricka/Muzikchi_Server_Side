@@ -1,0 +1,38 @@
+<div class="scroll-container" customScrollbar>
+    <div class="header" [contextMenu]="{item: track, type: 'track'}">
+        <img [src]="track.album.image">
+        <div class="meta">
+            <div class="track-name">{{track.name}}</div>
+            <div class="artist-name" >
+                <artists-links-list [artists]="track.artists"></artists-links-list>
+            </div>
+
+            <div class="duration meta-item">
+                <span class="name" trans>Duration:</span>
+                <span class="value">{{duration}}</span>
+            </div>
+            <div class="release-date meta-item">
+                <span class="name" trans>Release Date:</span>
+                <span class="value">{{track.album.release_date}}</span>
+            </div>
+
+            <div class="main-buttons">
+                <button class="no-style play-button" *ngIf="!playing()" (click)="play()">
+                    <svg-icon name="play-arrow"></svg-icon>
+                    <span trans>Play</span>
+                </button>
+                <button class="no-style play-button" *ngIf="playing()" (click)="pause()" trans>
+                    <svg-icon name="pause"></svg-icon>
+                    <span trans>Pause</span>
+                </button>
+                <button class="no-style more-button" (click)="openContextMenu($event)" trans>More...</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="album-header">
+        <span trans>Featured in</span> <a class="hover-underline" [routerLink]="urls.album(track.album)"><strong>{{track.album.name}}</strong></a>
+    </div>
+
+    <track-list [tracks]="getAlbumTracks()" [select]="track"></track-list>
+</div>

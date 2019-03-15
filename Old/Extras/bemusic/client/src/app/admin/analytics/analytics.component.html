@@ -1,0 +1,99 @@
+<div class="stats-header">
+    <div class="stat">
+        <svg-icon name="group"></svg-icon>
+        <div class="details">
+            <div class="count">{{stats.users}}</div>
+            <div class="name" trans>Total Users</div>
+        </div>
+    </div>
+    <div class="stat">
+        <svg-icon name="audiotrack"></svg-icon>
+        <div class="details">
+            <div class="count">{{stats.tracks}}</div>
+            <div class="name" trans>Total Songs</div>
+        </div>
+    </div>
+    <div class="stat">
+        <svg-icon name="mic"></svg-icon>
+        <div class="details">
+            <div class="count">{{stats.artists}}</div>
+            <div class="name" trans>Total Artists</div>
+        </div>
+    </div>
+    <div class="stat">
+        <svg-icon name="album"></svg-icon>
+        <div class="details">
+            <div class="count">{{stats.albums}}</div>
+            <div class="name" trans>Total Albums</div>
+        </div>
+    </div>
+    <div class="stat">
+        <svg-icon name="person"></svg-icon>
+        <div class="details" id="active-users-container">
+            <div class="count">1</div>
+            <div class="name" trans>Users Online</div>
+        </div>
+    </div>
+</div>
+
+<div class="analytics-container">
+    <div class="unauthorized-container">
+        <img [src]="settings.getBaseUrl() + 'assets/images/analytics.png'"/>
+    </div>
+
+    <div class="charts-row hidden">
+        <div class="chart-panel large">
+            <div class="chart-panel-header">
+                <div class="title">This Week vs Last Week</div>
+                <div class="sub-title">By sessions</div>
+            </div>
+            <div class="chart-panel-body">
+                <div class="chart-container" id="this-vs-last-week"></div>
+                <div class="chart-legend" id="legend-1-container"></div>
+            </div>
+        </div>
+
+        <div class="chart-panel small">
+            <div class="chart-panel-header">
+                <div class="title">Top Browsers</div>
+                <div class="sub-title">By pageviews</div>
+            </div>
+            <div class="chart-panel-body">
+                <div class="chart-container" id="chart-3-container"></div>
+                <div class="chart-legend" id="legend-3-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="charts-row hidden">
+        <div class="chart-panel large">
+            <div class="chart-panel-header">
+                <div class="title">This Month Vs Last Month</div>
+                <div class="sub-title">By pageviews</div>
+            </div>
+            <div class="chart-panel-body">
+                <div class="chart-container" id="chart-2-container"></div>
+                <div class="chart-legend" id="legend-2-container"></div>
+            </div>
+        </div>
+
+        <div class="chart-panel small">
+            <div class="chart-panel-header">
+                <div class="title">Top Countries</div>
+                <div class="sub-title">By sessions</div>
+            </div>
+            <div class="chart-panel-body">
+                <div class="chart-container" id="chart-4-container"></div>
+                <div class="chart-legend" id="legend-4-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="charts-row hidden">
+        <div class="view-selector">
+            <div id="view-selector-container"></div>
+        </div>
+    </div>
+
+    <div id="embed-api-auth-container"></div>
+</div>

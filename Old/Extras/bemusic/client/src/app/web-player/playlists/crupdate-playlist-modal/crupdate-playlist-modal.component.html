@@ -1,0 +1,51 @@
+<div class="backdrop"></div>
+
+<form class="modal-content" (ngSubmit)="confirm()" ngNativeValidate>
+    <div class="modal-header">
+        <h2 class="modal-title">
+            <span *ngIf="!model.id" trans>New Playlist</span>
+            <span *ngIf="model.id" trans>Update Playlist</span>
+        </h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button">
+            <svg-icon name="close"></svg-icon>
+        </button>
+    </div>
+    
+    <div class="content">
+        <div class="img-container">
+            <img [src]="model.image">
+            <button class="no-style upload-img-button" type="button" (click)="openImageUploadModal()">
+                <svg-icon name="add-a-photo"></svg-icon>
+            </button>
+        </div>
+
+        <div class="many-inputs">
+            <div class="input-container name-input">
+                <label for="playlist-name" trans>Playlist Name</label>
+                <input type="text" [(ngModel)]="model.name" id="playlist-name" name="name" required min="1" max="250">
+                <div class="error" *ngIf="errors.name">{{errors.name}}</div>
+            </div>
+
+            <div class="input-container description-input">
+                <label for="playlist-description" trans>Playlist Description</label>
+                <textarea [(ngModel)]="model.description" id="playlist-description" name="description" placeholder="Give your playlist a catchy description." trans-placeholder></textarea>
+                <div class="error" *ngIf="errors.description">{{errors.description}}</div>
+            </div>
+
+            <div class="visibility-checkbox">
+                <input type="checkbox" class="pretty-checkbox" name="visibility" id="playlist-visibility" [(ngModel)]="model.public">
+                <label for="playlist-visibility" trans>Public</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons right">
+        <button (click)="close()" type="button" class="button cancel cancel-button" trans>Close</button>
+        <button type="submit" class="button primary submit-button">
+            <span *ngIf="!model.id" trans>Create</span>
+            <span *ngIf="model.id" trans>Update</span>
+        </button>
+    </div>
+
+    <loading-indicator [isVisible]="loading" class="overlay opacity-high"></loading-indicator>
+</form>

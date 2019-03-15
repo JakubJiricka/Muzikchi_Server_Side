@@ -1,0 +1,24 @@
+<div class="header">
+    <div class="title">Logging</div>
+    <div class="subtitle" trans>Configure site error and access logging and related 3rd party integrations.</div>
+</div>
+
+<form class="body many-inputs" (submit)="saveSettings()">
+
+    <div class="input-container">
+        <label for="logging.sentry_public" trans>Sentry Public Key</label>
+        <input name="logging.sentry_public" id="logging.sentry_public" [(ngModel)]="state.client['logging.sentry_public']">
+    </div>
+
+    <div class="input-container">
+        <label for="logging.sentry_dsn" trans>Sentry Private Key (DSN)</label>
+        <input name="logging.sentry_dsn" id="logging.sentry_dsn" [(ngModel)]="state.server['sentry_dsn']">
+    </div>
+
+    <div class="widget widget-info">
+        <div class="title" trans>Information</div>
+        <p><a href="https://sentry.io" target="_blank">Sentry</a> <span trans>integration provides real-time error tracking and helps identify and fix issues when site is in production.</span></p>
+    </div>
+
+    <button class="button primary update-button" type="submit" trans>Update</button>
+</form>

@@ -1,0 +1,37 @@
+@import "../../../scss/variables";
+
+ads-page {
+  display: block;
+  width: 100%;
+  padding: 25px;
+
+  .panel {
+    border: 1px solid $border-color;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: $admin-table-background-color;
+
+    > .header {
+      background-color: $gray-bg-color;
+      border-bottom: 1px solid $border-color;
+      padding: 15px;
+      margin-bottom: 15px;
+      font-weight: 500;
+      color: #555;
+    }
+
+    > .input-container {
+      margin-right: 15px;
+      margin-left: 15px;
+
+      > textarea {
+        max-width: 750px;
+        height: 150px;
+      }
+    }
+
+    > .save-button, > .setting-checkbox {
+      margin: 0 15px 15px;
+    }
+  }
+}

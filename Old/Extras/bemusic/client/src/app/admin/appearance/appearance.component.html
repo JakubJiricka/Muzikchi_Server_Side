@@ -1,0 +1,38 @@
+<aside class="sidebar">
+    <div class="header">
+        <div class="back-button" (click)="closeEditor()">
+            <svg-icon name="close" class="align-middle"></svg-icon>
+        </div>
+        <div class="title" trans>Appearance Editor</div>
+        <button class="button primary save-button" (click)="appearance.saveChanges()" [disabled]="appearance.changes.isEmpty()">
+            <span *ngIf="!appearance.changes.isEmpty()" trans>Save</span>
+            <span *ngIf="appearance.changes.isEmpty()" trans>Saved</span>
+        </button>
+    </div>
+
+    <div class="navigation" *ngIf="!appearance.activePanel">
+        <div class="nav-item" (click)="openPanel(configItem.name)" *ngFor="let configItem of appearance.config">
+            <span class="name">{{configItem.name}}</span>
+            <svg-icon class="arrow-icon" name="keyboard-arrow-right"></svg-icon>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <ng-container *ngFor="let configItem of appearance.config">
+            <div class="tab general-tab" *ngIf="appearance.activePanel === configItem.name && configItem.fields.length">
+                <appearance-panel [config]="configItem"></appearance-panel>
+            </div>
+        </ng-container>
+        <div class="tab general-tab" *ngIf="appearance.activePanel === 'Menus'">
+            <menus-appearance-panel></menus-appearance-panel>
+        </div>
+
+    </div>
+</aside>
+
+<div class="live-preview">
+    <iframe src='about:blank' #iframe></iframe>
+    <div class="selected-el-box" #selectedElBox></div>
+</div>
+
+<loading-indicator [isVisible]="preview.isLoading" class="overlay"></loading-indicator>

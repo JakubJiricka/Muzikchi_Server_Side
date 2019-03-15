@@ -1,0 +1,25 @@
+@import "../../../scss/variables";
+
+groups {
+  display: block;
+
+  .spacing-container {
+    padding: 25px;
+    display: flex;
+  }
+
+  .new-group {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .flex-table-panel {
+    flex: 1 1 auto;
+
+    .button.flat {
+      font-size: 1.2rem;
+      line-height: 33px;
+    }
+  }
+}

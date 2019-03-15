@@ -1,0 +1,42 @@
+@import "../../../../scss/variables";
+
+$spacing: 10px;
+
+select-permissions-modal.modal {
+  > .modal-content {
+    width: 900px;
+  }
+
+  .permissions-group {
+    margin-bottom: 15px;
+    border: 1px solid $border-color;
+    padding: 15px;
+
+    > .group-name {
+      font-size: 1.7rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .permissions {
+    > .permission {
+      display: inline-block;
+      padding: $spacing;
+      margin: 0 $spacing $spacing 0;
+      border: 1px solid $border-color;
+      background-color: $gray-bg-color;
+      text-transform: capitalize;
+      cursor: pointer;
+      width: calc(25% - #{$spacing});
+      line-height: 10px;
+
+      &:hover {
+        background-color: darken($gray-bg-color, 3%);
+      }
+    }
+  }
+}

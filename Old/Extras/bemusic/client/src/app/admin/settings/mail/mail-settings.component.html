@@ -1,0 +1,109 @@
+<div class="header">
+    <div class="title">Mail</div>
+    <div class="subtitle" trans>Change incoming and outgoing email handlers, email credentials and more.</div>
+</div>
+
+<form class="body many-inputs" (submit)="saveSettings()">
+
+    <div class="input-container">
+        <label for="env.mail_from_address" trans>From Address</label>
+        <input type="email" name="env.mail_from_address" id="env.mail_from_address" [(ngModel)]="state.server['mail_from_address']" required>
+        <p trans>All outgoing application emails will be sent from this email address.</p>
+    </div>
+
+    <div class="input-container">
+        <label for="env.mail_from_name" trans>From Name</label>
+        <input name="env.mail_from_name" id="env.mail_from_name" [(ngModel)]="state.server['mail_from_name']" required>
+        <p trans>All outgoing application emails will be sent using this name.</p>
+    </div>
+
+    <div class="widget widget-info widget-important">
+        <div class="title" trans>Important!</div>
+        <p trans>Your selected mail method must be authorized to send emails using this address and name.</p>
+    </div>
+
+    <div class="input-container">
+        <label for="mail.driver" trans>Outgoing Mail Method</label>
+        <select name="mail.driver" id="mail.driver" [(ngModel)]="state.server['mail_driver']">
+            <option value="mailgun">Mailgun</option>
+            <option value="smtp">SMTP</option>
+            <option value="sparkpost">SparkPost</option>
+            <option value="ses">Ses (Amazon Simple Email Service)</option>
+            <option value="mandrill">Mandrill</option>
+            <option value="mail">PHP Mail</option>
+            <option value="sendmail">SendMail</option>
+            <option value="log">Log (Email will be saved to error log)</option>
+        </select>
+        <p trans>Which method should be used for sending outgoing application emails.</p>
+    </div>
+
+    <!-- SMTP -->
+    <ng-container *ngIf="state.server['mail_driver'] === 'smtp'">
+        <div class="input-container">
+            <label for="env.mail_host" trans>SMTP Host</label>
+            <input name="env.mail_host" id="env.mail_host" [(ngModel)]="state.server['mail_host']">
+        </div>
+
+        <div class="input-container">
+            <label for="env.mail_username" trans>SMTP Username</label>
+            <input name="env.mail_username" id="env.mail_username" [(ngModel)]="state.server['mail_username']">
+        </div>
+
+        <div class="input-container">
+            <label for="env.mail_password" trans>SMTP Password</label>
+            <input type="password" name="env.mail_password" id="env.mail_password" [(ngModel)]="state.server['mail_password']">
+        </div>
+
+        <div class="input-container">
+            <label for="env.mail_port" trans>SMTP Port</label>
+            <input name="env.mail_port" id="env.mail_port" [(ngModel)]="state.server['mail_port']">
+        </div>
+
+        <div class="input-container">
+            <label for="env.mail_encryption" trans>SMTP Encryption</label>
+            <input name="env.mail_encryption" id="env.mail_encryption" [(ngModel)]="state.server['mail_encryption']">
+        </div>
+    </ng-container>
+
+    <!-- MAILGUN -->
+    <ng-container *ngIf="state.server['mail_driver'] === 'mailgun'">
+        <div class="input-container">
+            <label for="env.mailgun_domain" trans>Mailgun Domain</label>
+            <input name="env.mailgun_domain" id="env.mailgun_domain" [(ngModel)]="state.server['mailgun_domain']">
+            <p trans>Usually the domain of your site (site.com)</p>
+        </div>
+
+        <div class="input-container">
+            <label for="env.mailgun_secret" trans>Mailgun Secret</label>
+            <input name="env.mailgun_secret" id="env.mailgun_secret" [(ngModel)]="state.server['mailgun_secret']">
+            <p trans>Should start with "key-"</p>
+        </div>
+    </ng-container>
+
+    <!-- SES -->
+    <ng-container *ngIf="state.server['mail_driver'] === 'ses'">
+        <div class="input-container">
+            <label for="env.ses_key" trans>SES Key</label>
+            <input name="env.ses_key" id="env.ses_key" [(ngModel)]="state.server['ses_key']">
+        </div>
+
+        <div class="input-container">
+            <label for="env.ses_secret" trans>SES Secret</label>
+            <input name="env.ses_secret" id="env.ses_secret" [(ngModel)]="state.server['ses_secret']">
+        </div>
+    </ng-container>
+
+    <!-- SPARKPOST-->
+    <div class="input-container" *ngIf="state.server['mail_driver'] === 'sparkpost'">
+        <label for="env.sparkpost_secret" trans>Sparkpost Secret</label>
+        <input name="env.sparkpost_secret" id="env.sparkpost_secret" [(ngModel)]="state.server['sparkpost_secret']">
+    </div>
+
+    <div class="setting-checkbox margin-top">
+        <input type="checkbox" class="pretty-checkbox" name="mail.use_default_templates" id="mail.use_default_templates" [(ngModel)]="state.client['mail.use_default_templates']">
+        <label for="mail.use_default_templates" trans>Default Mail Templates</label>
+        <p trans>Use default email templates, even if they have been modified via "Mail Templates" page.</p>
+    </div>
+
+    <button class="button primary update-button" type="submit" trans>Update</button>
+</form>

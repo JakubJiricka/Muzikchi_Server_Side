@@ -1,0 +1,223 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Bridge for Tickera\n"
+"POT-Creation-Date: 2015-11-12 14:02+0100\n"
+"PO-Revision-Date: 2015-11-12 14:04+0100\n"
+"Last-Translator: \n"
+"Language-Team: Tickera <info@tickera.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext_noop;_n_noop;_x;_nx;_nx_noop;_ex;"
+"esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;esc_html_x;_c;_nc\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: functions.php:11 functions.php:30 woocommerce-tickera-bridge.php:1260
+msgid "Event"
+msgstr ""
+
+#: functions.php:31
+msgid "Current Event"
+msgstr ""
+
+#: functions.php:37
+msgid "Ticket Type Column Title"
+msgstr ""
+
+#: functions.php:39 functions.php:63 woocommerce-tickera-bridge.php:199
+msgid "Ticket Type"
+msgstr ""
+
+#: functions.php:43
+msgid "Price Column Title"
+msgstr ""
+
+#: functions.php:45 woocommerce-tickera-bridge.php:200
+msgid "Price"
+msgstr ""
+
+#: functions.php:49
+msgid "Cart Column Title"
+msgstr ""
+
+#: functions.php:51 woocommerce-tickera-bridge.php:201
+msgid "Cart"
+msgstr ""
+
+#: functions.php:93
+msgid "Show Price"
+msgstr ""
+
+#: functions.php:96
+msgid "No"
+msgstr ""
+
+#: functions.php:97
+msgid "Yes"
+msgstr ""
+
+#: functions.php:102
+msgid "Style"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:47
+msgid "Tickera"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:48 woocommerce-tickera-bridge.php:702
+msgid "WooCommerce"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:51 woocommerce-tickera-bridge.php:55
+#, php-format
+msgid ""
+"To begin using WooCommerce Bridge for Tickera, please install and activate "
+"the latest version of <a href=\"%s\" class=\"thickbox\" title=\"%s\">%s</a>."
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:275
+msgid "Ticket / Add to cart button"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:276
+msgid "Table with Event tickets"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:321 woocommerce-tickera-bridge.php:388
+msgid "Completed"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:322 woocommerce-tickera-bridge.php:389
+msgid "Processing"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:323 woocommerce-tickera-bridge.php:390
+msgid "On Hold"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:324 woocommerce-tickera-bridge.php:391
+msgid "Pending Payment"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:387
+msgid "Any"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:533
+msgid "All fields marked with * are required."
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:601
+msgid "Append content to the order processing e-mails"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:605
+msgid "Whether to append content to the WooCommerce processing e-mails."
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:611 woocommerce-tickera-bridge.php:631
+msgid "Message Content"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:615 woocommerce-tickera-bridge.php:635
+msgid ""
+"Content of the message. You can use following placeholder: TICKETS_TABLE. "
+"This placeholder shows ordered tickets with the download links."
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:621
+msgid "Append content to the order completed e-mails"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:625
+msgid "Whether to append content to the WooCommerce completed e-mails."
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:661
+msgid "Order Processing E-mail"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:662
+msgid ""
+"E-mail content shown after order details in the WooCommerce order processing "
+"e-mail."
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:667
+msgid "Order Completed E-mail"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:668
+msgid ""
+"E-mail content shown after order details in the WooCommerce order completed "
+"e-mail."
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:723
+msgid "Hide Tickets"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:727
+msgid ""
+"Hide WooCommerce products / tickets from the Store page on the front-end."
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:733
+msgid "Redirect product single post to an event"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:737
+#, php-format
+msgid ""
+"Whether to redirect ticket product single posts to associated event post. "
+"%sNOTE: Variable products won't be redirected.%s"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:896 woocommerce-tickera-bridge.php:955
+msgid "Tickets"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:1249
+msgid "Product is a Ticket"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:1251
+msgid "Select whether this product is an event ticket or not."
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:1262
+msgid "Select an Event created in Tickera"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:1270
+msgid "Check-ins per ticket"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:1271
+msgid "Unlimited"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:1273
+msgid ""
+"It is useful if the event last more than one day. For instance, if duration "
+"of your event is 5 day, you should choose 5 or more for Available Check-ins"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:1280
+msgid "Ticket Template"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:1290
+msgid "Attendee Form"
+msgstr ""
+
+#: woocommerce-tickera-bridge.php:1389
+#, php-format
+msgid ""
+"There was an issue determining where %s is installed. Please reinstall it."
+msgstr ""

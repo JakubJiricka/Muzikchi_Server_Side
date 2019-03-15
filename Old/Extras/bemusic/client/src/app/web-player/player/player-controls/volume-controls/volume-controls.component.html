@@ -1,0 +1,13 @@
+<button class="player-action no-style volume-button volume-on" [class.visible]="!player.isMuted()" (click)="player.mute()" tooltip="Mute">
+    <svg-icon name="volume-up"></svg-icon>
+</button>
+
+<button class="player-action no-style volume-button volume-off" [class.visible]="player.isMuted()" (click)="player.unMute()" tooltip="Unmute">
+    <svg-icon name="volume-off"></svg-icon>
+</button>
+
+<div class="outer-track" #outerTrack>
+    <div class="inner-track"></div>
+    <div class="progress-track" [class.hidden]="player.isMuted()" #progressTrack></div>
+    <div class="progress-handle" #progressHandle></div>
+</div>

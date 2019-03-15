@@ -1,0 +1,32 @@
+.edit-main-info {
+  display: flex;
+
+  > .left-col {
+    flex: 0 0 200px;
+    width: 200px;
+    margin-right: 25px;
+
+    > img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    > .main-button {
+      display: block;
+      margin-top: 8px;
+      width: 100%;
+      line-height: 42px;
+
+      > svg-icon {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  > .right-col {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}

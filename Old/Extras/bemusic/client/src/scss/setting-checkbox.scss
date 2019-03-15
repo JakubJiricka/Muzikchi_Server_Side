@@ -1,0 +1,17 @@
+@import "variables";
+
+.setting-checkbox {
+  margin-bottom: 30px;
+
+  > p {
+    padding-left: 28px;
+    color: rgb(153, 153, 153);
+    margin: 0;
+    max-width: 650px;
+  }
+
+  > .error {
+    color: $danger-bg-color;
+    margin-top: 5px;
+  }
+}

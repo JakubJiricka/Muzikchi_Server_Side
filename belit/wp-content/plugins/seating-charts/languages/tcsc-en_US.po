@@ -1,0 +1,792 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-06-22 15:03+0200\n"
+"PO-Revision-Date: 2018-06-22 15:03+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__;_n;_ngettext_noop;_n_noop;_x;_nx;_nx_noop;_ex;"
+"esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;esc_html_x;_c;_nc\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/admin-pages/bottom-controls.php:25
+msgid "Save"
+msgstr ""
+
+#: includes/admin-pages/element.php:4
+msgid "Element"
+msgstr ""
+
+#: includes/admin-pages/element.php:11
+#: includes/admin-pages/seating-group.php:13
+#: includes/admin-pages/standing.php:13 includes/admin-pages/table.php:11
+msgid "Title"
+msgstr ""
+
+#: includes/admin-pages/element.php:26
+msgid "Exit"
+msgstr ""
+
+#: includes/admin-pages/element.php:31 includes/admin-pages/element.php:117
+msgid "Toilet"
+msgstr ""
+
+#: includes/admin-pages/element.php:36 includes/admin-pages/element.php:102
+msgid "Stage"
+msgstr ""
+
+#: includes/admin-pages/element.php:41 includes/admin-pages/element.php:81
+msgid "Drinks"
+msgstr ""
+
+#: includes/admin-pages/element.php:46
+msgid "Showers"
+msgstr ""
+
+#: includes/admin-pages/element.php:51
+msgid "Camping Area"
+msgstr ""
+
+#: includes/admin-pages/element.php:61
+msgid "Dance Floor"
+msgstr ""
+
+#: includes/admin-pages/element.php:66
+msgid "Food"
+msgstr ""
+
+#: includes/admin-pages/element.php:71
+msgid "Info"
+msgstr ""
+
+#: includes/admin-pages/element.php:76
+msgid "Entrance"
+msgstr ""
+
+#: includes/admin-pages/element.php:86
+msgid "ATM"
+msgstr ""
+
+#: includes/admin-pages/element.php:107 includes/admin-pages/table.php:4
+msgid "Tables"
+msgstr ""
+
+#: includes/admin-pages/element.php:112
+msgid "Reception"
+msgstr ""
+
+#: includes/admin-pages/element.php:122
+msgid "Escalator"
+msgstr ""
+
+#: includes/admin-pages/element.php:127
+msgid "Elevator"
+msgstr ""
+
+#: includes/admin-pages/element.php:137
+msgid "Disability Entrance"
+msgstr ""
+
+#: includes/admin-pages/element.php:142
+msgid "Gym"
+msgstr ""
+
+#: includes/admin-pages/element.php:147
+msgid "Parking"
+msgstr ""
+
+#: includes/admin-pages/element.php:152
+msgid "Doctor"
+msgstr ""
+
+#: includes/admin-pages/element.php:157
+msgid "Computer"
+msgstr ""
+
+#: includes/admin-pages/element.php:162
+msgid "Wardrobe"
+msgstr ""
+
+#: includes/admin-pages/element.php:177
+msgid "Icon Color"
+msgstr ""
+
+#: includes/admin-pages/element.php:184
+msgid "Background Color"
+msgstr ""
+
+#: includes/admin-pages/element.php:191
+#: includes/admin-pages/seating-group.php:40
+#: includes/admin-pages/standing.php:33 seating-charts.php:397
+#: seating-charts.php:2635
+msgid "Create"
+msgstr ""
+
+#: includes/admin-pages/element.php:195
+#: includes/admin-pages/seating-group.php:44
+#: includes/admin-pages/standing.php:37 includes/admin-pages/table.php:66
+#: includes/admin-pages/text.php:41 seating-charts.php:396
+#: seating-charts.php:1666
+msgid "Edit"
+msgstr ""
+
+#: includes/admin-pages/element.php:196
+#: includes/admin-pages/seating-group.php:45
+#: includes/admin-pages/standing.php:38 includes/admin-pages/table.php:67
+#: includes/admin-pages/text.php:42 includes/class.shortcodes.php:64
+msgid "Cancel"
+msgstr ""
+
+#: includes/admin-pages/labels.php:5
+msgid "Assign Seat Labels"
+msgstr ""
+
+#: includes/admin-pages/labels.php:13
+msgid "Letter"
+msgstr ""
+
+#: includes/admin-pages/labels.php:18 seating-charts.php:2574
+msgid "From"
+msgstr ""
+
+#: includes/admin-pages/labels.php:25 seating-charts.php:2576
+msgid "To"
+msgstr ""
+
+#: includes/admin-pages/labels.php:35 seating-charts.php:2557
+msgid "Label"
+msgstr ""
+
+#: includes/admin-pages/labels.php:43 includes/admin-pages/ticket-type.php:21
+msgid "Assign"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_admin.php:97
+msgid "Are you sure that you want to permanently delete the selected object?"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_admin.php:98
+msgid ""
+"If you change the event all ticket types will be unassigned. Do you want to "
+"change the event?"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_admin.php:99
+msgid ""
+"WARNING: Seats marked with black do not have assigned labels. Please select "
+"marked seats and add unique label to each."
+msgstr ""
+
+#: includes/admin-pages/seat_charts_admin.php:101
+msgid ""
+"All seat labels must be unique. Please correct errors and try to assign "
+"label(s) again."
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:24
+msgid "General Settings"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:29
+msgid "Unavailable Seat Color"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:32
+msgid "Color of unavailable seats"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:37
+msgid "Reserved Seat Color"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:40
+msgid "Color of reserved seats"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:45
+msgid "In Cart Seat Color"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:48
+msgid "Color of seats added in cart"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:53
+msgid "In Other's Cart Seat Color"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:56
+msgid "Color of seats added in cart (by someone else)"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:61
+msgid "Checked-in Seat Color"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:64
+msgid "Color of checked-in seats"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:75
+msgid "Firebase Settings"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:77
+#, php-format
+msgid ""
+"Seating Charts add-on integrates with %sGoogle's Firebase service%s to do a "
+"realtime check and indication of seats in cart. Using Firebase integration "
+"is not required. Check the %ssetup instructions here%s."
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:85
+msgid "Use Firebase Integration"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:87 includes/functions.php:38
+#: seating-charts.php:385
+msgid "Yes"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:88 includes/functions.php:39
+#: seating-charts.php:387
+msgid "No"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:93
+msgid "Authentication Domain"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:95
+msgid "yourapp.firebaseapp.com"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:100
+msgid "Database URL"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:102
+msgid "https://yourapp.firebaseio.com"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:107
+msgid "API Key"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:109
+msgid "Your API Key here"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:114
+msgid "Database Secret Key"
+msgstr ""
+
+#: includes/admin-pages/seat_charts_settings.php:116
+msgid "Your Secret Key here"
+msgstr ""
+
+#: includes/admin-pages/seating-group.php:6
+msgid "Seating Group"
+msgstr ""
+
+#: includes/admin-pages/seating-group.php:20 seating-charts.php:2628
+msgid "Rows"
+msgstr ""
+
+#: includes/admin-pages/seating-group.php:30
+msgid "Columns"
+msgstr ""
+
+#: includes/admin-pages/settings.php:4
+msgid "Settings"
+msgstr ""
+
+#: includes/admin-pages/settings.php:11
+msgid "Chart Title"
+msgstr ""
+
+#: includes/admin-pages/settings.php:33
+msgid "Change"
+msgstr ""
+
+#: includes/admin-pages/standing.php:6
+msgid "Standing Area"
+msgstr ""
+
+#: includes/admin-pages/standing.php:20 seating-charts.php:2646
+msgid "Ticket Type"
+msgstr ""
+
+#: includes/admin-pages/table.php:18
+msgid "Number of Seats"
+msgstr ""
+
+#: includes/admin-pages/table.php:24
+msgid "End Seats"
+msgstr ""
+
+#: includes/admin-pages/table.php:34
+msgid "Shape"
+msgstr ""
+
+#: includes/admin-pages/table.php:52
+msgid "Table Color"
+msgstr ""
+
+#: includes/admin-pages/text.php:4
+msgid "Text Element"
+msgstr ""
+
+#: includes/admin-pages/text.php:11
+msgid "Text"
+msgstr ""
+
+#: includes/admin-pages/text.php:21
+msgid "Color"
+msgstr ""
+
+#: includes/admin-pages/text.php:29
+msgid "Font Size"
+msgstr ""
+
+#: includes/admin-pages/ticket-type.php:4
+msgid "Assign Ticket Type"
+msgstr ""
+
+#: includes/admin-pages/ticket-type.php:23 seating-charts.php:2656
+msgid "Unset"
+msgstr ""
+
+#: includes/class.shortcodes.php:62 includes/class.shortcodes.php:346
+#: includes/class.shortcodes.php:385
+msgid "Add to Cart"
+msgstr ""
+
+#: includes/class.shortcodes.php:63 includes/class.shortcodes.php:365
+#: seating-charts.php:189 seating-charts.php:209 seating-charts.php:240
+#: seating-charts.php:1154
+msgid "Remove from Cart"
+msgstr ""
+
+#: includes/class.shortcodes.php:65
+msgid "Adding to cart, please wait..."
+msgstr ""
+
+#: includes/class.shortcodes.php:66
+msgid "Removing from cart, please wait..."
+msgstr ""
+
+#: includes/class.shortcodes.php:67
+msgid "Loading options, please wait..."
+msgstr ""
+
+#: includes/class.shortcodes.php:68
+msgid "Minimum required number of tickets for  "
+msgstr ""
+
+#: includes/class.shortcodes.php:69
+msgid "Maximum number of tickets for  "
+msgstr ""
+
+#: includes/class.shortcodes.php:70
+msgid " is "
+msgstr ""
+
+#: includes/class.shortcodes.php:71
+msgid "Minimum Tickets"
+msgstr ""
+
+#: includes/class.shortcodes.php:87
+msgid "Seat"
+msgstr ""
+
+#: includes/class.shortcodes.php:107 seating-charts.php:416
+msgid "Left click and drag to pan (or use arrow keys). Use mouse wheel to zoom"
+msgstr ""
+
+#: includes/class.shortcodes.php:108
+msgid "Click to remove or add it to the cart."
+msgstr ""
+
+#: includes/class.shortcodes.php:127 includes/functions.php:47
+msgid "Pick your seat(s)"
+msgstr ""
+
+#: includes/class.shortcodes.php:128 includes/functions.php:54
+msgid "Subtotal"
+msgstr ""
+
+#: includes/class.shortcodes.php:129 includes/functions.php:61
+msgid "Go to Cart"
+msgstr ""
+
+#: includes/class.shortcodes.php:141
+msgid "Seating chart is not selected."
+msgstr ""
+
+#: includes/class.shortcodes.php:243
+msgid "Reserved"
+msgstr ""
+
+#: includes/class.shortcodes.php:244
+msgid "In Cart"
+msgstr ""
+
+#: includes/class.shortcodes.php:248
+msgid "Unavailable"
+msgstr ""
+
+#: includes/class.shortcodes.php:256
+msgid "In Other's Cart"
+msgstr ""
+
+#: includes/class.shortcodes.php:302
+msgid "Left click and drag to pan. Click on available seats for booking."
+msgstr ""
+
+#: includes/class.shortcodes.php:344 includes/class.shortcodes.php:363
+#: includes/class.shortcodes.php:380
+msgid "Price:"
+msgstr ""
+
+#: includes/functions.php:10
+msgid "Select a Seating Chart"
+msgstr ""
+
+#: includes/functions.php:35
+msgid "Show Legend"
+msgstr ""
+
+#: includes/functions.php:45
+msgid "Button Title"
+msgstr ""
+
+#: includes/functions.php:52
+msgid "Subtotal Title"
+msgstr ""
+
+#: includes/functions.php:59
+msgid "Cart Title"
+msgstr ""
+
+#: seating-charts.php:329
+#, php-format
+msgid ""
+"<div id=\"message\" class=\"%1$s tc-donothide\"><p>Cannot save! Directory "
+"%2$s is not writable.</p></div> "
+msgstr ""
+
+#: seating-charts.php:330 seating-charts.php:331 seating-charts.php:334
+#: seating-charts.php:335 seating-charts.php:340
+#, php-format
+msgid "<div id=\"message\" class=\"%1$s\"><p>%2$s</p> </div> "
+msgstr ""
+
+#: seating-charts.php:330 seating-charts.php:331
+msgid "Seating Chart updated."
+msgstr ""
+
+#: seating-charts.php:333
+#, php-format
+msgid ""
+"<div id=\"message\" class=\"%1$s\">Seating Chart restored to revision from "
+"%s</div>"
+msgstr ""
+
+#: seating-charts.php:334
+msgid "Seating Chart published."
+msgstr ""
+
+#: seating-charts.php:335
+msgid "Seating Chart saved."
+msgstr ""
+
+#: seating-charts.php:336
+#, php-format
+msgid ""
+"<div id=\"message\" class=\"%1$s\"><p>Seating Chart submitted. <a target="
+"\"_blank\" href=\"%s\">View Preview</a></p></div>"
+msgstr ""
+
+#: seating-charts.php:338
+#, php-format
+msgid ""
+"<div id=\"message\" class=\"%1$s\">Seating Chart post scheduled for: <strong>"
+"%1$s</strong>.</div>"
+msgstr ""
+
+#: seating-charts.php:338
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: seating-charts.php:340
+msgid "Seating Chart draft updated."
+msgstr ""
+
+#: seating-charts.php:383
+msgid "Are you sure?"
+msgstr ""
+
+#: seating-charts.php:384
+msgid "Label error message"
+msgstr ""
+
+#: seating-charts.php:386
+msgid "OK"
+msgstr ""
+
+#: seating-charts.php:417
+msgid "Click and drag to move"
+msgstr ""
+
+#: seating-charts.php:418
+msgid "Click and drag to rotate. Hold SHIFT key to rotate it in precise steps."
+msgstr ""
+
+#: seating-charts.php:419
+msgid "Click to remove the object permanently"
+msgstr ""
+
+#: seating-charts.php:420
+msgid "Click to copy the object"
+msgstr ""
+
+#: seating-charts.php:421
+msgid "Click to edit the object"
+msgstr ""
+
+#: seating-charts.php:422
+msgid ""
+"Click and drag to resize. Hold SHIFT key to resize the object proportionally."
+msgstr ""
+
+#: seating-charts.php:423
+msgid "Drag to change the value"
+msgstr ""
+
+#: seating-charts.php:424
+msgid "Click to change the value"
+msgstr ""
+
+#: seating-charts.php:425
+msgid ""
+"Click to select / deselect seats. Use CTRL / CMD keys or mouse lasso to mark "
+"multiple desired seats at once."
+msgstr ""
+
+#: seating-charts.php:426
+msgid "Click to save changes"
+msgstr ""
+
+#: seating-charts.php:464
+msgid "Duplicate this Seating Chart"
+msgstr ""
+
+#: seating-charts.php:464
+msgid "Duplicate"
+msgstr ""
+
+#: seating-charts.php:539
+msgid " [duplicate]"
+msgstr ""
+
+#: seating-charts.php:543
+msgid "No seating chart to duplicate has been supplied!"
+msgstr ""
+
+#: seating-charts.php:672 seating-charts.php:1694
+msgid "Seat Color"
+msgstr ""
+
+#: seating-charts.php:674
+msgid "Color which will be visible on a seating chart(s)"
+msgstr ""
+
+#: seating-charts.php:760
+msgid "This product is currently out of stock and unavailable."
+msgstr ""
+
+#: seating-charts.php:771
+msgid "Clear"
+msgstr ""
+
+#: seating-charts.php:838 seating-charts.php:1662
+msgid "Seating Chart"
+msgstr ""
+
+#: seating-charts.php:924
+#, php-format
+msgid "Seat %s is already booked. Please remove it from the %scart%s."
+msgstr ""
+
+#: seating-charts.php:926
+#, php-format
+msgid "Seats %s are already booked. Please remove them from the %scart%s."
+msgstr ""
+
+#: seating-charts.php:952 seating-charts.php:976
+#, php-format
+msgid "Seat %s is already booked. Please remove it from the cart."
+msgstr ""
+
+#: seating-charts.php:954 seating-charts.php:979
+#, php-format
+msgid "Seats %s are already booked. Please remove them from the cart."
+msgstr ""
+
+#: seating-charts.php:999 seating-charts.php:1661
+msgid "Seating Charts"
+msgstr ""
+
+#: seating-charts.php:1021
+#, php-format
+msgid ""
+"%s add-on requires at least %s version of %s plugin. Your current version of "
+"%s is %s. Please update it."
+msgstr ""
+
+#: seating-charts.php:1384 seating-charts.php:1491 seating-charts.php:1532
+#: seating-charts.php:1584 seating-charts.php:1645
+msgid "Ticket added to"
+msgstr ""
+
+#: seating-charts.php:1384 seating-charts.php:1468 seating-charts.php:1491
+#: seating-charts.php:1532 seating-charts.php:1584 seating-charts.php:1645
+msgid "Cart"
+msgstr ""
+
+#: seating-charts.php:1385 seating-charts.php:1469 seating-charts.php:1492
+#: seating-charts.php:1533 seating-charts.php:1585 seating-charts.php:1646
+msgid "Subtotal: "
+msgstr ""
+
+#: seating-charts.php:1468
+msgid "Ticket removed from"
+msgstr ""
+
+#: seating-charts.php:1663
+msgid "Create New"
+msgstr ""
+
+#: seating-charts.php:1664
+msgid "Create New Seating Chart"
+msgstr ""
+
+#: seating-charts.php:1665
+msgid "Edit Seating Chart"
+msgstr ""
+
+#: seating-charts.php:1667
+msgid "New Seating Chart"
+msgstr ""
+
+#: seating-charts.php:1668 seating-charts.php:1672
+msgid "View Seating Chart"
+msgstr ""
+
+#: seating-charts.php:1669
+msgid "Search Seating Charts"
+msgstr ""
+
+#: seating-charts.php:1670
+msgid "No Seating Charts Found"
+msgstr ""
+
+#: seating-charts.php:1671
+msgid "No Seating Charts found in Trash"
+msgstr ""
+
+#: seating-charts.php:1696
+msgid "Color which will be visible on a seating chart"
+msgstr ""
+
+#: seating-charts.php:2024
+msgid "Browse"
+msgstr ""
+
+#: seating-charts.php:2071
+msgid "Seating Chart Rows"
+msgstr ""
+
+#: seating-charts.php:2076
+msgid "Set a number of rows (including the empty ones)"
+msgstr ""
+
+#: seating-charts.php:2081
+msgid "Seating Chart Columns"
+msgstr ""
+
+#: seating-charts.php:2086
+msgid "Set a number of columns (including the empty ones)"
+msgstr ""
+
+#: seating-charts.php:2092
+msgid "Event Name"
+msgstr ""
+
+#: seating-charts.php:2105
+msgid "Change & Save"
+msgstr ""
+
+#: seating-charts.php:2185
+msgid ""
+"HINT: use SHIFT and CTRL / CMD keys or mouse (lasso) in order to select or "
+"deselect multiple seats at once."
+msgstr ""
+
+#: seating-charts.php:2198
+msgid "Seat Cords"
+msgstr ""
+
+#: seating-charts.php:2206
+msgid "Seat Ticket Types"
+msgstr ""
+
+#: seating-charts.php:2213
+msgid "Seat Signs"
+msgstr ""
+
+#: seating-charts.php:2220
+msgid "Seat Directions"
+msgstr ""
+
+#: seating-charts.php:2555
+msgid "Select assigned seats and add seat labels."
+msgstr ""
+
+#: seating-charts.php:2564 seating-charts.php:2582 seating-charts.php:2663
+msgid "Set"
+msgstr ""
+
+#: seating-charts.php:2570
+msgid "Row Label"
+msgstr ""
+
+#: seating-charts.php:2573
+msgid "Col Label (from - to)"
+msgstr ""
+
+#: seating-charts.php:2596
+msgid "Select assigned seats and set their direction."
+msgstr ""
+
+#: seating-charts.php:2620
+msgid ""
+"Select one or more seats which have assigned ticket type in order to set "
+"seat(s) sign."
+msgstr ""
+
+#: seating-charts.php:2629
+msgid "Cols"
+msgstr ""
+
+#: seating-charts.php:2648
+msgid "Loading..."
+msgstr ""

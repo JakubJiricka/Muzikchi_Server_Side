@@ -1,0 +1,10 @@
+.tickera_additional_info .required{
+    color: red;
+    font-weight: 700;
+    border: 0;
+    padding-left: 3px;
+}
+
+.tickera_additional_info label input{
+    margin-left: 0px;
+}

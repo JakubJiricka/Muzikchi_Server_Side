@@ -1,0 +1,28 @@
+<div class="backdrop"></div>
+
+<form class="modal-content" (ngSubmit)="confirm()" ngNativeValidate>
+    <div class="modal-header">
+        <h2 class="modal-title" trans>
+            <span *ngIf="lyric.id" trans>Update Lyric</span>
+            <span *ngIf="!lyric.id" trans>New Lyric</span>
+        </h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button">
+            <svg-icon name="close"></svg-icon>
+        </button>
+    </div>
+
+    <div class="input-container">
+        <text-editor class="text-editor" [minHeight]="400" [basic]="true" #textEditor></text-editor>
+        <div class="error" *ngIf="errors.text">{{errors.text}}</div>
+    </div>
+
+    <div class="buttons right">
+        <button (click)="close()" type="button" class="button cancel cancel-button" trans>Close</button>
+        <button type="submit" class="button primary submit-button" trans>
+            <span *ngIf="lyric.id" trans>Update</span>
+            <span *ngIf="!lyric.id" trans>Create</span>
+        </button>
+    </div>
+
+    <loading-indicator [isVisible]="loading" class="overlay opacity-high"></loading-indicator>
+</form>

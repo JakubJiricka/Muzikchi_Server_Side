@@ -1,0 +1,50 @@
+@import "../../../../scss/variables";
+
+filterable-page-header {
+  display: flex;
+  align-items: flex-end;
+
+  &.margin {
+    margin: 15px 20px 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $wp-border-color-200;
+  }
+
+  > .title {
+    color: $wp-text-color-300;
+    font-size: 1.6rem;
+  }
+
+  > .filter-bar {
+    position: relative;
+    max-width: 330px;
+    flex: 1 1 35%;
+    margin-left: auto;
+
+    > input {
+      color: inherit;
+      width: 100%;
+      background-color: $wp-bg-color-400;
+      height: 35px;
+      padding: 0 10px 0 30px;
+      border: 1px solid transparent;
+    }
+
+    > svg-icon {
+      color: $wp-text-color-300;
+      position: absolute;
+      top: 7px;
+      left: 6px;
+    }
+  }
+
+  @media only screen and (max-width: $tablet) {
+    > .title {
+      display: none;
+    }
+
+    > .filter-bar {
+      max-width: none;
+    }
+  }
+}

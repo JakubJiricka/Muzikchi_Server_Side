@@ -1,0 +1,22 @@
+<div class="header" *ngIf="getImage()">
+    <img [src]="getImage()">
+    <div class="meta">
+        <a class="primary-name hover-underline" [routerLink]="urls.playlist(item)">{{item.name}}</a>
+        <a class="secondary-name hover-underline" [routerLink]="urls.user(item.editors[0])"><span trans>By</span> {{item.editors[0]['display_name']}}</a>
+    </div>
+</div>
+
+<div class="context-menu-panel primary-panel" [class.hidden]="!activePanelIs('primary')">
+    <div class="panel-body">
+        <div class="menu-item" *ngIf="!userIsCreator() && !userIsFollowing()" (click)="follow()" trans>Follow</div>
+        <div class="menu-item" *ngIf="!userIsCreator() && userIsFollowing()" (click)="unfollow()" trans>Unfollow</div>
+        <div class="menu-item" *ngIf="userIsCreator()" (click)="openEditModal()" trans>Edit</div>
+        <div class="menu-item" *ngIf="userIsCreator()" (click)="maybeDeletePlaylist()" trans>Delete</div>
+        <div class="menu-item" *ngIf="userIsCreator() && !isPublic()" (click)="makePublic()" trans>Make Public</div>
+        <div class="menu-item" *ngIf="userIsCreator() && isPublic()" (click)="makePrivate()" trans>Make Private</div>
+        <div class="menu-item" (click)="copyLinkToClipboard()" trans>Copy Link</div>
+        <div class="menu-item" *ngIf="isPublic()" (click)="openShareModal()" trans>Share</div>
+    </div>
+</div>
+
+<context-menu-playlist-panel class="context-menu-panel" *ngIf="activePanelIs('playlist')" [tracks]="getTracks()" (close$)="openPanel('primary')"></context-menu-playlist-panel>

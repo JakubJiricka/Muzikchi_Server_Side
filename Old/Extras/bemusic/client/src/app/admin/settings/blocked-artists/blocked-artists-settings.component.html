@@ -1,0 +1,22 @@
+<div class="header">
+    <div class="title" trans>Blocked Artist</div>
+    <div class="subtitle" trans>Artists that should be blocked on the site (they will not be searchable, indexable, or appear on the site in any other way.</div>
+</div>
+
+<form class="body many-inputs" (submit)="saveSettings()" ngNativeValidate>
+    <div class="input-container">
+        <input type="text" enterKeybind (blur)="addBlockedArtist()" [(ngModel)]="blockedArtist" name="blockedArtist" placeholder="+Artist Name" trans-placeholder>
+        <div class="blocked-artists tags">
+            <div class="blockedArtist tag" *ngFor="let blockedArtist of blockedArtists">
+                <span>{{blockedArtist}}</span>
+                <button type="button" class="no-style" (click)="removeBlockedArtist(blockedArtist)">
+                    <svg-icon name="close"></svg-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button class="button primary update-button" type="submit" trans>Update</button>
+</form>
+
+<loading-indicator [isVisible]="loading" class="overlay"></loading-indicator>

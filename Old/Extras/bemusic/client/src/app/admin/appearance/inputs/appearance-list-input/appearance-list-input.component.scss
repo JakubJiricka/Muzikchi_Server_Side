@@ -1,0 +1,56 @@
+@import "../../../../../scss/variables";
+
+appearance-list-input {
+  display: block;
+  border-top: 1px solid $border-color;
+  padding-top: 10px;
+  margin-top: 10px;
+
+  > .title {
+    margin-bottom: 5px;
+  }
+
+  > .add-button-container {
+    text-align: right;
+  }
+
+  > .list-items {
+    > .list-item {
+      margin-bottom: 10px;
+      position: relative;
+
+      > .remove-item-button {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 4px;
+        background-color: $danger-bg-color;
+        color: $danger-text-color;
+        border-bottom-left-radius: 3px;
+        border-top-right-radius: 3px;
+
+        > svg-icon {
+          display: block;
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      > .title {
+        border-bottom-color: transparent;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &:active, &:focus {
+          border-bottom-color: $link-color;
+        }
+      }
+
+      > .content {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+  }
+}

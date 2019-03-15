@@ -1,0 +1,36 @@
+<div class="header">
+    <div class="title">Envato</div>
+    <div class="subtitle" trans>Manage envato integration module.</div>
+</div>
+
+<form class="body many-inputs" (submit)="saveSettings()">
+
+    <div class="setting-checkbox">
+        <input type="checkbox" class="pretty-checkbox" name="envato.enable" id="envato.enable" [(ngModel)]="state.client['envato.enable']">
+        <label for="envato.enable" trans>Envato Integration</label>
+        <p trans>Enable envato integration (social login, purchase code validation, sales reports and more)</p>
+    </div>
+
+    <div class="setting-checkbox">
+        <input type="checkbox" class="pretty-checkbox" name="envato.require_purchase_code" id="envato.require_purchase_code" [(ngModel)]="state.client['envato.require_purchase_code']">
+        <label for="envato.require_purchase_code" trans>Envato Purchase Code</label>
+        <p trans>Require users to enter a valid purchase code in order to register and submit support requests.
+            Envato social login will also check for purchase code automatically when this is enabled.</p>
+    </div>
+
+    <div class="setting-checkbox">
+        <input type="checkbox" class="pretty-checkbox" name="envato.filter_search" id="envato.filter_search" [(ngModel)]="state.client['envato.filter_search']">
+        <label for="envato.filter_search" trans>Filter Help Center Search</label>
+        <p trans>Users will only be able to find articles for items that they have purchased.</p>
+    </div>
+
+    <div class="widget widget-flat">
+        <div class="title" trans>Envato Items</div>
+        <p trans>This will automatically import all your envato items for use as categories in new ticket and tickets list pages.</p>
+        <button class="button flat" type="button" (click)="importEnvatoItems()" trans>Import Envato Items</button>
+    </div>
+
+    <button class="button primary update-button" type="submit">Update</button>
+</form>
+
+<loading-indicator [isVisible]="loading" class="overlay"></loading-indicator>

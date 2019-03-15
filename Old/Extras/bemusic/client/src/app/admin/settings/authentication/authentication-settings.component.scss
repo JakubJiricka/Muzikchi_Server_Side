@@ -1,0 +1,19 @@
+@import "../../../../scss/variables";
+
+authentication-settings {
+  .twitter .pretty-checkbox:checked + label:before {
+    background: $twitter-color;
+  }
+
+  .facebook .pretty-checkbox:checked + label:before {
+    background: $facebook-color;
+  }
+
+  .envato .pretty-checkbox:checked + label:before {
+    background: $envato-color;
+  }
+
+  .google .pretty-checkbox:checked + label:before {
+    background: $google-color;
+  }
+}

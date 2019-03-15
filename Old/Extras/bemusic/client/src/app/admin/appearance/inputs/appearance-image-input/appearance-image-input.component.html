@@ -1,0 +1,20 @@
+<div class="field-container" (click)="openModal(field)">
+    <div class="label">{{field.name}}</div>
+    <div class="img-container">
+        <img [src]="field.value" *ngIf="field.value">
+        <div class="no-image" *ngIf="!field.value">
+            <svg-icon name="photo-size-select-actual"></svg-icon>
+            <span class="text" trans>Add</span>
+        </div>
+
+        <dropdown class="actions-dropdown">
+            <button class="no-style"><svg-icon name="settings" class="trigger-icon"></svg-icon></button>
+
+            <div class="dropdown-menu" #menu>
+                <div class="dropdown-item" #menuItem (click)="remove()" *ngIf="field.value" trans>Remove</div>
+                <div class="dropdown-item" #menuItem (click)="useDefault()" *ngIf="field.defaultValue" trans>Use Default</div>
+            </div>
+        </dropdown>
+
+    </div>
+</div>

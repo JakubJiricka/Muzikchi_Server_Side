@@ -1,0 +1,15 @@
+Bug Fixes
+- fixed an issue where playlist tracks would not update sometimes without a page reload.
+- tracks added to queue will now properly appear after current track instead of before it.
+- fixed an issue with tracks sometimes not being removed from queue via context menu.
+- corrected some text that was not being translated properly across the site.
+- fixed an issue with soundcloud player not playing next song automatically.
+- prevent tracks with long names from pushing queue sidebar out of the view.
+- fixed issue with infinite redirect when setting homepage as login page.
+- properly save user selected repeat mode in local storage.
+- improve context menu positioning on small screens.
+- apply custom stylesheet to search slideout panel.
+
+Enhancements
+- added a setting to redirect user to https automatically.
+- show local plays in tracks table in admin area.

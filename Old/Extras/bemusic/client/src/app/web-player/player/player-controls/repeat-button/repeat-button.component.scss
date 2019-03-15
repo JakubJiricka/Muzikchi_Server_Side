@@ -1,0 +1,13 @@
+@import "../../../../../scss/variables";
+
+repeat-button {
+  display: block;
+  
+  > button {
+    display: block;
+  }
+
+  .active {
+    color: $accent-color
+  }
+}

@@ -1,0 +1,67 @@
+share-media-item-modal {
+  transition: height 0.5s ease;
+  
+  .link-input-container {
+    display: flex;
+
+    > .input-addon {
+      min-width: 65px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  
+  .share-icons {
+    margin: 10px 0 20px;
+
+    > button {
+      margin-right: 2px;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      > img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  .share-via-email {
+    > .title {
+      margin-bottom: 10px;
+    }
+
+    > .email-address-input > input {
+      height: 50px;
+    }
+
+    > .email-message-input > textarea {
+      border-top: 0;
+      height: 90px;
+    }
+
+    > .emails {
+      > .email {
+        background-color: #ECEFF5;
+        border-radius: 2px;
+        padding: 5px 8px;
+        font-size: 1rem;
+        color: #9099a1;
+        text-transform: uppercase;
+        font-weight: 300;
+        position: relative;
+        margin: 10px 5px;
+
+        > svg-icon {
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          vertical-align: text-top;
+        }
+      }
+    }
+  }
+}

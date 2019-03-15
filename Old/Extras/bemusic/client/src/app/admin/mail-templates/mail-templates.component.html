@@ -1,0 +1,40 @@
+<div class="header">
+    <div class="title">{{selectedTemplate.model.display_name}}</div>
+    <div class="actions">
+        <div class="action change-layout-action">
+            <button class="no-style grid-layout-button" (click)="setLayout('row')" [class.active]="isLayoutActive('row')"><svg-icon name="view-comfy"></svg-icon></button>
+            <button class="no-style list-layout-button" (click)="setLayout('column')" [class.active]="isLayoutActive('column')"><svg-icon name="view-list"></svg-icon></button>
+        </div>
+    </div>
+        <button class="button primary" (click)="updateSelectedTemplate()" *ngIf="currentUser.hasPermission('mail_templates.update')" trans>Update</button>
+</div>
+
+<div class="many-inputs">
+    <div class="input-container">
+        <label for="selected-template" trans>Selected Template</label>
+        <select name="selected-template" id="selected-template" [(ngModel)]="selectedTemplate" (ngModelChange)="setEditorValue()">
+            <option [ngValue]="template" *ngFor="let template of templates">{{template.model.display_name}}</option>
+        </select>
+    </div>
+    <div class="input-container">
+        <label for="subject" trans>Subject</label>
+        <input type="text" name="subject" id="subject" [(ngModel)]="selectedTemplate.model.subject">
+        <div class="error" *ngIf="errors.subject">{{errors.subject}}</div>
+    </div>
+</div>
+
+<div class="label">
+    <div class="types">
+        <button class="type no-style" [class.selected]="isTypeActive('html')" (click)="toggleTemplateType()">HTML</button>
+        <button class="type no-style" *ngIf="selectedTemplate.plain" [class.selected]="isTypeActive('plain')" (click)="toggleTemplateType()" trans>Plaintext</button>
+    </div>
+    <div class="actions">
+        <button class="button flat" (click)="restoreDefault()" *ngIf="currentUser.hasPermission('mail_templates.update')" trans>Restore Default</button>
+    </div>
+</div>
+
+<div class="template" [ngClass]="selectedLayout">
+    <div class="error" *ngIf="errors.contents" trans>Mail template syntax is not valid.</div>
+    <div class="editor" #editor></div>
+    <mail-template-preview></mail-template-preview>
+</div>

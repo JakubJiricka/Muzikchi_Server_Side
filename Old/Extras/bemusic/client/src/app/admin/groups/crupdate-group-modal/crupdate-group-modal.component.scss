@@ -1,0 +1,42 @@
+@import "../../../../scss/variables";
+
+crupdate-group-modal {
+  .permissions-panel {
+    margin: 25px 0 35px;
+
+    > .header {
+      display: flex;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $border-color;
+      align-items: flex-end;
+
+      > .title {
+        font-weight: 500;
+      }
+
+      > button {
+        margin-left: auto;
+      }
+    }
+
+    .manage-permissions {
+      display: flex;
+      margin-top: 10px;
+      flex-wrap: wrap;
+
+      > .permission {
+        padding: 10px;
+        background-color: darken(#fff, 3%);
+        border: 1px solid $border-color-light;
+        border-radius: 4px;
+        margin: 0 6px 6px 0;
+
+        > .round-close-button {
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+
+}

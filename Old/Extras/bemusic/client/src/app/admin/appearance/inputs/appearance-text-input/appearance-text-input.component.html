@@ -1,0 +1,5 @@
+<div class="input-container">
+    <label for="{{field.name}}">{{field.name}}</label>
+    <input type="text" id="{{field.name}}" placeholder="{{field.defaultValue}}" [(ngModel)]="field.value"
+           (focus)="onFocus(field)" (blur)="onBlur()" (ngModelChange)="commitChanges(field)">
+</div>

@@ -1,0 +1,13 @@
+@import "../../scss/variables";
+
+page {
+  display: block;
+  height: 100%;
+  width: 100%;
+  flex: 1 1 auto;
+  overflow: auto;
+
+  > .page-body {
+    padding: 25px;
+  }
+}

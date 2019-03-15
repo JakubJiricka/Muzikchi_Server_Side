@@ -1,0 +1,111 @@
+<nav class="navbar">
+    <div class="nav-content">
+        <a class="nav-group logo-group" [routerLink]="['/']">
+            <img class="logo" *ngIf="settings.has('branding.site_logo')" [src]="settings.get('branding.site_logo')" alt="Agent logo">
+            <div class="text-logo" *ngIf="!settings.has('branding.site_logo')">{{settings.get('branding.site_name')}}</div>
+        </a>
+
+        <div class="nav-group left flex-grow-none">
+            <div class="toggle-sidebar nav-item">
+                <button class="no-style" (click)="leftColumnIsHidden = !leftColumnIsHidden" tooltip="Toggle Sidebar"><svg-icon name="menu"></svg-icon></button>
+            </div>
+        </div>
+
+        <div class="nav-group right">
+            <dropdown class="logged-in-user-widget">
+                <div class="avatar">
+                    <img src="{{currentUser.get('avatar')}}" alt="avatar">
+                </div>
+
+                <div class="email">{{currentUser.get('display_name')}} <svg-icon name="arrow-drop-down" class="dropdown-icon"></svg-icon></div>
+
+                <button class="no-style mobile-toggle"><svg-icon name="menu"></svg-icon></button>
+
+                <div class="dropdown-menu indent" #menu>
+                    <a class="dropdown-item" #menuItem routerLink="/admin" *ngIf="currentUser.hasPermission('admin')">
+                        <svg-icon name="dashboard"></svg-icon>
+                        <span trans>Admin Area</span>
+                    </a>
+                    <a class="dropdown-item" #menuItem routerLink="/account-settings">
+                        <svg-icon name="account-circle"></svg-icon>
+                        <span trans>Account Settings</span>
+                    </a>
+                    <div class="dropdown-item" #menuItem (click)="auth.logOut()">
+                        <svg-icon class="logout-icon" name="exit-to-app"></svg-icon>
+                        <span trans>Logout</span>
+                    </div>
+                </div>
+            </dropdown>
+        </div>
+    </div>
+</nav>
+
+<section class="content">
+    <aside class="left-column admin-left-column" [class.closed]="leftColumnIsHidden">
+        <div class="menu-items">
+            <a class="menu-item" routerLink="analytics" *ngIf="currentUser.hasPermission('reports.view')" routerLinkActive="router-link-active">
+                <svg-icon name="pie-chart"></svg-icon>
+                <span trans>Analytics</span>
+            </a>
+            <a class="menu-item" routerLink="appearance" *ngIf="currentUser.hasPermission('appearance.update')" routerLinkActive="router-link-active">
+                <svg-icon name="style"></svg-icon>
+                <span trans>Appearance</span>
+            </a>
+            <a class="menu-item" routerLink="settings" *ngIf="currentUser.hasPermission('settings.view')" routerLinkActive="router-link-active">
+                <svg-icon name="settings"></svg-icon>
+                <span trans>Settings</span>
+            </a>
+            <a class="menu-item" routerLink="artists" *ngIf="currentUser.hasPermission('artists.update')" routerLinkActive="router-link-active">
+                <svg-icon name="mic"></svg-icon>
+                <span trans>Artists</span>
+            </a>
+            <a class="menu-item" routerLink="albums" *ngIf="currentUser.hasPermission('albums.update')" routerLinkActive="router-link-active">
+                <svg-icon name="album"></svg-icon>
+                <span trans>Albums</span>
+            </a>
+            <a class="menu-item" routerLink="tracks" *ngIf="currentUser.hasPermission('tracks.update')" routerLinkActive="router-link-active">
+                <svg-icon name="audiotrack"></svg-icon>
+                <span trans>Tracks</span>
+            </a>
+            <a class="menu-item" routerLink="lyrics" *ngIf="currentUser.hasPermission('lyrics.update')" routerLinkActive="router-link-active">
+                <svg-icon name="queue-music"></svg-icon>
+                <span trans>Lyrics</span>
+            </a>
+            <a class="menu-item" routerLink="playlists" *ngIf="currentUser.hasPermission('playlists.update')" routerLinkActive="router-link-active">
+                <svg-icon name="playlist-play"></svg-icon>
+                <span trans>Playlists</span>
+            </a>
+            <a class="menu-item" routerLink="users" *ngIf="currentUser.hasPermission('users.view')" routerLinkActive="router-link-active">
+                <svg-icon name="person"></svg-icon>
+                <span trans>Users</span>
+            </a>
+            <a class="menu-item" routerLink="groups" *ngIf="currentUser.hasPermission('groups.view')" routerLinkActive="router-link-active">
+                <svg-icon name="people"></svg-icon>
+                <span trans>Groups</span>
+            </a>
+            <a class="menu-item" routerLink="pages" *ngIf="currentUser.hasPermission('pages.view')" routerLinkActive="router-link-active">
+                <svg-icon name="insert-drive-file"></svg-icon>
+                <span trans>Pages</span>
+            </a>
+            <a class="menu-item" routerLink="translations" *ngIf="currentUser.hasPermission('localizations.view')" routerLinkActive="router-link-active">
+                <svg-icon name="translate"></svg-icon>
+                <span trans>Translations</span>
+            </a>
+            <a class="menu-item" routerLink="mail-templates" *ngIf="currentUser.hasPermission('mail_templates.view')" routerLinkActive="router-link-active">
+                <svg-icon name="mail"></svg-icon>
+                <span trans>Mail Templates</span>
+            </a>
+            <a class="menu-item" routerLink="ads" *ngIf="currentUser.hasPermission('settings.view')" routerLinkActive="router-link-active">
+                <svg-icon name="ads-custom"></svg-icon>
+                <span trans>Ads</span>
+            </a>
+        </div>
+        <div class="version">
+            Version: {{settings.get('version')}}
+        </div>
+    </aside>
+
+    <div class="content-inner">
+        <router-outlet></router-outlet>
+    </div>
+</section>

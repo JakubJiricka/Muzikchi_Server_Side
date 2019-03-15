@@ -1,0 +1,13 @@
+<div class="scroll-container" customScrollbar #scrollContainer>
+    <div class="queue-item" *ngFor="let track of queue.getAll(); index as index;" [class.active]="trackIsPlaying(track)" [contextMenu]="{item: track, type: 'track'}">
+        <div class="img-container" *ngIf="track.album">
+            <img [src]="settings.getDefaultImage('album')" [lazyLoad]="track.album.image" [scrollTarget]="scrollContainer" class="lazy-loaded">
+            <playback-control-button [track]="track" (play)="playTrack(track, index)" (pause)="player.pause()"></playback-control-button>
+        </div>
+        <div class="meta">
+            <div class="track-name">{{track.name}}</div>
+            <div class="artist-name">{{track.artists}}</div>
+        </div>
+        <button class="no-style toggle-menu" (click)="showContextMenu(track, $event)"><svg-icon name="more-horiz"></svg-icon></button>
+    </div>
+</div>

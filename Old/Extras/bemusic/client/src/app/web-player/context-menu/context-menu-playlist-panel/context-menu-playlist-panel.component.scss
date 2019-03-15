@@ -1,0 +1,65 @@
+@import "../../../../scss/variables";
+
+context-menu-playlist-panel {
+  display: block;
+  padding: 0 10px 10px;
+
+  > .panel-header {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid $wp-border-color-200;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    &:hover {
+      color: $wp-text-color-100;
+    }
+
+    > svg-icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  > .panel-body {
+    > .title {
+      margin-bottom: 15px;
+      color: $wp-text-color-300;
+    }
+
+    > .new-playlist {
+      display: block;
+      margin-bottom: 15px;
+      padding: 6px;
+      border: 1px solid $wp-border-color-200;
+      border-radius: 3px;
+
+      &:hover {
+        color: $wp-text-color-100;
+      }
+
+      > svg-icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 3px;
+      }
+    }
+  }
+
+  .playlists {
+    max-height: 130px;
+    overflow: auto;
+
+    > .playlist {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 10px 0;
+
+      &:hover {
+        color: $wp-text-color-100;
+      }
+    }
+  }
+}

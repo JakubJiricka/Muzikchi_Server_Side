@@ -1,0 +1,25 @@
+<div class="scroll-container" customScrollbar #scrollContainer>
+    <filterable-page-header class="margin" [filterQuery]="filterQuery">
+        <sorting-header [name]="order">
+            <div class="dropdown-item" #menuItem (click)="sort('added_at', 'desc', 'Date Added')" trans>Date Added</div>
+            <div class="dropdown-item" #menuItem (click)="sort('name', 'asc', 'Name')" trans>Name</div>
+            <div class="dropdown-item" #menuItem (click)="sort('number_of_songs', 'desc', 'Number of Songs')" trans>Number of Songs</div>
+        </sorting-header>
+    </filterable-page-header>
+
+    <ad-host slot="ad_slot_1" class="margin-bottom"></ad-host>
+
+    <media-grid>
+        <artist-item *ngFor="let artist of filteredItems" [artist]="artist" [scrollContainer]="scrollContainer">
+            <div class="secondary-text">
+                {{artist['number_of_tracks']}}
+                <span trans>Songs</span>
+            </div>
+        </artist-item>
+    </media-grid>
+
+    <no-results-message *ngIf="! filteredItems || ! filteredItems.length">
+        <span primary-text trans>Nothing to display.</span>
+        <span secondary-text trans>You have not added any artists to your library yet.</span>
+    </no-results-message>
+</div>

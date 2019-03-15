@@ -1,0 +1,40 @@
+<div class="scroll-container" customScrollbar infinite-scroll (onInfiniteScroll)="playlist.loadMore()" [infiniteScrollEnabled]="playlist.canLoadMore()">
+    <div class="header" [contextMenu]="{item: playlist.get(), type: 'playlist', extra: {image: playlist.getImage()}}">
+        <img [src]="playlist.getImage()">
+        <div class="meta">
+            <div class="playlist-name">{{playlist.get().name}}</div>
+            <a class="playlist-by" [routerLink]="urls.user(playlist.getCreator())">
+                <img [src]="playlist.getCreator().avatar">
+                <span class="name">{{playlist.getCreator()['display_name']}}</span>
+            </a>
+            <div class="description">{{playlist.get().description}}</div>
+
+            <div class="duration-info">
+                {{playlist.tracksCount}} <span trans>Songs</span>, {{totalDuration}}
+            </div>
+        </div>
+    </div>
+    <div class="main-buttons">
+        <button class="no-style play-button" *ngIf="!playlist.playing()" (click)="playlist.play()">
+            <svg-icon name="play-arrow"></svg-icon>
+            <span trans>Play</span>
+        </button>
+        <button class="no-style play-button" *ngIf="playlist.playing()" (click)="playlist.pause()">
+            <svg-icon name="pause"></svg-icon>
+            <span trans>Pause</span>
+        </button>
+        <button class="no-style more-button" (click)="openContextMenu($event)" trans>More...</button>
+    </div>
+
+    <ad-host slot="ad_slot_1" class="margin-bottom"></ad-host>
+
+    <track-list
+            [tracks]="playlist.getTracks()"
+            [contextMenuParams]="{type: 'playlist-track', extra: {playlistId: playlist.get().id}}"
+            [showArtist]="true"
+            [showAlbum]="true"
+            reorder="track-list-row"
+            (reorder)="reorderTracks($event)"
+            (delete)="removeTracksFromPlaylist($event)"
+    ></track-list>
+</div>

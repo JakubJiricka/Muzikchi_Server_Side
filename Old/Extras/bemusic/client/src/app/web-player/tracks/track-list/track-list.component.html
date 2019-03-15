@@ -1,0 +1,63 @@
+<ng-container *ngIf="!state.isMobile">
+    <div class="track-list-row track-list-header" *ngIf="showHeader">
+        <div class="track-list-column track-number">#</div>
+        <div class="track-list-column track-action"></div>
+        <div class="track-list-column track-name" trans>Song</div>
+        <div class="track-list-column toggle-menu"></div>
+        <div class="track-list-column artist-name" *ngIf="showArtist" trans>Artist</div>
+        <div class="track-list-column album-name" *ngIf="showAlbum" trans>Album</div>
+        <div class="track-list-column added-at" *ngIf="showAddedAt"><svg-icon name="date-range"></svg-icon></div>
+        <div class="track-list-column track-duration"><svg-icon name="access-time"></svg-icon></div>
+        <div class="track-list-column track-popularity" *ngIf="showPopularity"><svg-icon name="trending-up"></svg-icon></div>
+    </div>
+
+    <div class="track-list-row track-list-item"
+         *ngFor="let track of tracks; index as index;"
+         [class.selected]="selectedTracks.has(track)"
+         [attr.data-id]="track.id"
+         [class.playing]="trackIsPlaying(track)"
+         [contextMenu]="getContextMenuParams(track)"
+    >
+        <div class="track-list-column track-number">
+            <span class="number">{{index+1}}</span>
+            <playback-control-button [track]="track" (play)="playTrack(track, index)" (pause)="player.pause()"></playback-control-button>
+        </div>
+        <div class="track-list-column track-action">
+            <library-track-toggle-button [track]="track"></library-track-toggle-button>
+        </div>
+        <div class="track-list-column track-name">{{track.name}}</div>
+        <div class="track-list-column toggle-menu">
+            <button class="no-style" (click)="showContextMenu(track, $event)"><svg-icon name="more-horiz"></svg-icon></button>
+        </div>
+        <artists-links-list class="track-list-column artist-name hover-underline" *ngIf="showArtist && track.artists" [artists]="track.artists"></artists-links-list>
+        <a class="track-list-column album-name hover-underline" *ngIf="showAlbum && track.album" [routerLink]="urls.album(track.album, track.artists[0])">{{track.album.name}}</a>
+        <div class="track-list-column added-at" *ngIf="showAddedAt">{{track['added_at']}}</div>
+        <div class="track-list-column track-duration">{{track['formatted_duration']}}</div>
+        <div class="track-list-column track-popularity" *ngIf="showPopularity">
+            <div class="popularity-track">
+                <div class="popularity-track-inner" [style.width]="getTrackPopularity(track)"></div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="state.isMobile">
+    <div
+        class="mobile-track-list-row track-list-item"
+        *ngFor="let track of tracks; index as index;"
+        [class.playing]="trackIsPlaying(track)"
+        [attr.data-id]="track.id"
+        (click)="toggleTrackPlayback(track, index)"
+    >
+        <div class="track-info">
+            <div class="track-name">{{track.name}}</div>
+            <div class="artist-name">
+                <artists-links-list class="artist-name" [artists]="track.artists"></artists-links-list>
+                <div class="album-name" *ngIf="track.album"> &bull; {{track.album.name}}</div>
+            </div>
+        </div>
+        <button class="no-style options-button" (click)="showContextMenu(track, $event)">
+            <svg-icon name="more-vert"></svg-icon>
+        </button>
+    </div>
+</ng-container>

@@ -1,0 +1,40 @@
+<div class="pagination-controls-inner" *ngIf="shouldBeVisible()">
+    <div class="meta">
+        <strong class="pagination-from">{{paginator.params.from}}</strong>
+        <span trans>to</span>
+        <strong class="pagination-to">{{paginator.params.to}}</strong>
+        <span trans>of</span>
+        <strong class="pagination-total">{{paginator.params.total}}</strong>
+        <span class="items-name">{{itemsName}}</span>
+
+        <span class="separator">|</span>
+
+        <label for="per-page" trans>Per Page: </label>
+        <select name="per-page" id="per-page" [(ngModel)]="paginator.params.perPage" (ngModelChange)="paginator.onParamChange('perPage')">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="13">13</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+    <div class="controls">
+        <button class="no-style first-page-button" title="First Page" trans-title (click)="paginator.firstPage()" [class.disabled]="paginator.isFirstPage()">
+           <svg-icon name="double-left-custom"></svg-icon>
+        </button>
+        <button class="no-style previous-page-button" title="Previous Page" trans-title (click)="paginator.prevPage()" [class.disabled]="!paginator.hasPrev()">
+            <svg-icon name="chevron-left-custom"></svg-icon>
+        </button>
+        <button class="no-style next-page-button" title="Next Page" trans-title (click)="paginator.nextPage()" [class.disabled]="!paginator.hasNext()">
+            <svg-icon name="chevron-right-custom"></svg-icon>
+        </button>
+        <button class="no-style last-page-button" *ngIf="!hideLastPageBtn" title="Last Page" trans-title (click)="paginator.lastPage()" [class.disabled]="paginator.isLastPage()">
+            <svg-icon name="double-right-custom"></svg-icon>
+        </button>
+    </div>
+</div>

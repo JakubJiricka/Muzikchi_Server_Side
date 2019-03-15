@@ -1,0 +1,142 @@
+@import "../../../../scss/variables";
+
+search {
+  display: block;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+
+  .main-header {
+    padding: 25px;
+
+    > .title {
+      margin-bottom: 35px;
+      font-size: 2.8rem;
+      font-weight: 300;
+    }
+
+    > .tab-nav {
+      display: flex;
+      border-bottom: 1px solid $wp-border-color-200;
+
+      > .tab-nav-item {
+        padding: 10px 15px;
+        border-bottom: 3px solid transparent;
+        color: inherit;
+        white-space: nowrap;
+
+        &.active {
+          border-color: $accent-color;
+        }
+      }
+    }
+  }
+
+  .tabs {
+    padding: 0 25px;
+
+    media-grid {
+      padding: 0;
+    }
+  }
+
+  .top-results-row {
+
+    > .artists-row, .albums-row {
+      margin: 0 -10px;
+    }
+
+    > .header {
+      display: flex;
+      margin-top: 35px;
+      border-bottom: 1px solid $wp-border-color-200;
+
+      > .title {
+        font-size: 2.8rem;
+        font-weight: 300;
+      }
+
+      > .link {
+        display: block;
+        color: $wp-text-color-300;
+        font-size: 1.6rem;
+        margin-left: auto;
+        align-self: flex-end;
+        padding-bottom: 3px;
+      }
+    }
+  }
+
+  no-results-message {
+    width: 100%;
+    height: 100%;
+
+    > .text {
+      > .main {
+        font-size: 4.5rem;
+      }
+
+      > .secondary {
+        font-size: 2rem;
+      }
+    }
+
+    @media only screen and (max-width: $tablet) {
+      height: calc(100% - 60px);
+
+      > .text > .main {
+        font-size: 3.6rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      > .text > .secondary {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .search-input-container {
+    position: relative;
+    padding: 15px 15px 0;
+
+    > input {
+      background-color: $wp-bg-color-400;
+      padding: 0 30px 0 10px;
+      border-radius: 5px;
+      border: none;
+      height: 45px;
+      color: inherit;
+
+      &:active, &:focus {
+        outline-color: lighten($wp-border-color-200, 10%);
+      }
+    }
+
+    > svg-icon, > button {
+      position: absolute;
+      top: 25px;
+      right: 15px + 5px;
+    }
+
+    > loading-indicator {
+      position: absolute;
+      top: 25px;
+      right: 15px + 10px;
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      overflow: hidden;
+
+      > .spinner {
+        width: 20px;
+        height: 20px;
+      }
+
+      .rect {
+        width: 4px;
+      }
+    }
+  }
+}

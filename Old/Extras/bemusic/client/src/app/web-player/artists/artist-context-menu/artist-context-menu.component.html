@@ -1,0 +1,15 @@
+<div class="header">
+    <img [src]="item.image_small">
+    <div class="meta">
+        <a class="primary-name hover-underline" [routerLink]="urls.artist(item)">{{item.name}}</a>
+    </div>
+</div>
+
+<div class="context-menu-panel primary-panel">
+    <div class="panel-body">
+        <div class="menu-item" (click)="goToArtistRadio()" *ngIf="!settings.get('player.hide_radio_button')" trans>Go to Artist Radio</div>
+        <div class="menu-item" (click)="copyLinkToClipboard()" trans>Copy Artist Link</div>
+        <div class="menu-item" (click)="openShareModal()" trans>Share</div>
+        <a class="menu-item"  [routerLink]="urls.editArtist(item)" *ngIf="currentUser.hasPermission('artists.update')" trans>Edit</a>
+    </div>
+</div>

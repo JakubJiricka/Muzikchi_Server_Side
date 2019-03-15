@@ -1,0 +1,8 @@
+<div class="img-container">
+    <img [src]="settings.getDefaultImage('artist')" [lazyLoad]="artist.image_small" [scrollTarget]="scrollContainer" class="lazy-loaded">
+    <playback-control-button (play)="play()" (pause)="pause()" [playing]="playing()"></playback-control-button>
+</div>
+<div class="footer">
+    <a class="artist-name primary-text" [routerLink]="urls.artist(artist)">{{artist.name}}</a>
+    <ng-content select=".secondary-text"></ng-content>
+</div>

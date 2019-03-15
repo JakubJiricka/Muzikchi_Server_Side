@@ -1,0 +1,108 @@
+<div class="scroll-container" customScrollbar #scrollContainer>
+    <div class="input-container search-input-container" *ngIf="state.isMobile">
+        <input type="search" trans-placeholder placeholder="Search..." [formControl]="searchControl">
+
+        <svg-icon name="search" [class.hidden]="searching || searchControl.value"></svg-icon>
+
+        <button type="button" class="no-style" (click)="clearSearch()">
+            <svg-icon name="close" [class.hidden]="searching || ! searchControl.value"></svg-icon>
+        </button>
+
+        <loading-indicator [isVisible]="searching"></loading-indicator>
+    </div>
+
+    <ad-host slot="ad_slot_1" class="margin-top"></ad-host>
+
+    <div class="main-header" *ngIf="hasResults()">
+        <div class="title" *ngIf="!state.isMobile">
+            <span trans>Search results for</span>
+            <span>« {{searchTerm}} »</span>
+        </div>
+        <div class="tab-nav">
+            <a class="tab-nav-item" [routerLink]="getRouterLink()" [class.active]="activeTabIs('topResults')" trans>Top Results</a>
+            <a class="tab-nav-item" *ngIf="results.artists.length" [routerLink]="getRouterLink('artists')" [class.active]="activeTabIs('artists')" trans>Artists</a>
+            <a class="tab-nav-item" *ngIf="results.tracks.length" [routerLink]="getRouterLink('songs')" [class.active]="activeTabIs('songs')" trans>Songs</a>
+            <a class="tab-nav-item" *ngIf="results.albums.length" [routerLink]="getRouterLink('albums')" [class.active]="activeTabIs('albums')" trans>Albums</a>
+            <a class="tab-nav-item" *ngIf="results.playlists.length" [routerLink]="getRouterLink('playlists')" [class.active]="activeTabIs('playlists')" trans>Playlists</a>
+            <a class="tab-nav-item" *ngIf="results.users.length" [routerLink]="getRouterLink('users')" [class.active]="activeTabIs('users')" trans>Users</a>
+        </div>
+    </div>
+
+    <section class="tabs">
+        <div class="tab top-results-tab" *ngIf="activeTabIs('topResults') && hasResults()">
+            <track-list [tracks]="results.tracks.slice(0, 5)" [showAlbum]="true" [showArtist]="true" *ngIf="results.tracks.length"></track-list>
+
+            <div class="top-results-row" *ngIf="results.artists.length">
+                <div class="header">
+                    <div class="title" trans>Artists</div>
+                    <a class="link hover-underline" [routerLink]="getRouterLink('artists')" *ngIf="results.users.length > 5">(See all {{results.artists.length}})</a>
+                </div>
+                <media-grid class="artists-row">
+                    <artist-item *ngFor="let artist of results.artists.slice(0, 5)" [artist]="artist" [contextMenu]="{item: artist, type: 'artist'}" [scrollContainer]="scrollContainer"></artist-item>
+                </media-grid>
+            </div>
+
+            <div class="top-results-row" *ngIf="results.albums.length">
+                <div class="header">
+                    <div class="title" trans>Albums</div>
+                    <a class="link hover-underline" [routerLink]="getRouterLink('albums')" *ngIf="results.users.length > 5">(See all {{results.albums.length}})</a>
+                </div>
+                <media-grid class="albums-row">
+                    <album-item *ngFor="let album of results.albums.slice(0, 5)" [album]="album" [contextMenu]="{item: album, type: 'album'}" [scrollContainer]="scrollContainer"></album-item>
+                </media-grid>
+            </div>
+
+            <div class="top-results-row" *ngIf="results.playlists.length">
+                <div class="header">
+                    <div class="title" trans>Playlists</div>
+                    <a class="link hover-underline" [routerLink]="getRouterLink('playlists')" *ngIf="results.users.length > 5">(See all {{results.playlists.length}})</a>
+                </div>
+                <media-grid class="playlists-row">
+                    <playlist-item *ngFor="let playlist of results.playlists.slice(0, 5)" [playlist]="playlist" [contextMenu]="{item: playlist, type: 'playlist'}" [scrollContainer]="scrollContainer"></playlist-item>
+                </media-grid>
+            </div>
+
+            <div class="top-results-row" *ngIf="results.users.length">
+                <div class="header">
+                    <div class="title" trans>Users</div>
+                    <a class="link hover-underline" [routerLink]="getRouterLink('users')" *ngIf="results.users.length > 5">(See all {{results.users.length}})</a>
+                </div>
+                <media-grid class="users-row">
+                    <user-item *ngFor="let user of results.users.slice(0, 5)" [user]="user" [contextMenu]="{item: user, type: 'user'}" [scrollContainer]="scrollContainer"></user-item>
+                </media-grid>
+            </div>
+        </div>
+
+        <media-grid class="tab artists-tab" *ngIf="activeTabIs('artists')">
+            <artist-item *ngFor="let artist of results.artists" [artist]="artist" [contextMenu]="{item: artist, type: 'artist'}" [scrollContainer]="scrollContainer"></artist-item>
+        </media-grid>
+
+        <div class="tab songs-tab" *ngIf="activeTabIs('songs')">
+            <track-list [tracks]="results.tracks"></track-list>
+        </div>
+
+        <media-grid class="tab albums-tab" *ngIf="activeTabIs('albums')">
+            <album-item *ngFor="let album of results.albums" [album]="album" [contextMenu]="{item: album, type: 'album'}" [scrollContainer]="scrollContainer"></album-item>
+        </media-grid>
+
+        <media-grid class="tab playlists-tab" *ngIf="activeTabIs('playlists')">
+            <playlist-item *ngFor="let playlist of results.playlists" [playlist]="playlist" [contextMenu]="{item: playlist, type: 'playlist'}" [scrollContainer]="scrollContainer"></playlist-item>
+        </media-grid>
+
+        <media-grid class="tab users-tab" *ngIf="activeTabIs('users')">
+            <user-item *ngFor="let user of results.users" [user]="user" [contextMenu]="{item: user, type: 'user'}" [scrollContainer]="scrollContainer"></user-item>
+        </media-grid>
+    </section>
+
+    <no-results-message *ngIf="!hasResults() && hasSearchTerm() && searchedOnce">
+        <span primary-text><span trans>No results for</span> « {{searchControl.value}} »</span>
+        <span secondary-text trans>Please check your spelling or try using different keywords.</span>
+    </no-results-message>
+
+    <no-results-message *ngIf="state.isMobile && (!hasSearchTerm() || !searchedOnce)">
+        <span primary-text><span trans>Search</span> {{settings.get('branding.site_name')}}</span>
+        <span secondary-text trans>Find artists, albums, songs, playlists and more.</span>
+    </no-results-message>
+
+    <ad-host slot="ad_slot_2" class="margin-top margin-bottom"></ad-host>
+</div>

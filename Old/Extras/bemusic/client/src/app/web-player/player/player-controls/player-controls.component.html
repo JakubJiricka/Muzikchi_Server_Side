@@ -1,0 +1,21 @@
+<main-playback-buttons></main-playback-buttons>
+
+<player-seekbar></player-seekbar>
+
+<button class="no-style lyrics" (click)="showLyricsModal()" [disabled]="!player.cued()" *ngIf="!shouldHideLyricsButton" trans>Lyrics</button>
+
+<button class="player-action no-style" (click)="overlay.maximize()" *ngIf="!shouldHideVideoButton" [disabled]="!player.cued()" tooltip="Toggle video">
+    <svg-icon name="ondemand-video"></svg-icon>
+</button>
+
+<button class="player-action no-style" (click)="queueSidebar.toggle()" tooltip="Toggle queue">
+    <svg-icon name="queue-music"></svg-icon>
+</button>
+
+<button class="player-action no-style shuffle-button" [class.active]="player.getState().shuffling" (click)="player.toggleShuffle()" tooltip="Shuffle">
+    <svg-icon name="shuffle"></svg-icon>
+</button>
+
+<repeat-button></repeat-button>
+
+<volume-controls></volume-controls>

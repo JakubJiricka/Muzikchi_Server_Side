@@ -1,0 +1,20 @@
+<div class="nav" *ngIf="state.isMobile">
+    <a routerLink="songs" class="nav-item" routerLinkActive="active">
+        <svg-icon name="audiotrack"></svg-icon>
+        <span class="name" trans>Songs</span>
+    </a>
+    <a routerLink="playlists" class="nav-item" routerLinkActive="active">
+        <svg-icon name="queue-music"></svg-icon>
+        <span class="name" trans>Playlists</span>
+    </a>
+    <a routerLink="artists" class="nav-item" routerLinkActive="active">
+        <svg-icon name="mic"></svg-icon>
+        <span class="name" trans>Artists</span>
+    </a>
+    <a routerLink="albums" class="nav-item" routerLinkActive="active">
+        <svg-icon name="album"></svg-icon>
+        <span class="name" trans>Albums</span>
+    </a>
+</div>
+
+<router-outlet></router-outlet>

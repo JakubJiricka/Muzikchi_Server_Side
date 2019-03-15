@@ -1,0 +1,621 @@
+.tc_warning_ticket_types_needed{
+    background: yellow;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+    border: 1px dashed;
+    font-size: 14px;
+    float: left;
+    width: 100%;
+}
+
+.tc_cart_remove_icon{
+    float: right;
+    display: inline-block;
+    opacity: 0.5;
+    transition: opacity .15s ease-in-out;
+    -moz-transition: opacity .15s ease-in-out;
+    -webkit-transition: opacity .15s ease-in-out;
+    cursor: pointer;
+}
+
+.tc-age-check-error {
+    color: red;
+}
+
+.tc_cart_remove_icon:hover{
+    opacity: 1;
+    transition: opacity .15s ease-in-out;
+    -moz-transition: opacity .15s ease-in-out;
+    -webkit-transition: opacity .15s ease-in-out;
+}
+
+.tc_event_data_widget{
+    font-size: 0.8em;
+    display: block;
+}
+
+.tc_event_date_title_front,
+.tc_event_location_title_front{
+    color: #8c8c8c;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-right: 20px;
+}
+
+.tc_event_date_title_front .fa,
+.tc_event_location_title_front .fa{
+    padding-right: 5px;
+}
+
+.tc_the_content_pre{
+    padding-bottom: 10px;
+}
+
+#tickera_cart label.error{
+    color: red;
+    padding-top: 5px;
+}
+
+.tickera-payment-gateways {
+    border: 1px solid #f1f1f1;
+    padding: 6px 10px;
+    float:left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.tickera-hide-button {
+    display: none;
+}
+
+.tickera-payment-gateways .tc_gateway_form {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s linear;
+    -moz-transition: max-height 0.5s linear;
+    -webkit-transition: max-height 0.5s linear;
+}
+
+.tickera-payment-gateways .tickera-height {
+    max-height: 1000px;
+    transition: max-height 0.5s linear;
+    -moz-transition: max-height 0.5s linear;
+    -webkit-transition: max-height 0.5s linear;
+}
+
+.tickera-payment-gateways .tickera-height.tc_gateway_form {
+    margin: 30px 0;
+}
+
+.tickera-payment-gateways .plugin-title {
+    font-size: 0.9em;
+}
+
+.tickera-payment-gateways .plugin-title label {
+    margin-bottom: 0;
+}
+
+.tickera-payment-gateways .plugin-title img {
+    vertical-align: middle;
+}
+
+.tickera-payment-options {
+    margin-left: 15px;
+}
+
+.tc_cart_payment_methods th {
+    padding: 20px 7px;
+}
+
+.tc_gateway_form thead  th {
+    padding: 20px 7px;
+}
+
+.tickera_table {
+    width: 100%;
+}
+
+.cart_success{
+    color: green;
+}
+
+.tc_cart_billing {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.tc_cart_billing th {
+    margin: 10px 0;
+}
+
+.tc_gateway_form td {
+    padding: 7px;
+}
+
+.info_section h2 {
+    float: left;
+    width: 100%;
+}
+
+.tickera input {
+    border: 1px solid rgba(0, 0, 0, 0.2);    
+}
+
+.tickera select {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    max-width: 196px;
+}
+
+.tickera-input-field {
+    border: 1px solid rgba(0, 0, 0, 0.2);    
+    padding: 7px;
+}
+
+.tc_cart_payment_methods {
+    /*padding: 15px;*/
+    width: 100%;
+}
+
+.tc-form-disable {
+    position: absolute;
+    top: -20px;
+    bottom: -20px;
+    left:-20px;
+    right: -20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.tickera_owner_info .tc_cart_remove_icon {
+    opacity: 1;
+}
+
+.tickera_owner_info {
+    /*position: relative;*/
+}
+
+.tc-delete-loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #6b5f89; 
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: tcspin 2s linear infinite;
+    z-index: 99;
+    position: absolute;
+}
+
+@keyframes tcspin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+.ticket-info-wrap {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0 0 40px 0;
+    float:left;
+    width: 100%;
+}
+
+.fields-wrap input {
+    float: left;
+}
+
+.fields-wrap label {
+    width: 100%;
+}
+
+.fields-wrap span {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.field-name {
+    float: left;
+}
+
+.cart_error{
+    color: red;
+}
+
+.tc-container {
+    width: 100%;
+    margin: 0 auto 0 auto;
+}
+
+.tickera-checkout {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #555;
+}
+
+.tickera-checkout .ticket-price {
+    text-align: center;
+}
+
+.tickera-checkout .ticket-quantity {
+    text-align: center;
+}
+
+.ticket-quantity .quantity {
+    width: 35px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    border: 1px solid #e7e7e7;
+    margin: 0 3px;
+    padding: 0 5px;
+}
+
+.ticket-quantity .plus {
+    margin-left: -4px;
+}
+
+.ticket-quantity .tickera_button {
+    background: none;
+    border: none;
+    color: #4187c9;
+    font-size: 15px;
+    height: 30px;
+    outline: none;
+    padding: 5px;
+}
+
+.ticket-quantity .tickera_button:hover {
+    cursor: pointer;
+    color: #555;
+    background-color: transparent;
+}
+
+.ticket-quantity .tickera_button:hover,
+.ticket-quantity .tickera_button:focus{
+    background: transparent;
+    border: none;
+}
+
+.tickera-checkout tr {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.tickera-checkout tr th {
+    font-size: 14px;
+    font-weight: bold;
+    padding:10px;
+}
+
+.tickera-checkout thead tr th:nth-child(2),
+.tickera-checkout thead tr th:nth-child(3),
+.tickera-checkout thead tr th:nth-child(4),
+.tickera-checkout tbody tr td:nth-child(2),
+.tickera-checkout tbody tr td:nth-child(3),
+.tickera-checkout tbody tr td:nth-child(4){
+    text-align: center;
+}
+
+
+
+.tickera-checkout tr th:first-child {
+    text-align: left;
+}
+
+.tickera-checkout tr th:last-child, .ticket-total {
+    text-align: right;
+}
+
+.tickera-checkout tbody tr td{
+    padding: 14px 10px;
+    vertical-align: top;
+    line-height: 18px;
+}
+
+.tickera-checkout .tickera_update{
+    float: right;
+    transition: all linear 0.2s;
+    -webkit-transition: all linear 0.2s;
+    -moz-transition: all linear 0.2s;
+}
+
+.tickera-button {
+    border: none;
+    color: #fff;
+    padding: 13px 20px;
+    background-color: #4187c9;
+    border: none;
+}
+
+.tickera-button:hover {
+    background-color: #285F96;
+}
+
+.tickera_checkout{
+    float: right;
+    margin: 30px 0 0 0;
+}
+
+.tickera_checkout:hover{
+    background-color: #7cc576;
+    color: #fff;
+    cursor: pointer;
+}
+
+.coupon-code {
+    font-size: 15px;
+}
+
+.coupon-code input {
+    border: 1px solid #e7e7e7;
+    height: 34px;
+    margin-bottom: 10px;
+}
+
+.tickera-checkout .ticket-total-all {
+    font-weight: bold;
+    text-align: right;
+}
+
+.ticket-total-all span {
+    margin-bottom: 10px;
+}
+
+.tickera-checkout .last-table-row td {
+    padding: 20px 10px;
+}
+
+.ticket-info-wrap p {
+    line-height: 0;
+    margin: 0;
+}
+
+#coupon_code {
+    margin-bottom: 0;
+}
+
+.tickera_buyer_info {
+    border-bottom: 1px solid #e7e7e7;
+    margin-bottom: 19px;
+    padding-bottom: 20px;
+    float: left;
+    width: 100%;
+}
+
+.tickera_buyer_info h5 {
+    float: left;
+    width: 100%;
+}
+
+.tickera_additional_info label input {
+    margin-left: 5px;
+}
+
+.tc_cart_payment_methods label {
+    margin-bottom: 0px;
+    float: left;
+    width: 100%;
+}
+
+.tc_cart_errors {
+    color: #FA1010;
+}
+
+.tc_in_cart{
+    width: 100%;
+    display: block;
+}
+
+.order_details_title{
+    font-weight: bold;
+    display: inline-block;
+    width: 130px;
+}
+
+span.total_item_title{
+    display: inline-block;
+    margin-right: 5px;
+    font-weight: normal;
+}
+
+span.total_item_amount{
+    display: inline-block;
+    min-width: 85px;
+    font-weight: normal;
+}
+
+span.cart_total_price_title, 
+span.cart_total_price{
+    font-weight: bold;
+    margin-top: 14px;
+    margin-bottom: 0;
+}
+
+/* CART WIDGET */
+
+.tc_widget_cart_button {
+    text-align: center;
+    float: right;
+    margin-top: 20px;
+}
+
+.tc-clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+html[xmlns] .tc-clearfix {
+    display: block;
+}
+
+* html .tc-clearfix {
+    height: 1%;
+}
+
+
+.payment-option-wrap {
+    width: 33%;
+    float:left;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.payment-option-wrap:hover {
+    cursor: pointer;
+}
+
+.payment-image-check {
+    height: 70px;
+    overflow: hidden;
+}
+
+.payment-option-wrap img {
+    margin: -72px 0 0 0;
+    width: auto !important;
+}
+
+.active-gateway img {
+    margin: 0;
+}
+
+.tc_choose_gateway {
+    margin-right: 7px;
+}
+
+
+.payment-option-wrap label img{
+    /* fix */
+    pointer-events: none;
+    position: relative;
+    max-width: none;
+}
+
+/* fix */
+.payment-option-wrap label{
+    display: inline-block;
+    position: relative;
+}
+.payment-option-wrap label::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.tc_redirect_message{
+    display: none;
+}
+
+.tickera-payment-gateways .free_orders.plugin-title{
+    display: none;
+}
+
+.woocommerce-checkout {
+    position: relative;
+}
+
+.tc_checkout_error_info {
+    color: red;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 1270px){
+    .tc-container {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1070px){
+    .tc-container {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 850px){
+    .tc-container {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .tc-container {
+        width: 100%;
+    }
+
+    .tickera-checkout tr th {
+        font-size: 14px;
+    }
+
+    .tickera-checkout tbody tr td,
+    .event_tickets th, 
+    .event_tickets td{
+        font-size: 13px;
+    }
+    .tc_gateway_form td {
+        padding: 7px 2px;
+    }
+
+    .tc_gateway_form td {
+        font-size: 14px;
+    }
+
+    .payment-option-wrap {
+        width: 50%;
+    }
+
+}
+
+@media only screen and (max-width: 470px){
+    .tc-container {
+        width: 100%;
+    }
+    .ticket-price, .ticket-price-header {
+        display: none;
+    }
+
+    .coupon-code input {
+        width: 200px;
+        margin: 10px 0 10px 0;
+    }
+
+    .tickera_additional_info input[type=text], 
+    .tickera_additional_info input[type=password], 
+    .tickera_additional_info input[type=email]{
+        width: 100%;
+        margin: 8px 0 10px 0;
+    }
+
+    .tickera-checkout .tickera_update,
+    .tickera_checkout{
+        margin: 8px 0 10px 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .tc-container {
+        width: 100%;
+    }
+
+    .ticket-quantity .tickera_button {
+        width: 100%;
+        margin: 0;
+    }
+
+    .ticket-quantity .quantity {
+        height: 23px;
+    }
+
+    .coupon-code input {
+        width: 248px;
+        margin: 10px 0 10px 0;
+    }
+}

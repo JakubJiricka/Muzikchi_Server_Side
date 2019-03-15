@@ -1,0 +1,1049 @@
+.tc_wrap label.error{
+    color: red !important;
+    padding-left: 10px;
+}
+
+#post label.error{
+    color: red;
+    padding-left: 10px;
+}
+
+#side-sortables label.error{
+    color: red !important;
+    padding-left: 0px;
+}
+
+.tc_tooltip{
+    content: "\f223";
+
+}
+
+a.tc_tooltip_link{
+    color: #fff !important;
+}
+
+a[href="post-new.php?post_type=tc_events"]{
+    display: none !important;
+}
+
+#adminmenu #menu-posts-tc_events div.wp-menu-image:before{
+    font-family: 'tck' !important;
+    content: "\e600";
+}
+
+.regular-textarea{
+    width: 351px;
+    height: 100px;
+}
+
+.tablenav .actions{
+    padding: 2px 0px 0 0;
+}
+
+/*form th{
+    text-align: right;
+}*/
+
+/* Ticket Templates */
+
+.sortables{ list-style-type: none; margin: 0; padding: 0; float: left; width: 100%}
+.sortables li{ padding:5px; font-size: 12px; width: auto; cursor: move; }
+
+#ticket_elements{ 
+    width: 100%; 
+    float: left;
+    min-height: 20px;
+    margin-bottom: 20px;
+    padding: 20px 14px 6px;
+    border: 1px solid #ccc;
+}
+
+#ticket_elements li.ui-sortable-helper {
+    margin-right: auto;
+}
+
+#template_document_settings{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 20px 20px 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+#ticket_elements .element_content{
+    display: none;
+}
+
+.left-holder{
+    width: 75%;
+    display: inline-block;
+    float: left;
+}
+
+.right-holder{
+    width: 22%;
+    margin-left: 2%;
+    float: right;
+    margin-top: 81px;
+}
+
+.right-holder-second{
+    margin-top: 20px;
+}
+
+.wp-admin .element_content label,
+.wp-admin #template_document_settings label{
+    width: 100%;
+    margin: 10px 0px 5px 0px;
+    display: block;
+}
+
+#template_document_settings select {
+    width: 100%;
+}
+
+.element_content select{
+    max-width: 100%;
+}
+
+.ticket-elements-drop-area .element-icon {
+    display: none;
+}
+
+.ticket-elements-drop-area input.file_url{
+    max-width: 100%;
+}
+
+#ticket_elements li {
+    margin-bottom: 15px;
+    background: none;
+    background-color: #fff;
+    float: left;
+    width: 13%;
+    margin-right: 0.64%;
+    margin-left: 0.63%;
+    padding: 14px;
+    text-align: center;
+    height: 150px !important;
+    box-sizing: border-box;
+    border-bottom: 5px solid rgba(8, 147, 202, 0.3);
+    -webkit-transition: border 0.3s linear;
+    -moz-transition: border 0.3s linear;
+    transition: border 0.3s linear;
+}
+
+#ticket_elements li:hover {    
+    border-bottom: 5px solid #0893CA;
+}
+
+#ticket_elements li i {
+    color: #9c9c9c;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+#ticket_elements li:hover i {
+    color: #0893ca;
+}
+
+#ticket_elements .element_title {
+    font-size: 1.1em;
+    line-height: 1.2em;
+    margin-bottom: 10px;
+    color: #9c9c9c;
+}
+
+.row_num_info {
+    display: none;
+}
+
+#ticket_elements li:hover .element_title {
+    color: #444;
+}
+
+#ticket_elements .element-icon {
+    font-size: 2.7em;
+}
+
+#ticket_elements .elements-wrap {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+}
+
+.rows{
+    width: 100%;
+    float: left;
+}
+
+.rows ul{
+    width: 100%;
+    margin-bottom: -1px;
+    padding: 14px;
+    border: 1px dashed #ccc;
+    position: relative;
+}
+
+.ticket-elements-drop-area > ul > li {
+    box-sizing: border-box;
+    padding: 20px;
+    border-bottom: 5px solid rgba(8, 147, 202, 0.3);
+}
+
+.ticket-elements-drop-area li.ui-sortable-helper,
+.ticket-elements-drop-area li:hover {
+    border-color: #0893CA;
+    margin-right: auto;
+    -webkit-transition: border 0.1s linear;
+    -moz-transition: border 0.1s linear;
+    transition: border 0.1s linear;
+}
+
+.rows .sortables .ui-state-default{
+    background: none;
+    background-color: #fff;
+}
+
+.rows .element_title{
+    font-size: 20px;
+}
+
+.row_num_info{
+    position: absolute;
+    top: -20px;
+    z-index: 99999;
+    right: 0px;
+    color: #8F8F8F;
+}
+
+.rows li.ui-state-default.cols{
+    display: inline-block;
+    float: left;
+}
+
+.rows li.ui-state-default.cols div.chosen-drop {
+    z-index: 10;
+}
+
+.rows .element_title, 
+.rows .element_content{
+    padding: 5px;
+}
+
+.ui-state-highlight { }
+
+.rows li.ui-state-default.cols_1{
+    width: 100%;
+}
+
+.rows li.ui-state-default.cols_1 .element_title{
+    font-size: 20px;
+}
+
+
+.rows li.ui-state-default.cols_2{
+    width: 49.2%;
+    margin-right: 1%;
+}
+
+.rows li.ui-state-default.cols_2 .element_title{
+    font-size: 20px;
+}
+
+
+.rows li.ui-state-default.cols_3{
+    width: 32.5%;
+    margin-right: 1%;
+}
+
+.rows li.ui-state-default.cols_3 .element_title{
+    font-size: 17px;
+}
+
+.rows li.ui-state-default.cols_4{
+    width: 24%;
+    margin-right: 1%;
+}
+
+.rows li.ui-state-default.cols_4 .element_title{
+    font-size: 16px;
+}
+
+.rows li.ui-state-default.cols_5{
+    width: 19%;
+    margin-right: 1%;
+}
+
+.rows li.ui-state-default.cols_5 .element_title{
+    font-size: 16px;
+}
+
+.rows li.ui-state-default.cols_6{
+    width: 15.66%;
+    margin-right: 1%;
+}
+
+.rows li.ui-state-default.cols_6 .element_title{
+    font-size: 15px;
+}
+
+.rows li.ui-state-default.cols_7{
+    width: 13.25%;
+    margin-right: 1%;
+}
+
+.rows li.ui-state-default.cols_7 .element_title{
+    font-size: 15px;
+}
+
+.rows li.ui-state-default.cols_8{
+    width: 11.43%;
+    margin-right: 1%;
+}
+
+.rows li.ui-state-default.cols_8 .element_title{
+    font-size: 14px;
+}
+
+.rows li.ui-state-default.cols_9{
+    width: 10%;
+    margin-right: 1%;
+}
+
+.rows li.ui-state-default.cols_9 .element_title{
+    font-size: 14px;
+}
+
+.rows li.ui-state-default.cols_10{
+    width: 8.94%;
+    margin-right: 1%;
+}
+
+.rows li.ui-state-default.cols_10 .element_title{
+    font-size: 14px;
+}
+
+.rows li.ui-state-default.cols.last_child{
+    margin-right: 0%;
+}
+
+.ticket_margin{
+    display: inline;
+    width: 16%;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.ticket_element_padding{
+    display: inline;
+    width: 13%;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+#template_document_settings .ticket_margin {
+    width: 14%;
+}
+
+#template_document_settings .file_url{
+    width: 70%;
+}
+
+.ticket-table tr,
+.event-table tr,
+.order-table tr,
+.discount-table tr{
+    text-align: left;
+}
+
+table.order-table th{
+    padding-right: 50px;
+    padding-bottom: 5px;
+}
+
+table.order-details{
+    margin-left: -3px;
+    margin-top: -3px;
+}
+
+.status_green{
+    color: green;
+}
+
+.status_red{
+    color: red;
+}
+
+.tc_order_tickets_warning{
+    padding: 10px;
+    display: block;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.checkin-table{
+    margin-top: 20px;
+}
+
+label[for=api_key]{
+    padding-top: 4px;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.tc_wrap{
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+
+    /* IE 5-7 */
+    filter: alpha(opacity=0);
+
+    /* Netscape */
+    -moz-opacity: 0;
+
+    /* Safari 1.x */
+    -khtml-opacity: 0;
+
+    /* Good browsers */
+    opacity: 0; 
+}
+
+.tc_wrap input[type="text"],
+.tc_wrap textarea{
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+
+.tc_wrap span.description,
+.tc_wrap p.description{
+    font-size: 13px;
+    font-style: italic;
+    display: block;
+    color: #858585;
+    margin-bottom: 5px;
+    /*max-width: 500px;*/
+}
+
+.tc_wrap .message_placeholder{
+    display: none;
+}
+
+.tc_wrap select,
+.tc_wrap input.file_url{
+    min-width: 100%;
+}
+
+.tc_wrap #template_document_settings select,
+.tc_wrap #template_document_settings input.file_url{
+    min-width: 100px;
+}
+
+.tc_wrap #poststuff h3{
+    color: #fff;
+    background: #0893CA;
+}
+
+.image-check-wrap {
+    float: left;
+    height: 85px;
+    width: 150px;
+    margin-bottom: 35px;
+}
+
+
+.image-check-wrap label img{
+    /* fix */
+    pointer-events: none;
+    position: relative;
+}
+
+/* fix */
+.image-check-wrap label{
+    display: inline-block;
+    position: relative;
+}
+.image-check-wrap label::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.check-image {
+    height: 90px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.check-image img {
+    margin-top: -102px;
+}
+
+.active-gateway img {
+    margin-top: 0;
+}
+
+
+.image-check-wrap .tc_active_gateways {
+    display: none;
+}
+
+a.tc_link{
+    padding: 4px 10px;
+    display: inline-block;
+    color: #fff;
+    font-size: 0.9em;
+    background-color: #7BBBA9;
+    border: 2px solid #7BBBA9;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin: 7px 0 10px 0;
+}
+
+a.tc_link:hover {
+    background-color: transparent;
+    text-decoration: none;
+    color: #7BBBA9;
+}
+
+
+.tc_wrap select{
+    width: 25em !important;
+    max-width: 100% !important;
+    min-width: 1em !important;
+}
+
+.tickera_page_tc_settings .chosen-container-single,
+.tickera_page_tc_ticket_templates .chosen-container-single,
+.discount-table .chosen-container-single,
+.ticket-table .chosen-container-single {
+    width: 350px !important;
+}
+
+
+@media only screen and (max-width: 1070px){
+    .left-holder, .right-holder {
+        width: 100%;
+    }    
+
+    .right-holder {
+        margin-top: 20px;
+    }
+}
+
+/* Toggle Controls */
+
+.tc-control:focus {
+    background:none;
+    outline:none;
+}
+.tc-control {
+    border-radius: 10px;
+    background: rgb(176,176,176);
+    width:39px;
+    height:18px;
+    display:block;
+    position: relative;
+    opacity:.8;
+}
+.tc-control:hover {
+    cursor: pointer;
+    opacity:1;
+}
+
+.tc-control .tc-toggle {
+    width: 14px;
+    height: 14px;
+    margin: 2px;
+    background: #F4F4F4;
+    border-radius:50%;
+    display:block;
+    position:absolute;
+    -webkit-transition:all .2s ease-in-out;
+    left:0px;
+}
+.tc-control .tc-toggle:hover {
+    -webkit-transform:scale(1.1);
+}
+
+.tc-control.tc-on .tc-toggle {
+    left:21px;
+}
+
+.tc-control.tc-on {
+    background: rgb(107,187,26);
+}
+
+
+/* Colorbox styles */
+
+#tc-shortcode-select {
+    width: 350px;
+    background-position:  95% 15px;
+}
+
+.tc-shortcodes-colorbox #cboxLoadedContent {
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.tc-shortcode-wrap {
+    padding: 30px;
+}
+
+.tc-shortcode-atts {
+    margin-top: 30px;
+}
+
+
+.tc-shortcode-atts .description {
+    float: left;
+    margin-top: 3px;
+}
+
+.shortcode-table tr th {
+    width: 20%;
+    text-align: left;
+    padding: 18px 0;
+}
+
+.tc-shortcode-wrap select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 38px;
+    padding: 0 10px;
+    background: url('../images/arrow-select.png') no-repeat 96% 15px;
+    padding: 0 30px 0 10px;
+    width: 300px;
+}
+
+.shortcode-table {
+    width: 100%;
+}
+
+.shortcode-table input[type="text"] {
+    padding: 8px 10px;
+    width: 300px;
+}
+
+.tc-title-wrap {
+    color: #fff;
+    background: #0893CA;
+    width: 100%;
+    padding: 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.tc-title-wrap h3 {
+    color: #fff;
+    margin: 0;
+    font-weight: bold;
+}
+
+.tc-shortcodes-colorbox #cboxClose {
+    background: url('../images/close-button.png') no-repeat center;
+    color: #fff;
+    margin-right: 10px;
+    top: 13px;
+}
+
+.tc_wrap .tablenav .displaying-num {
+    margin-right: 7px;
+    padding-top: 7px;
+    display: inline-block;
+}
+
+
+/* TICKERA ADDONS */
+
+.tc_addon {
+    width: 19%;
+    display: inline-block;
+    background-color: #fff;
+    margin-right: 1%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 295px;
+    float: left;
+    margin-bottom: 15px;
+    position: relative;
+    margin-right: 1.2%;
+    border-left: 1px solid #d9d9d9;
+    border-top: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    border-bottom: 5px solid rgba(8, 147, 202, 0.3);
+    -webkit-transition: border 0.2s linear;
+    -moz-transition: border 0.2s linear;
+    transition: border 0.2s linear;
+}
+
+.tc_addon a {
+    height: 295px;
+    float:left;
+    width: 100%;
+    box-shadow: none !important;
+}
+
+.tc-addons-image {
+    float: left;
+    width: 100%;
+    padding: 10px 25px 10px 25px;
+    background-color: #fdfdfd;
+    border-bottom: 1px solid #f1f1f1;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    transition: background 0.2s linear;
+}
+
+.tc-addons-image a {
+    float: left;
+}
+
+.tc-addons-image a:active,
+.tc-addons-image a:focus {
+    outline: 0;
+}
+
+.tc-addon-content {
+    float: left;
+    width: 100%;
+    padding: 17px 25px 17px 25px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.tc-addon-content p {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #949494;
+    line-height: 1.7em;
+    margin: 0;
+}
+
+.tc_addon:hover .tc-addons-image {
+    background: #f4f4f4;
+}
+
+.tc_addon:hover {
+    border-bottom: 4px solid #0893CA;
+} 
+
+.tc_addon img {
+    max-width: 100%;
+}
+
+@media only screen and (max-width : 500px) {
+    .shortcode-table tr th {
+        width: 100%;
+        display: block;
+    }
+
+    .shortcode-table tr td {
+        width: 100%;
+        display: block;
+    }
+
+    .shortcode-table input,
+    .shortcode-table select,
+    #tc-shortcode-select {
+        width: 100%;
+    } 
+}
+
+label.tc_checkboxes_label{
+    width: 100%;
+    display: block;
+}
+
+.inline_hover{
+    text-decoration: underline;
+}
+
+.close-this {
+    float: right;
+}
+
+.close-this {
+    font-size: 20px;
+}
+
+#ticket_elements .close-this {
+    display: none;
+}
+
+
+/* DATEPICKER EVENT */
+
+.post-type-tc_events .datepicker > .datepicker_header {
+    background-color: #0893CA;
+    color: #fff;
+    padding: 10px 5px;
+} 
+
+.post-type-tc_events .datepicker > .datepicker_header > .icon-home > svg > g > path {
+    fill: #fff;
+}
+
+.post-type-tc_events .datepicker > .datepicker_header > a:hover {
+    background-color: transparent;
+}
+
+.post-type-tc_events .datepicker > .datepicker_header > a {
+    color: #fff;
+    font-size: 1.4em;
+    line-height: 0;
+}
+.post-type-tc_events .datepicker > .datepicker_header > a:hover {
+    opacity: 0.6;
+    color: #fff;
+}
+
+.post-type-tc_events .datepicker > .datepicker_inner_container > .datepicker_calendar > .datepicker_table > tbody > tr > td {
+    padding: 4px;
+}
+
+.post-type-tc_events .datepicker > .datepicker_inner_container > .datepicker_calendar > .datepicker_table > tbody > tr > td.hover,
+.post-type-tc_events .datepicker > .datepicker_inner_container > .datepicker_calendar > .datepicker_table > tbody > tr > td.active {
+    background-color: #0893CA;
+    color: #fff;
+}
+
+.post-type-tc_events .datepicker_table tr th {
+    padding-top: 3px;
+    padding-bottom: 7px;
+}
+
+/* ORDER NOTES */
+.tc_order_notes_title{
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+ul.tc_order_notes {
+    padding: 0;
+}
+
+ul.tc_order_notes li {
+    padding: 0;
+}
+
+ul.tc_order_notes li .note_content {
+    padding: 10px;
+    background: #FFF;
+    position: relative;
+}
+
+ul.tc_order_notes li .note_content p {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+ul.tc_order_notes li .note_content:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-width: 10px 10px 0 0;
+    border-style: solid;
+    border-color: #FFF transparent;
+}
+
+ul.tc_order_notes li p.meta {
+    padding: 10px;
+    color: #999;
+    margin: 0;
+    font-size: 11px;
+}
+
+ul.tc_order_notes li p.meta .exact-date {
+    border-bottom: 1px dotted #999;
+}
+
+/* Shortcode fix */
+
+.tc-shortcodes-colorbox #cboxTopLeft {
+    width: 0px;height: 0px ; background: none;
+}
+.tc-shortcodes-colorbox #cboxTopRight {
+    width: 0px;height: 0px  !important;background: none;
+}
+.tc-shortcodes-colorbox #cboxBottomLeft {
+    width: 0px ;height: 0px !important;background: none;
+}
+.tc-shortcodes-colorbox #cboxBottomRight {
+    width: 0px ;height: 0px ;background: none ;
+}
+.tc-shortcodes-colorbox #cboxMiddleLeft {
+    width: 0px ;height: 0px !important;background: none;
+}
+.tc-shortcodes-colorbox #cboxMiddleRight {
+    width: 0px;height: 0px ;background: none ;
+}
+.tc-shortcodes-colorbox #cboxTopCenter {
+    width: 0px ;height: 0px !important;background: none ;
+}
+.tc-shortcodes-colorbox #cboxBottomCenter {
+    width: 0px ;height: 0px ;background: none;
+}
+.tc-shortcodes-colorbox #cboxTitle {
+    display: none !important;
+}
+
+.tc-ticket-custom-text {
+    width: 100%;
+}
+
+.show_if_tc_ticket .wp-picker-container {
+    float: left;
+}
+
+.tc-shortcodes-colorbox#colorbox,
+.tc-shortcodes-colorbox#cboxOverlay {
+ z-index: 99999;   
+}
+
+
+@media only screen and (max-width: 650px) {
+    #ticket_elements .element-icon {
+        display: none;
+    }
+
+    #ticket_elements li {
+        text-align: left;
+        width: 48%;
+        height: auto !important;
+        border-width: 1px;
+        padding: 9px;
+        margin-bottom: 5px;
+    }
+
+    #ticket_elements li:hover {
+        border-width: 1px;
+    }
+
+    #ticket_elements .element_title {
+        margin-bottom: 0;
+    }
+
+    #ticket_elements li .elements-wrap {
+        transform: none;
+    }
+
+}
+
+@media only screen and (min-width : 1600px){
+    .tc_addon:nth-child(5n + 5) {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (min-width: 1200px)  and (max-width: 1600px)  {
+
+    .tc_addon {
+        width: 24%;
+        margin-right: 1.3%;
+        min-height: 320px;
+    }
+
+    .tc_addon a {
+        min-height: 320px;
+    }
+
+    .tc_addon:nth-child(4n + 4) {
+        margin-right: 0;
+    }
+
+    .tc_addon img {
+        height: 30px;
+    }
+}
+
+
+@media only screen and (min-width: 780px)  and (max-width: 1200px)  {
+
+    .tc_addon {
+        width: 32%;
+        margin-right: 2%;
+        min-height: 370px;
+    }
+
+    .tc_addon a {
+        min-height: 300px;
+    }
+
+    .tc_addon:nth-child(3n + 3) {
+        margin-right: 0;
+    }
+
+    .tc_addon img {
+        height: 28px;
+    }
+}
+
+@media only screen and (min-width: 400px)  and (max-width: 780px)  {
+
+    .tc_addon {
+        width: 49%;
+        margin-right: 2%;
+        min-height: 370px;
+    }
+
+    .tc_addon a {
+        min-height: 340px;
+    }
+
+    .tc_addon:nth-child(2n + 2) {
+        margin-right: 0;
+    }
+
+    .tc_addon img {
+        height: 30px;
+    }
+}
+
+@media only screen and (min-width: 465px)  and (max-width: 500px)  {
+    .tc_addon img {
+        height: 23px;
+    }
+}
+
+@media only screen and (max-width: 465px)  {
+
+    .tc_addon {
+        width: 100%;
+        margin-right: 2%;
+        min-height: 370px;
+    }
+
+    .tc_addon a {
+        min-height: 200px;
+    }
+
+}

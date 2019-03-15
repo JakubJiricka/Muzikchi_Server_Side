@@ -1,0 +1,46 @@
+@import "../../../../scss/variables";
+
+playback-control-button {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: $wp-bg-color-300;
+  color: $wp-text-color-100;
+  
+  &:hover {
+    > .pause-button.visible {
+      display: block;
+    }
+    
+    > playing-indicator.visible {
+      display: none;
+    }
+  }
+  
+  > .visible.pause-button {
+    display: none;
+  }
+  
+  > .play-button, > .pause-button, > playing-indicator, > .buffering {
+    display: none;
+  }
+  
+  > .visible {
+    display: block;
+  }
+
+  > button {
+    width: 20px;
+    height: 20px;
+
+    > svg-icon {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

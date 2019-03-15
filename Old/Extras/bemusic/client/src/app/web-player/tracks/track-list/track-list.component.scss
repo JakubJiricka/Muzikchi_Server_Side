@@ -1,0 +1,168 @@
+@import "../../../../scss/variables";
+
+track-list {
+  display: block;
+  width: 100%;
+  color: $wp-text-color-300;
+
+  &.dragging .track-list-row * {
+    pointer-events: none;
+  }
+
+  > .track-list-row {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    border-bottom: 1px solid $wp-border-color-200;
+    border-top: 2px solid transparent;
+
+    &:hover, &.playing {
+      .track-number > .number {
+        display: none;
+      }
+
+      .track-number > playback-control-button {
+        display: flex;
+      }
+    }
+
+    &:hover .toggle-menu {
+      visibility: visible;
+      pointer-events: initial;
+    }
+
+    &.playing {
+      color: $accent-color;
+
+      > .track-duration, > .track-name, > .artist-name, > .album-name {
+        color: inherit;
+      }
+    }
+
+    &.selected {
+      background-color: #23232C;
+    }
+
+    &.track-list-header {
+      background-color: $wp-bg-color-400;
+      border-bottom-color: transparent;
+    }
+
+    > .track-list-column {
+      flex-flow: row nowrap;
+      flex-grow: 1;
+      flex-basis: 0;
+
+      > svg-icon {
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+      }
+
+      > button {
+        vertical-align: middle;
+      }
+    }
+
+    > .track-number, > .track-action, > .track-duration {
+      width: 65px;
+      flex: 0 0 65px;
+      text-align: center;
+    }
+
+    > .track-action {
+      color: $wp-text-color-300;
+    }
+
+    > .added-at {
+      max-width: 120px;
+      margin-left: 20px;
+    }
+
+    > .track-popularity {
+      width: 80px;
+      flex: 0 0 80px;
+      padding: 0 15px;
+      text-align: center;
+
+      > .popularity-track {
+        height: 6px;
+        position: relative;
+        background-color: $wp-bg-color-300;
+
+        > .popularity-track-inner {
+          height: 100%;
+          width: 0;
+          background-color: $wp-text-color-300;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+
+    > .track-name, > .artist-name, > .album-name {
+      flex: 1 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: $wp-text-color-200;
+    }
+
+    > .toggle-menu {
+      flex: 0 0 60px;
+      width: 60px;
+      visibility: hidden;
+      pointer-events: none;
+
+      > button {
+        display: block;
+        margin: 0 auto;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  > .mobile-track-list-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &.playing > .track-info > .track-name {
+      color: $accent-color;
+    }
+
+    > .track-info {
+      flex: 1 1 auto;
+      min-width: 0;
+      pointer-events: none;
+
+      > .track-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $wp-text-color-200;
+      }
+
+      > .artist-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.3rem;
+
+        > artists-links-list, > .album-name {
+          display: inline-block;
+        }
+      }
+    }
+
+    > .options-button {
+      display: block;
+      flex: 0 0 24px;
+      width: 24px;
+      margin-left: 10px;
+    }
+  }
+}

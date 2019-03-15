@@ -1,0 +1,75 @@
+<div class="header">
+    <div class="title" trans>Authentication</div>
+    <div class="subtitle" trans>Configure registration, social login  and related 3rd party integrations.</div>
+</div>
+
+<form class="body many-inputs social-login-container" (submit)="saveSettings()">
+
+    <div class="setting-checkbox">
+        <input type="checkbox" class="pretty-checkbox" name="require_email_confirmation" id="require_email_confirmation" [(ngModel)]="state.client['require_email_confirmation']">
+        <label for="require_email_confirmation" trans>Require Email Confirmation</label>
+        <p trans>Require new users to validate their email address before being able to login.</p>
+    </div>
+
+    <div class="setting-checkbox">
+        <input type="checkbox" class="pretty-checkbox" name="registration.disable" id="registration.disable" [(ngModel)]="state.client['registration.disable']">
+        <label for="registration.disable" trans>Disable Registration</label>
+        <p trans>All registration (including social login) will be disabled.</p>
+    </div>
+
+    <div class="setting-checkbox google">
+        <input type="checkbox" class="pretty-checkbox" name="social.google.enable" id="social.google.enable" [(ngModel)]="state.client['social.google.enable']">
+        <label for="social.google.enable" trans>Google Login</label>
+        <p trans>Enable logging into the site via google.</p>
+    </div>
+
+    <ng-container *ngIf="state.client['social.google.enable']">
+        <div class="input-container">
+            <label for="social.google.id" trans>Google ID</label>
+            <input name="social.google.id" id="social.google.id" [(ngModel)]="state.server['google_id']">
+        </div>
+
+        <div class="input-container">
+            <label for="social.google.secret" trans>Google Secret</label>
+            <input name="social.google.secret" id="social.google.secret" [(ngModel)]="state.server['google_secret']">
+        </div>
+    </ng-container>
+
+    <div class="setting-checkbox facebook">
+        <input type="checkbox" class="pretty-checkbox" name="social.facebook.enable" id="social.facebook.enable" [(ngModel)]="state.client['social.facebook.enable']">
+        <label for="social.facebook.enable" trans>Facebook Login</label>
+        <p trans>Enable logging into the site via facebook.</p>
+    </div>
+
+    <ng-container *ngIf="state.client['social.facebook.enable']">
+        <div class="input-container">
+            <label for="social.facebook.id" trans>Facebook ID</label>
+            <input name="social.facebook.id" id="social.facebook.id" [(ngModel)]="state.server['facebook_id']">
+        </div>
+
+        <div class="input-container">
+            <label for="social.facebook.secret" trans>Facebook Secret</label>
+            <input name="social.facebook.secret" id="social.facebook.secret" [(ngModel)]="state.server['facebook_secret']">
+        </div>
+    </ng-container>
+
+    <div class="setting-checkbox twitter">
+        <input type="checkbox" class="pretty-checkbox" name="social.twitter.enable" id="social.twitter.enable" [(ngModel)]="state.client['social.twitter.enable']">
+        <label for="social.twitter.enable" trans>Twitter Login</label>
+        <p>Enable logging into the site via twitter.</p>
+    </div>
+
+    <ng-container *ngIf="state.client['social.twitter.enable']">
+        <div class="input-container">
+            <label for="social.twitter.id" trans>Twitter ID</label>
+            <input name="social.twitter.id" id="social.twitter.id" [(ngModel)]="state.server['twitter_id']">
+        </div>
+
+        <div class="input-container">
+            <label for="social.twitter.secret" trans>Twitter Secret</label>
+            <input name="social.twitter.secret" id="social.twitter.secret" [(ngModel)]="state.server['twitter_secret']">
+        </div>
+    </ng-container>
+
+    <button class="button primary update-button" type="submit" trans>Update</button>
+</form>

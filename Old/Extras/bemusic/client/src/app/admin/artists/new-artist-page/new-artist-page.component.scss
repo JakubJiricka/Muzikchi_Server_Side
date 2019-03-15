@@ -1,0 +1,15 @@
+@import "../../../../scss/variables";
+@import "../../../../scss/admin-artist-edit-main-info";
+@import "../../../../scss/admin-artist-edit-inputs";
+
+new-artist-page {
+  display: block;
+  padding: 25px;
+
+  > .panel {
+    background-color: $admin-table-background-color;
+    box-shadow: $box-shadow-1;
+    padding: 15px;
+    border-radius: 3px;
+  }
+}

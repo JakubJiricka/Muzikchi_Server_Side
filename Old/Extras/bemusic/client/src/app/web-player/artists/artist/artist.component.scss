@@ -1,0 +1,304 @@
+@import "../../../../scss/variables";
+
+artist {
+  display: block;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
+
+  > .scroll-container {
+    padding-bottom: 25px;
+  }
+
+  .artist-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0 20px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: "";
+      background: linear-gradient(to bottom,transparent -80%, $wp-bg-color-500 100%);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    > .artist-name {
+      position: relative;
+      margin: 0 25px 15px;
+      font-size: 5.5rem;
+      color: $wp-text-color-100;
+
+      @media only screen and (max-width: $tablet) {
+        font-size: 3.5rem;
+      }
+    }
+
+    > .genres {
+      font-size: 13px;
+      position: relative;
+      max-width: 430px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      > .genre {
+        padding: 0 7px;
+        color: inherit;
+        text-transform: capitalize;
+      }
+    }
+
+    > .main-buttons {
+      position: relative;
+      margin-bottom: 50px;
+
+      > button {
+        padding: 10px 0;
+        border: 2px solid transparent;
+        border-radius: 25px;
+        color: $wp-text-color-100;
+        text-transform: uppercase;
+        min-width: 130px;
+
+        &.play-button {
+          background-color: $accent-color;
+          border-color: $accent-color;
+          margin-right: 15px;
+          
+          > svg-icon {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          &:hover {
+            background-color: lighten($accent-color, 3%);
+          }
+        }
+
+        &.more-button {
+          background-color: rgba(0,0,0,0.5);
+          border-color: $wp-border-color-100;
+
+          &:hover {
+            background-color: rgba(0,0,0,0.4);
+          }
+        }
+      }
+    }
+
+    > .nav-links {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      > .nav-link {
+        padding: 5px;
+        margin: 15px;
+        border-bottom: 2px solid transparent;
+        color: inherit;
+
+        @media only screen and (max-width: $tablet) {
+          font-weight: 400;
+          text-transform: none;
+        }
+
+        &.active {
+          color: $wp-text-color-100;
+          border-color: $accent-color;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    padding: 0 25px;
+
+    .title {
+      margin: 15px 0;
+      color: #898B8C;
+      text-transform: uppercase;
+    }
+
+    .dark-button {
+      padding: 8px 16px;
+      background-color: $wp-bg-color-400;
+      border: 1px solid $wp-border-color-200;
+      border-radius: 3px;
+
+      &:hover {
+        background-color: $wp-bg-color-300;
+      }
+    }
+
+    > .left-col {
+      flex: 1 1 auto;
+      min-width: 0;
+
+      > .popular-tracks {
+        > .dark-button {
+          margin-top: 20px;
+        }
+
+        > .title {
+          margin-left: 15px;
+        }
+      }
+
+      > .albums {
+        padding-top: 45px;
+
+        > .albums-section-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 25px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid $wp-border-color-200;
+          font-weight: 500;
+          text-transform: uppercase;
+
+          > .actions {
+            margin-left: auto;
+
+            > .active {
+              color: $accent-color;
+            }
+          }
+        }
+
+        > .album {
+          margin-bottom: 40px;
+          
+          > .album-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            min-width: 0;
+
+            > img {
+              width: 110px;
+              height: 110px;
+              flex:  0 0 110px;
+              object-fit: cover;
+              margin-right: 15px;
+            }
+
+            > .meta {
+              flex: 1 1 auto;
+              min-width: 0;
+
+              @media only screen and (max-width: $tablet) {
+                > .album-name {
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  font-size: 1.7rem;
+                }
+              }
+            }
+
+            .release-date {
+              color: $wp-text-color-300;
+            }
+
+            .album-name {
+              display: block;
+              margin: 4px 0 23px;
+              font-size: 2.1rem;
+              color: inherit;
+            }
+
+            .dark-button {
+              display: block;
+              border-radius: 25px;
+              min-width: 110px;
+            }
+          }
+        }
+
+        > media-grid {
+          padding: 0;
+        }
+      }
+
+      @media only screen and (max-width: $tablet) {
+        width: 100%;
+
+        > .popular-tracks > .title {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &.bio {
+      display: block;
+
+      > .bio-images {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 25px;
+        overflow: hidden;
+
+        > img {
+          flex: 0 0 24%;
+          height: 275px;
+          width: 24%;
+          object-fit: cover;
+        }
+      }
+
+      > .bio-text {
+        padding: 15px;
+        background-color: $wp-bg-color-400;
+      }
+
+      > no-results-message {
+        margin-top: 40px;
+      };
+    }
+
+    > .right-col {
+      width: 30%;
+      flex: 0 0 30%;
+
+      > .similar-artists {
+        margin-left: 30px;
+
+        > .similar-artist {
+          display: flex;
+          align-items: center;
+          padding: 3px;
+          margin-bottom: 5px;
+          background-color: $wp-bg-color-400;
+          color: inherit;
+
+          &:hover {
+            background-color: $wp-bg-color-300;
+          }
+
+          > img {
+            width: 45px;
+            height: 45px;
+            margin-right: 15px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

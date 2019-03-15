@@ -1,0 +1,86 @@
+<ng-container *ngIf="!panel.noResults">
+    <a [routerLink]="['/search', panel.searchQuery.value || '']" class="view-all-link">
+        <div trans>View All Results...</div>
+        <svg-icon name="keyboard-arrow-right"></svg-icon>
+    </a>
+
+    <div class="artist-results" *ngIf="panel.results.artists.length">
+        <div class="result-type" trans>Artists</div>
+
+        <div class="artists">
+            <div class="result-with-image" *ngFor="let artist of panel.results.artists" [contextMenu]="{item: artist, type: 'artist'}">
+                <a [routerLink]="urls.artist(artist)" class="img-container"><img [src]="artist.image_small"></a>
+                <div class="names">
+                    <a class="primary hover-underline" [routerLink]="urls.artist(artist)">{{artist.name}}</a>
+                    <div class="secondary" trans>Artist</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="track-results" *ngIf="panel.results.tracks.length">
+        <div class="result-type" trans>Songs</div>
+
+        <div class="tracks">
+            <div class="result-with-image track" *ngFor="let track of panel.results.tracks" [contextMenu]="{item: track, type: 'track'}" (click)="goToTrackPage(track)">
+                <div class="img-container">
+                    <playback-control-button [track]="track" (play)="playTrack(track)" (pause)="pausePlayer()"></playback-control-button>
+                    <img *ngIf="track.album" [src]="track.album.image">
+                </div>
+                <div class="names">
+                    <a class="primary hover-underline" [routerLink]="urls.track(track)">{{track.name}}</a>
+                    <artists-links-list class="secondary" [artists]="track.artists"></artists-links-list>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="album-results" *ngIf="panel.results.albums.length">
+        <div class="result-type" trans>Albums</div>
+
+        <div class="albums">
+            <div class="result-with-image" *ngFor="let album of panel.results.albums" [contextMenu]="{item: album, type: 'album'}">
+                <a [routerLink]="urls.album(album)" class="img-container"><img [src]="album.image"></a>
+                <div class="names">
+                    <a class="primary hover-underline" [routerLink]="urls.album(album)">{{album.name}}</a>
+                    <a class="secondary hover-underline" *ngIf="album.artist" [routerLink]="urls.artist(album.artist)">{{album.artist.name}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="playlist-results" *ngIf="panel.results.playlists.length">
+        <div class="result-type" trans>Playlists</div>
+
+        <div class="playlists">
+            <div class="result-with-image" *ngFor="let playlist of panel.results.playlists" [contextMenu]="{item: playlist, type: 'playlist'}">
+                <a [routerLink]="urls.playlist(playlist)" class="img-container"><img [src]="playlist.image"></a>
+                <div class="names">
+                    <a class="primary hover-underline" [routerLink]="urls.playlist(playlist)">{{playlist.name}}</a>
+                    <span class="secondary">
+                        <span trans>By</span> <a class="hover-underline" [routerLink]="urls.user(playlist.editors[0])">{{playlist.editors[0]['display_name']}}</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="user-results" *ngIf="panel.results.users.length">
+        <div class="result-type" trans>Users</div>
+
+        <div class="users">
+            <div class="result-with-image" *ngFor="let user of panel.results.users">
+                <a [routerLink]="urls.user(user)" class="img-container"><img [src]="user.avatar"></a>
+                <div class="names">
+                    <a class="primary hover-underline" [routerLink]="urls.user(user)">{{user['display_name']}}</a>
+                    <span class="secondary">{{user.followers_count}} <span trans>Followers</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<no-results-message *ngIf="panel.noResults && !panel.searching">
+    <span primary-text trans>No results found.</span>
+    <span secondary-text trans>Please check your spelling or try using different keywords.</span>
+</no-results-message>

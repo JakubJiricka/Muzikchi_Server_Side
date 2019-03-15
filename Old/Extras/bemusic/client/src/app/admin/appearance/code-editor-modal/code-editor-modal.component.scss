@@ -1,0 +1,22 @@
+@import "../../../../scss/variables";
+
+code-editor-modal.modal {
+  > .modal-content {
+    width: 1000px;
+
+    .modal-header {
+      margin: 0 0 15px;
+    }
+
+    .editor {
+      min-height: 550px;
+      border: 1px solid $border-color;
+      font-size: 1.4rem;
+
+      .ace_tooltip {
+        //TODO: fix this properly in ace editor
+        transform: translate(-550px, -30px);
+      }
+    }
+  }
+}

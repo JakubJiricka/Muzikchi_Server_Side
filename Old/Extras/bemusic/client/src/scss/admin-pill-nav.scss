@@ -1,0 +1,65 @@
+@import "variables";
+
+.admin-pill-nav {
+  flex: 0 0 250px;
+  width: 250px;
+  margin-right: 30px;
+
+  &.solid {
+    > .nav-item {
+      background-color: #fff;
+      border: 1px solid $border-color;
+    }
+  }
+
+  &.with-actions {
+    .name {
+      width: 90%;
+    }
+
+    .actions {
+      width: 10%;
+      color: $icon-color-dark;
+      position: absolute;
+      right: 5px;
+      top: 9px;
+    }
+  }
+
+  &.rounded {
+    > .nav-item {
+      border-radius: 3px;
+    }
+  }
+
+  > .nav-item {
+    display: block;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-transform: capitalize;
+    white-space: nowrap;
+    margin-bottom: 5px;
+    color: $text-color;
+    position: relative;
+
+    > .name {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &:hover {
+      background-color: darken($gray-bg-color, 1%);
+    }
+
+    &.selected {
+      background-color: $accent-color;
+      color: $accent-text-color;
+      border-color: $accent-color;
+
+      > .actions {
+        color: $accent-text-color;
+      }
+    }
+  }
+}

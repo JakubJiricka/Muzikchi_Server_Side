@@ -1,0 +1,6 @@
+{
+  "/secure": {
+    "target": "http://localhost/youtubify2/server",
+    "secure": false
+  }
+}

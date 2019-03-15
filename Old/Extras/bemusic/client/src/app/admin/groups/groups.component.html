@@ -1,0 +1,73 @@
+<div class="spacing-container">
+    <section class="admin-pill-nav solid with-actions">
+        <div class="new-group">
+            <button class="button primary flat" (click)="showCrupdateGroupModal()" *ngIf="currentUser.hasPermission('groups.create')" trans>New Group</button>
+        </div>
+        <div class="nav-item" *ngFor="let group of groups" (click)="selectGroup(group)" [class.selected]="selectedGroup == group">
+            <div class="name">{{group.name}}</div>
+            <dropdown class="actions">
+                <button class="no-style"><svg-icon name="settings" class="size-22"></svg-icon></button>
+                <div class="dropdown-menu" #menu>
+                    <div class="dropdown-item" #menuItem (click)="showCrupdateGroupModal(group)" *ngIf="currentUser.hasPermission('groups.update')" trans>Edit</div>
+                    <div class="dropdown-item" #menuItem (click)="maybeDeleteGroup(group)" *ngIf="currentUser.hasPermission('groups.delete')" trans>Delete</div>
+                </div>
+            </dropdown>
+        </div>
+    </section>
+
+    <section class="flex-table-panel" *ngIf="paginator">
+        <div class="flex-table-panel-header">
+            <div class="header-inner default">
+                <div class="left" *ngIf="currentUser.hasPermission('groups.update')">
+                    <button class="button primary flat" (click)="showAssignUsersModal()" [disabled]="selectedGroup.guests" trans>Assign Users</button>
+                    <button class="button primary flat" (click)="maybeDetachUsers()" [disabled]="!selectedItems.length" trans>Unassign Users</button>
+                </div>
+                <div class="right">
+                    <div class="input-container">
+                        <input type="text" class="search" placeholder="Search users" trans-placeholder [formControl]="searchQuery">
+                        <svg-icon name="search"></svg-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-table flex-table-bordered flex-table-compact flex-table-center-vertical flex-table-hover">
+            <div class="flex-table-row flex-table-header">
+                <div class="flex-table-item width-1">
+                    <input type="checkbox" class="pretty-checkbox" id="toggle-all-users-checkbox" (click)="toggleAllSelectedItems()">
+                    <label for="toggle-all-users-checkbox"><span>.</span></label>
+                </div>
+                <div class="flex-table-item width-2 image" trans>Avatar</div>
+                <div class="flex-table-item width-3" trans>Email</div>
+                <div class="flex-table-item" trans>First Name</div>
+                <div class="flex-table-item" trans>Last Name</div>
+                <div class="flex-table-item width-1"></div>
+            </div>
+            <div class="table-body" *ngIf="selectedGroup">
+                <div class="flex-table-row" *ngFor="let user of items; let index = index;" [class.selected]="isItemSelected(user.id)">
+                    <div class="flex-table-item width-1" (click)="$event.stopPropagation()">
+                        <input type="checkbox" class="pretty-checkbox" id="user-checkbox-{{index}}" (change)="toggleSelectedItem(user.id)" [checked]="isItemSelected(user.id)">
+                        <label for="user-checkbox-{{index}}"><span>.</span></label>
+                    </div>
+                    <div class="flex-table-item width-2 image"><img src="{{user.avatar}}"></div>
+                    <div class="flex-table-item width-3">{{user.email}}</div>
+                    <div class="flex-table-item">{{user.first_name}}</div>
+                    <div class="flex-table-item">{{user.last_name}}</div>
+                </div>
+
+                <no-results-message *ngIf="!selectedGroup.guests && paginator.doesNotHaveResults()">
+                    <span primary-text trans>Nothing To Display.</span>
+                    <span secondary-text trans>There are no users in this group yet.</span>
+                </no-results-message>
+
+                <no-results-message *ngIf="selectedGroup.guests">
+                    <span primary-text trans>Guests Group</span>
+                    <span secondary-text trans>Users can't be assigned to this group.</span>
+                </no-results-message>
+            </div>
+        </div>
+
+        <div class="flex-table-panel-footer" [class.hidden]="paginator.params.perPage >= paginator.params.total">
+            <pagination-controls [paginator]="paginator" itemsName="Users"></pagination-controls>
+        </div>
+    </section>
+</div>

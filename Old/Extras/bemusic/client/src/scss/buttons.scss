@@ -1,0 +1,101 @@
+@import "variables";
+
+.button {
+  color: inherit;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0 8px;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 88px;
+  line-height: 36px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.12);
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.primary {
+    background-color: $accent-color;
+    color: $accent-text-color;
+    border-color: $accent-color;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+
+    &:hover {
+      background-color: darken($accent-color, 3%);
+    }
+  }
+
+  &.danger {
+    background-color: $danger-button-color;
+    color: $danger-text-color;
+    border-color: $danger-button-color;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+
+    &:hover {
+      background-color: darken($danger-button-color, 3%);
+    }
+  }
+
+  &.flat {
+    background-color: $flat-button-background-color;
+    box-shadow: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 28px;
+    color: $flat-button-text-color;
+
+    &:hover {
+      background-color: rgba(158, 158, 158, 0.4)
+    }
+  }
+
+  &:disabled {
+    background-color: #E1E1E1;
+    box-shadow: none;
+    color: #B7B7B7;
+    cursor: not-allowed;
+    border-color: #E1E1E1;
+
+    &:hover {
+      background-color: #E1E1E1;
+    }
+  }
+}
+
+button.no-style {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+  min-width: initial;
+  -webkit-user-select: none; /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button > svg-icon {
+  display: block;
+  pointer-events: none; /* fix edge click on svg icon bug */
+}

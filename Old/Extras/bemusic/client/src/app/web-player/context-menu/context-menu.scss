@@ -1,0 +1,66 @@
+@import "../../../scss/variables";
+
+.context-menu {
+  display: block;
+  background-color: $wp-bg-color-400;
+  box-shadow: $box-shadow-4;
+  width: 220px;
+  color: $wp-text-color-200;
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+
+  > .header {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin: 0 10px 10px;
+    border-bottom: 1px solid $wp-border-color-200;
+
+    > img {
+      width: 60px;
+      height: 60px;
+      flex: 0 0 auto;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    > .meta {
+      margin-top: 5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      > .primary-name {
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+      }
+
+      > .secondary-name {
+        display: block;
+        color: $wp-text-color-300;
+        margin-top: 2px;
+        width: 100%;
+      }
+    }
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-left: 5px solid transparent;
+    cursor: pointer;
+    color: inherit;
+
+    &:hover {
+      border-color: $accent-color;
+      background-color: $wp-bg-color-300;
+    }
+
+    > svg-icon {
+      display: block;
+      margin-left: auto;
+    }
+  }
+}

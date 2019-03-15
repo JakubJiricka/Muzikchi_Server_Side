@@ -1,0 +1,20 @@
+<div class="spacing-container">
+    <aside class="admin-pill-nav rounded">
+        <a class="nav-item" routerLink="general" routerLinkActive="selected"><div class="name" trans>General</div></a>
+        <a class="nav-item" routerLink="providers" routerLinkActive="selected"><div class="name" trans>Data Providers</div></a>
+        <a class="nav-item" routerLink="player" routerLinkActive="selected"><div class="name" trans>Player</div></a>
+        <a class="nav-item" routerLink="localization" routerLinkActive="selected"><div class="name" trans>Localization</div></a>
+        <a class="nav-item" routerLink="authentication" routerLinkActive="selected"><div class="name" trans>Authentication</div></a>
+        <a class="nav-item" routerLink="mail" routerLinkActive="selected"><div class="name" trans>Mail</div></a>
+        <a class="nav-item" routerLink="cache" routerLinkActive="selected"><div class="name" trans>Cache</div></a>
+        <a class="nav-item" routerLink="analytics" routerLinkActive="selected"><div class="name" trans>Analytics</div></a>
+        <a class="nav-item" routerLink="logging" routerLinkActive="selected"><div class="name" trans>Logging</div></a>
+        <a class="nav-item" routerLink="queue" routerLinkActive="selected"><div class="name" trans>Queue</div></a>
+        <a class="nav-item" routerLink="genres" routerLinkActive="selected"><div class="name" trans>Genres</div></a>
+        <a class="nav-item" routerLink="blocked-artists" routerLinkActive="selected"><div class="name" trans>Blocked Artists</div></a>
+    </aside>
+
+    <div class="settings-panels-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

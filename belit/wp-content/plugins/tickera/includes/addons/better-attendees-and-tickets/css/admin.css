@@ -1,0 +1,15 @@
+.post-type-tc_tickets_instances h1 .page-title-action,
+.post-type-tc_tickets_instances #post-body-content,
+.post-type-tc_tickets_instances .subsubsub .mine,
+.post-type-tc_tickets_instances .subsubsub .all,
+.post-type-tc_tickets_instances .subsubsub .publish,
+.post-type-tc_tickets_instances #postbox-container-1,
+.post-type-tc_tickets_instances .page-title-action
+{
+    display: none;  
+}
+
+.post-type-tc_tickets_instances #poststuff #post-body.columns-2{
+    margin-right: 0px;
+}
+

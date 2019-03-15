@@ -1,0 +1,122 @@
+@import "../../../scss/variables";
+
+$description-color: rgb(153, 153, 153);
+$title-color: #555;
+$spacing: 30px;
+
+settings {
+  display: block;
+
+  .spacing-container {
+    padding: 25px;
+    display: flex;
+  }
+
+  .settings-panels-container {
+    flex: 1 1 auto;
+    height: 100%;
+
+    > .settings-panel, router-outlet + * {
+      display: block;
+      margin-bottom: $spacing;
+      border: 1px solid $border-color;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      background-color: $admin-table-background-color;
+      padding: ($spacing - 5px) $spacing;
+
+      > .header {
+        margin-bottom: $spacing + 10px;
+        color: $text-color-secondary;
+
+        > .title {
+          font-size: 2rem;
+          margin-bottom: 5px;
+          color: $title-color;
+        }
+
+        > .subtitle {
+          font-size: 1.4rem;
+          color: $description-color;
+        }
+      }
+
+      > .body {
+        margin: 0;
+
+        > .input-container {
+          > input, > select, > textarea {
+            max-width: 400px;
+            border-radius: 4px;
+            height: 46px;
+          }
+
+          > label {
+            color: $title-color;
+          }
+
+          > p {
+            margin: 10px 0 25px;
+            padding: 0 1px;
+            max-width: 650px;
+            color: $description-color;
+            font-size: 1.4rem;
+          }
+        }
+
+        .description {
+          font-size: 1.3rem;
+        }
+
+        .margin-top {
+          margin-top: 35px;
+        }
+
+        .margin-bottom {
+          margin-bottom: 35px;
+        }
+      }
+    }
+  }
+
+  .widget {
+    background-color: #f3fbf7;
+    padding: 14px;
+    margin: 35px 0;
+    border-radius: 3px;
+    overflow-wrap: break-word;
+    border-left: 5px solid darken(#f3fbf7, 40%);
+    max-width: 650px;
+
+    > p {
+      margin: 5px 0 0;
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+
+    > .title {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #555;
+    }
+
+    > .button {
+      margin-top: 15px;
+    }
+
+    &.widget-flat {
+      background-color: darken($admin-table-background-color, 1%);
+      border: 1px solid $border-color-light;
+    }
+
+    &.widget-important {
+      background-color: #fef7ed;
+      border-left: 5px solid darken(#fef7ed, 40%);
+    }
+
+    &.widget-warning {
+      background-color: #f2564d;
+      border-left: 5px solid darken(#f2564d, 40%);
+    }
+  }
+}

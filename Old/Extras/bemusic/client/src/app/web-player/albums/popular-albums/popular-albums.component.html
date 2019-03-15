@@ -1,0 +1,18 @@
+<div class="scroll-container" customScrollbar #scrollContainer>
+    <filterable-page-header [filterQuery]="filterQuery" class="margin">
+        <span trans>Popular Albums</span>
+    </filterable-page-header>
+
+    <ad-host slot="ad_slot_1"></ad-host>
+
+    <media-grid>
+        <album-item *ngFor="let album of filteredItems" [album]="album" [contextMenu]="{item: album, type: 'album'}" [scrollContainer]="scrollContainer"></album-item>
+    </media-grid>
+
+    <no-results-message *ngIf="!filteredItems || ! filteredItems.length">
+        <span primary-text trans>No albums found.</span>
+        <span secondary-text trans>Could not find any popular albums. Please try again later.</span>
+    </no-results-message>
+
+    <ad-host slot="ad_slot_2" class="margin-bottom"></ad-host>
+</div>

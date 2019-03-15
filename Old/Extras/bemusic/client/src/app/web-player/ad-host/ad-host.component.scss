@@ -1,0 +1,14 @@
+ad-host {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+
+  &.margin-bottom {
+    margin-bottom: 15px;
+  }
+  &.margin-top {
+    margin-top: 15px;
+  }
+}

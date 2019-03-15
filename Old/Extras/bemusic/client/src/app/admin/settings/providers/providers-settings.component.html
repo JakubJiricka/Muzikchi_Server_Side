@@ -1,0 +1,137 @@
+<div class="header">
+    <div class="title" trans>Data Providers</div>
+    <div class="subtitle" trans>Select and configure providers that will be used to automate the site.</div>
+</div>
+
+<form class="body many-inputs" (submit)="saveSettings()" ngNativeValidate>
+
+    <div class="widget widget-info">
+        <div class="title" trans>Information</div>
+        <p trans>Local provider means that only data created manually via admin area will be used. No attempt will be made to fetch it from any 3rd party APIs or sites.</p>
+    </div>
+
+    <button class="button flat" (click)="generateSitemap()" type="button" trans>Generate Sitemap</button>
+    <p class="margin-bottom description">
+        <span trans>Once generated, sitemap index url will be</span>:
+        <a href="{{settings.getBaseUrl()}}storage/sitemaps/sitemap-index.xml" target="_blank">{{settings.getBaseUrl()}}storage/sitemaps/sitemap-index.xml</a>
+    </p>
+
+    <div class="input-container">
+        <label for="artist_provider" trans>Artist Provider</label>
+        <select name="artist_provider" id="artist_provider" [(ngModel)]="state.client['artist_provider']">
+            <option value="Spotify">Spotify</option>
+            <option value="Local">Local</option>
+            <option value="Discogs">Discogs</option>
+        </select>
+    </div>
+
+    <div class="input-container">
+        <label for="album_provider" trans>Album Provider</label>
+        <select name="album_provider" id="album_provider" [(ngModel)]="state.client['album_provider']">
+            <option value="Spotify">Spotify</option>
+            <option value="Local">Local</option>
+            <option value="Discogs">Discogs</option>
+        </select>
+    </div>
+
+    <div class="input-container">
+        <label for="search_provider" trans>Search Provider</label>
+        <select name="search_provider" id="search_provider" [(ngModel)]="state.client['search_provider']">
+            <option value="Spotify">Spotify</option>
+            <option value="Local">Local</option>
+            <option value="Discogs">Discogs</option>
+            <option value="Lastfm">Last.fm</option>
+        </select>
+    </div>
+
+    <div class="input-container">
+        <label for="genres_provider" trans>Genres Provider</label>
+        <select name="genres_provider" id="genres_provider" [(ngModel)]="state.client['genres_provider']">
+            <option value="Lastfm">Last.fm</option>
+            <option value="Local">Local</option>
+        </select>
+    </div>
+
+    <div class="input-container">
+        <label for="new_releases_provider" trans>New Releases Provider</label>
+        <select name="new_releases_provider" id="new_releases_provider" [(ngModel)]="state.client['new_releases_provider']">
+            <option value="Spotify">Spotify</option>
+            <option value="Local">Local</option>
+        </select>
+    </div>
+
+    <div class="input-container">
+        <label for="top_albums_provider" trans>Popular Albums Provider</label>
+        <select name="top_albums_provider" id="top_albums_provider" [(ngModel)]="state.client['top_albums_provider']">
+            <option value="Spotify">Spotify</option>
+            <option value="Local">Local</option>
+        </select>
+    </div>
+
+    <div class="input-container">
+        <label for="top_tracks_provider" trans>Top 50 Provider</label>
+        <select name="top_tracks_provider" id="top_tracks_provider" [(ngModel)]="state.client['top_tracks_provider']">
+            <option value="Spotify">Spotify</option>
+            <option value="Local">Local</option>
+        </select>
+    </div>
+
+    <div class="input-container">
+        <label for="providers.biography" trans>Artist Biography Provider</label>
+        <select name="providers.biography" id="providers.biography" [(ngModel)]="state.client['artist_bio_provider']">
+            <option value="wikipedia">Wikipedia</option>
+            <option value="Local">Local</option>
+        </select>
+    </div>
+
+    <div class="input-container" *ngIf="state.client['artist_bio_provider'] === 'wikipedia'">
+        <label for="keys.wikipedia_language" trans>Wikipedia Language</label>
+        <input name="keys.wikipedia_language" id="keys.wikipedia_language" [(ngModel)]="state.client['wikipedia_language']" required minlength="2" maxlength="2">
+        <p trans>ISO 639-1 (two letter) language code.</p>
+    </div>
+
+
+    <!--SPOTIFY KEYS-->
+    <ng-container *ngIf="needProviderKeys('spotify')">
+        <div class="input-container">
+            <label for="keys.spotify_id" trans>Spotify ID</label>
+            <input name="keys.spotify_id" id="keys.spotify_id" [(ngModel)]="state.server['spotify_id']" required>
+        </div>
+
+        <div class="input-container">
+            <label for="keys.spotify_secret" trans>Spotify Secret</label>
+            <input name="keys.spotify_secret" id="keys.spotify_secret" [(ngModel)]="state.server['spotify_secret']" required>
+        </div>
+    </ng-container>
+
+    <!--DISCOGS KEYS-->
+    <ng-container *ngIf="needProviderKeys('discogs')">
+        <div class="input-container">
+            <label for="keys.discogs_id" trans>Discogs ID</label>
+            <input name="keys.discogs_id" id="keys.discogs_id" [(ngModel)]="state.server['discogs_id']" required>
+        </div>
+
+        <div class="input-container">
+            <label for="keys.discogs_secret" trans>Discogs Secret</label>
+            <input name="keys.discogs_secret" id="keys.discogs_secret" [(ngModel)]="state.server['discogs_secret']" required>
+        </div>
+    </ng-container>
+
+    <!--LAST.FM KEYS-->
+    <ng-container *ngIf="needProviderKeys('Lastfm')">
+        <div class="input-container">
+            <label for="keys.lastfm_api_key" trans>Last.fm Api Key</label>
+            <input name="keys.lastfm_api_key" id="keys.lastfm_api_key" [(ngModel)]="state.server['lastfm_api_key']" required>
+        </div>
+    </ng-container>
+
+    <div class="setting-checkbox margin_top">
+        <input type="checkbox" class="pretty-checkbox" name="https.enable_cert_verification" id="https.enable_cert_verification" [(ngModel)]="state.client['https.enable_cert_verification']">
+        <label for="https.enable_cert_verification" trans>Enable Certificate Verification</label>
+        <p trans>Should only be disabled if there are problems with 3rd party data providers.</p>
+    </div>
+
+    <button class="button primary update-button" type="submit" trans>Update</button>
+</form>
+
+<loading-indicator [isVisible]="loading" class="overlay"></loading-indicator>

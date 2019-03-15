@@ -1,0 +1,30 @@
+@import "../../../../../scss/variables";
+
+library-track-toggle-button {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  
+  > button {
+    display: block;
+    
+    &.remove-button:hover {
+      > .check-icon {
+        display: none;
+      }
+      
+      > .remove-icon {
+        display: block;
+      }
+    }
+    
+    > svg-icon {
+      display: block;
+      
+      &.remove-icon {
+        display: none;
+      }
+    }
+  }
+}

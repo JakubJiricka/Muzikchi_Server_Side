@@ -1,0 +1,23 @@
+<div class="header" *ngIf="!multipleTracksSelected()">
+    <img [src]="item.album.image">
+    <div class="meta">
+        <a class="primary-name hover-underline" [routerLink]="urls.track(item)">{{item.name}}</a>
+        <artists-links-list class="secondary-name" [artists]="item.artists"></artists-links-list>
+    </div>
+</div>
+
+<div class="context-menu-panel primary-panel" [class.hidden]="!activePanelIs('primary')">
+    <div class="panel-body">
+        <ng-content></ng-content>
+        <div class="menu-item" (click)="goToTrackRadio()"  *ngIf="!multipleTracksSelected()" trans>Go to Track Radio</div>
+        <div class="menu-item" (click)="addToQueue()" *ngIf="!inQueue() || multipleTracksSelected()" trans>Add to Queue</div>
+        <div class="menu-item" (click)="removeFromQueue()" *ngIf="inQueue() && !multipleTracksSelected()" trans>Remove from Queue</div>
+        <div class="menu-item" (click)="removeFromPlaylist()" trans>Remove from Playlist</div>
+        <div class="menu-item" (click)="saveToLibrary()" *ngIf="!inLibrary() || multipleTracksSelected()" trans>Save to Your Music</div>
+        <div class="menu-item" (click)="removeFromLibrary()" *ngIf="inLibrary() && !multipleTracksSelected()" trans>Remove from Your Music</div>
+        <div class="menu-item" (click)="showLyricsModal()"  *ngIf="!multipleTracksSelected()" trans>Show Lyrics</div>
+        <div class="menu-item" (click)="copyLinkToClipboard()" *ngIf="!multipleTracksSelected()" trans>Copy Track Link</div>
+        <div class="menu-item" (click)="openShareModal()" *ngIf="!multipleTracksSelected()" trans>Share</div>
+        <a class="menu-item"  routerLink="admin/tracks" [queryParams]="{track_id: item.id}" *ngIf="currentUser.hasPermission('tracks.update')" trans>Edit</a>
+    </div>
+</div>

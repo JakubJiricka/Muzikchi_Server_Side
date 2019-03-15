@@ -1,0 +1,35 @@
+genres-settings {
+  display: block;
+
+  .tags {
+    margin: 0 -5px;
+    max-width: 600px;
+  }
+
+  .tag {
+    display: inline-block;
+    background-color: #ECEFF5;
+    border-radius: 2px;
+    padding: 5px 8px;
+    font-size: 1rem;
+    color: #9099a1;
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+    margin: 10px 5px 0;
+
+    > button {
+      vertical-align: text-top;
+
+      &:hover {
+        color: darken(#9099a1, 15%);
+      }
+    }
+
+    svg-icon {
+      display: block;
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

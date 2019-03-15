@@ -1,0 +1,14 @@
+@import "../../../../../scss/variables";
+
+playing-indicator {
+  display: block;
+  width: 20px;
+  height: 20px;
+
+  > svg-icon {
+    display: block;
+    width: inherit;
+    height: inherit;
+  }
+}
+

@@ -1,0 +1,47 @@
+@import "../../../../scss/variables";
+
+user-access-manager {
+  display: block;
+
+  .panel-outter {
+    margin: 10px 0 20px;
+
+    > .header {
+      display: flex;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $border-color;
+      align-items: flex-end;
+
+      > .title {
+        font-weight: 500;
+      }
+
+      > .add-button {
+        text-align: right;
+        flex: 1 1 auto;
+      }
+    }
+
+    > .panel-body {
+      padding: 0;
+
+      .panel-item {
+        display: inline-block;
+        margin: 0 10px 10px 0;
+        padding: 10px;
+        background-color: darken(#fff, 3%);
+        border: 1px solid $border-color-light;
+        border-radius: 4px;
+
+        > .round-close-button {
+          margin-left: 6px;
+        }
+
+        &.group {
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

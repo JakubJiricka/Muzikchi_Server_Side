@@ -1,0 +1,32 @@
+<div class="backdrop"></div>
+
+<form class="modal-content scroll-container" customScrollbar autocomplete="off" ngNativeValidate (submit)="confirm()">
+    <div class="modal-header">
+        <h2 class="modal-title">
+            <span trans>Assign users to:</span>
+            <span class="capitalize"> {{group && group.name}}</span>
+        </h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button"><svg-icon name="close"></svg-icon></button>
+    </div>
+
+    <div class="errors">
+        <div class="error" *ngIf="errors.emails" trans>Could not find any users with these email addresses.</div>
+    </div>
+
+    <div class="many-inputs">
+        <div class="assign-users">
+            <div class="label" trans>Users</div>
+            <button class="no-style more" (click)="assignMoreUsers()" type="button" trans>Assign More</button>
+        </div>
+        <div class="input-container with-addon" *ngFor="let obj of emails; let i = index">
+            <input type="email" [(ngModel)]="emails[i].email" name="{{i}}" id="{{i}}" placeholder="Email Address" required>
+            <button class="input-addon lesser no-style" (click)="removeUser(i)" type="button"><svg-icon name="close"></svg-icon></button>
+            <div class="error" *ngIf="errors['emails.'+i]">{{errors['emails.'+i]}}</div>
+        </div>
+    </div>
+
+    <div class="buttons right">
+        <button (click)="close()" type="button" class="button cancel" trans>Cancel</button>
+        <button type="submit" class="button primary" trans>Assign</button>
+    </div>
+</form>

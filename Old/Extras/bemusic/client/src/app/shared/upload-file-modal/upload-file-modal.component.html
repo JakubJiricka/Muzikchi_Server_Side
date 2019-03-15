@@ -1,0 +1,41 @@
+<div class="backdrop"></div>
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h2 class="modal-title" trans>Upload File</h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button"><svg-icon name="close"></svg-icon></button>
+    </div>
+
+    <div class="upload-panel">
+        <div class="menu">
+            <button class="menu-item upload-tab-button no-style" [class.active]="activeTab === 'upload'" (click)="setActiveTab('upload')" trans>Upload</button>
+            <button class="menu-item link-tab-button no-style" [class.active]="activeTab === 'link'" (click)="setActiveTab('link')" trans>Link</button>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab upload" *ngIf="activeTab === 'upload'">
+                <div class="dropzone" fileDropzone (onUpload)="uploadFiles($event)" trans>Drop Files Here or Click to Upload</div>
+            </div>
+            <div class="tab link" *ngIf="activeTab === 'link'">
+                <div class="input-container">
+                    <label for="image-link" trans>File URL</label>
+                    <input type="text" id="image-link" (change)="setLinkModel($event.target['value'])">
+                    <p>
+                        <span trans>It must be direct link to a file.</span>
+                        <br>
+                        <span trans>Example: http://site.com/image.png</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="errors" *ngIf="errors">
+            <div class="error" *ngFor="let error of errors | mapToIterable">{{error.value}}</div>
+        </div>
+    </div>
+
+    <div class="buttons right">
+        <button (click)="close()" type="button" class="button cancel" trans>Cancel</button>
+        <button type="submit" class="button primary submit-button" (click)="confirm()" trans>Upload</button>
+    </div>
+</div>

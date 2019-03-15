@@ -1,0 +1,22 @@
+<div class="scroll-container" customScrollbar>
+    <div class="header">
+        <img [src]="getImage()">
+        <div class="meta">
+            <div class="radio-name">{{seed.name}}</div>
+            <div class="radio-type">{{type}} <span trans>Radio</span></div>
+
+            <div class="main-buttons">
+                <button class="no-style play-button" *ngIf="!playing()" (click)="play()">
+                    <svg-icon name="play-arrow"></svg-icon>
+                    <span trans>Play</span>
+                </button>
+                <button class="no-style play-button" *ngIf="playing()" (click)="pause()">
+                    <svg-icon name="pause"></svg-icon>
+                    <span trans>Pause</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <track-list [tracks]="tracks" [showArtist]="true"></track-list>
+</div>

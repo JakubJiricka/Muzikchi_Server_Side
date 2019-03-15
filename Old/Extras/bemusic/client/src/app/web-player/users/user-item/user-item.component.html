@@ -1,0 +1,7 @@
+<a class="img-container" [routerLink]="urls.user(user)">
+    <img [src]="settings.getDefaultImage('artist')" [lazyLoad]="user.avatar" [scrollTarget]="scrollContainer" class="lazy-loaded">
+</a>
+<div class="footer">
+    <a class="user-name primary-text" [routerLink]="urls.user(user)">{{user['display_name']}}</a>
+    <div class="followers secondary-text">{{user['followers_count']}} <span trans>Followers</span></div>
+</div>

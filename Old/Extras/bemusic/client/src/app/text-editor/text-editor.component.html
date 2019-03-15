@@ -1,0 +1,101 @@
+<div class="editor-header">
+    <div class="toolbar-row">
+        <div class="actions" *ngIf="!basic && !showAdvancedControls && currentUser.hasPermission('uploads.create')">
+            <button class="no-style editor-button" type="button" tooltip="Add Attachment" (click)="openFileUploadDialog()">
+                <svg-icon name="attachment"></svg-icon>
+            </button>
+        </div>
+
+        <div class="actions" *ngIf="!basic">
+            <button type="button" class="no-style editor-button" (click)="execCommand('codesample')" tooltip="Insert Code Sample"><svg-icon name="code"></svg-icon></button>
+        </div>
+
+        <div class="actions">
+            <button type="button" class="no-style editor-button" (click)="execCommand('undo')" [class.disabled]="!hasUndo()" tooltip="Undo"><svg-icon name="undo"></svg-icon></button>
+            <button type="button" class="no-style editor-button" (click)="execCommand('redo')" [class.disabled]="!hasRedo()" tooltip="Redo"><svg-icon name="redo"></svg-icon></button>
+        </div>
+
+        <div class="actions">
+            <button type="button" class="no-style editor-button" (click)="execCommand('bold')" [class.active]="queryCommandState('bold')" tooltip="Bold"><svg-icon name="format-bold"></svg-icon></button>
+            <button type="button" class="no-style editor-button" (click)="execCommand('italic')" [class.active]="queryCommandState('italic')" tooltip="Italic"><svg-icon name="format-italic"></svg-icon></button>
+            <button type="button" class="no-style editor-button" (click)="execCommand('underline')" [class.active]="queryCommandState('underline')" tooltip="Underline"><svg-icon name="format-underlined"></svg-icon></button>
+        </div>
+
+        <div class="actions">
+            <button type="button" class="no-style editor-button" (click)="execCommand('insertunorderedlist')" [class.active]="queryCommandState('unorderedlist')" tooltip="Unordered List">
+                <svg-icon name="format-list-bulleted"></svg-icon>
+            </button>
+            <button type="button" class="no-style editor-button" (click)="execCommand('insertorderedlist')" [class.active]="queryCommandState('orderedlist')" tooltip="Ordered List">
+                <svg-icon name="format-list-numbered"></svg-icon>
+            </button>
+        </div>
+
+        <div class="actions" *ngIf="!basic">
+            <button type="button" class="no-style editor-button" (click)="execCommand('mceLink')" tooltip="Insert Link"><svg-icon name="link"></svg-icon></button>
+            <button type="button" class="no-style editor-button image-modal-button" (click)="openInsertImageModal()" *ngIf="currentUser.hasPermission('uploads.create')" tooltip="Insert Image">
+                <svg-icon name="image"></svg-icon>
+            </button>
+        </div>
+
+        <ng-content select="[customButtons]"></ng-content>
+
+        <div class="actions last">
+            <button type="button" class="no-style editor-button" (click)="execCommand('removeformat')" tooltip="Remove Formatting"><svg-icon name="format-clear"></svg-icon></button>
+        </div>
+
+        <ng-content select="[header]"></ng-content>
+    </div>
+    <div class="toolbar-row" *ngIf="showAdvancedControls">
+        <div class="actions">
+            <dropdown>
+                <button type="button" class="no-style editor-button text-button insert-button">Insert <svg-icon name="arrow-drop-down" class="caret"></svg-icon></button>
+                <div class="dropdown-menu indent insert-menu" #menu>
+                    <div class="dropdown-item" #menuItem (click)="execCommand('InsertHorizontalRule')"><svg-icon name="remove"></svg-icon> Horizontal Line</div>
+                    <div class="dropdown-item" #menuItem (click)="execCommand('mceLink')"><svg-icon name="link"></svg-icon> Link</div>
+                    <div class="dropdown-item" #menuItem (click)="execCommand('mceMedia')"><svg-icon name="videocam"></svg-icon> Media</div>
+                    <div class="dropdown-item important-item" #menuItem (click)="insertInfoContainer('important')" trans><svg-icon name="star"></svg-icon> Important</div>
+                    <div class="dropdown-item" #menuItem (click)="insertInfoContainer('warning')" trans><svg-icon name="warning"></svg-icon> Warning</div>
+                    <div class="dropdown-item" #menuItem (click)="insertInfoContainer('note')" trans><svg-icon name="note"></svg-icon> Note</div>
+                </div>
+            </dropdown>
+        </div>
+        <div class="actions">
+            <dropdown>
+                <button type="button" class="no-style editor-button text-button format-button">Format <svg-icon name="arrow-drop-down" class="caret"></svg-icon></button>
+                <div class="dropdown-menu scroll-container format-menu" customScrollbar #menu>
+                    <div class="dropdown-item" #menuItem (click)="execCommand('FormatBlock', 'h1')"><div class="text">Heading 1</div> <div class="alt-text">Ctrl+Alt+1</div></div>
+                    <div class="dropdown-item" #menuItem (click)="execCommand('FormatBlock', 'h2')"><div class="text">Heading 2</div> <div class="alt-text">Ctrl+Alt+2</div></div>
+                    <div class="dropdown-item" #menuItem (click)="execCommand('FormatBlock', 'h3')"><div class="text">Heading 3</div> <div class="alt-text">Ctrl+Alt+3</div></div>
+                    <div class="dropdown-item" #menuItem (click)="execCommand('strikethrough')"><div class="text">Strikethrough</div> <div class="alt-text">Alt+Shift+5</div></div>
+                    <div class="dropdown-item" #menuItem (click)="execCommand('superscript')"><div class="text">Superscript</div> <div class="alt-text">Ctrl+.</div></div>
+                    <div class="dropdown-item" #menuItem (click)="execCommand('subscript')"><div class="text">Subscript</div> <div class="alt-text">Ctrl+,</div></div>
+                    <div class="dropdown-item" #menuItem (click)="execCommand('mceBlockQuote')"><div class="text">Blockquote</div> <div class="alt-text">Ctrl+Alt+B</div></div>
+                    <div class="dropdown-item" #menuItem (click)="execCommand('FormatBlock', 'p')"><div class="text">Paragraph</div> <div class="alt-text">Ctrl+Alt+0</div></div>
+                </div>
+            </dropdown>
+        </div>
+        <div class="actions">
+            <dropdown>
+                <button type="button" class="no-style editor-button text-button color-button">Color <svg-icon name="arrow-drop-down" class="caret"></svg-icon></button>
+                <div class="dropdown-menu indent color-dropdown" #menu>
+                    <div class="dropdown-item text-color-item" #menuItem (click)="showColorPicker('ForeColor')"><svg-icon name="format-color-text"></svg-icon> Text Color</div>
+                    <div class="dropdown-item bg-color-item" #menuItem (click)="showColorPicker('HiliteColor')"><svg-icon name="format-color-fill"></svg-icon> Background Color</div>
+                </div>
+            </dropdown>
+        </div>
+        <div class="actions">
+            <button type="button" class="no-style editor-button" (click)="execCommand('justifyLeft')" [class.active]="queryCommandState('justifyLeft')" tooltip="Unordered List"><svg-icon name="format-align-left"></svg-icon></button>
+            <button type="button" class="no-style editor-button" (click)="execCommand('justifyCenter')" [class.active]="queryCommandState('justifyCenter')" tooltip="Unordered List"><svg-icon name="format-align-center"></svg-icon></button>
+            <button type="button" class="no-style editor-button" (click)="execCommand('justifyRight')" [class.active]="queryCommandState('justifyRight')" tooltip="Unordered List"><svg-icon name="format-align-right"></svg-icon></button>
+        </div>
+        <div class="actions editor-toggle-buttons">
+            <button type="button" class="no-style editor-button visual-mode-button" [class.active]="activeEditor === 'visual'" (click)="showVisualEditor()" trans>Visual</button>
+            <button type="button" class="no-style editor-button source-mode-button" [class.active]="activeEditor === 'source'" (click)="showSourceEditor()" trans>Source</button>
+        </div>
+    </div>
+</div>
+
+<textarea class="source-textarea" #sourceArea rows="8" [style.min-height]="minHeight" style="display: none" [(ngModel)]="sourceAreaModel"></textarea>
+<textarea class="visual-textarea" #visualArea rows="8" [style.min-height]="minHeight"></textarea>
+
+<ng-content select="[footer]"></ng-content>

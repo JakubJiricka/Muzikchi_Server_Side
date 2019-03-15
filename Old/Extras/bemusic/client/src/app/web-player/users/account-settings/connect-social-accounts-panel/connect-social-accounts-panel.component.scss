@@ -1,0 +1,45 @@
+@import "../../../../../scss/variables";
+
+connect-social-accounts-panel {
+  display: block;
+
+  .social-login-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $wp-border-color-200;
+
+    &.last {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    > img {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+    }
+
+    > .name {
+      display: inline-block;
+      margin-left: 15px;
+      flex: 1 1 auto;
+    }
+
+    > .button {
+      margin-left: auto;
+
+      &.disable-button {
+        background-color: $danger-button-color;
+        border-color: $danger-button-color;
+      }
+    }
+
+    > .social-account-username {
+      margin-left: auto;
+      margin-right: 10px;
+      color: $link-color;
+    }
+  }
+}

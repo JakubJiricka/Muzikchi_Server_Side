@@ -1,0 +1,188 @@
+//media queries
+$phone: 576px;
+$tablet: 768px;
+$laptop: 1200px;
+$desktop: 1600px;
+
+//fonts
+$font-family: Roboto,'Helvetica Neue',sans-serif;
+
+$text-color: rgba(0,0,0,.87);
+$text-color-secondary: rgba(0,0,0,.54);
+$gray-bg-color: #FAFAFA;
+$border-color: #E0E0E0;
+$border-color-light: #eff1f2;
+$danger-button-color: #ea6153;
+
+//contextual colors
+$success-bg-color: #4CAF50;
+$success-text-color: #fff;
+$danger-bg-color: #F44336;
+$danger-text-color: #fff;
+
+//accent color
+$accent-color: #6eac00;
+$accent-text-color: #fff;
+$link-color: $accent-color;
+
+//Box Shadows
+$box-shadow-1: 0 1px 2px rgba(0,0,0,0.15);
+$box-shadow-2: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+$box-shadow-3: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12);
+$box-shadow-4: 0 9px 11px -5px rgba(0,0,0,.2), 0 18px 28px 2px rgba(0,0,0,.14), 0 7px 34px 6px rgba(0,0,0,.12);
+
+//icons
+$icon-color-dark: rgba(0, 0, 0, 0.5);
+$icon-color-light: rgba(0, 0, 0, 0.3);
+$default-svg-icon-size: 24px;
+
+//loading indicator
+$loading-indicator-color: $accent-color;
+$loading-indicator-width: 80px;
+$loading-indicator-height: 70px;
+
+//web player
+$wp-bg-color-500: #1e1e26;
+$wp-bg-color-400: #2a2a35;
+$wp-bg-color-300: lighten($wp-bg-color-400, 5%);
+$wp-bg-color-200: lighten($wp-bg-color-400, 10%);
+$wp-bg-color-100: lighten($wp-bg-color-400, 35%);
+$wp-border-color-200: rgba(255,255,255,0.05);
+$wp-border-color-100: rgba(255,255,255,0.1);
+$wp-text-color-300: #898B8C;
+$wp-text-color-200: #C2C2CA;
+$wp-text-color-100: #fff;
+
+//web-player nav sidebar
+$wp-nav-sidebar-bg-color: #23232C;
+$wp-nav-sidebar-width: 220px;
+$wp-nav-sidebar-current-track-height: 65px;
+
+//web-player search slideout panel
+$wp-search-panel-bg-color: #1e1e26;
+$wp-search-panel-width: 365px;
+
+//web-player controls bar
+$wp-controls-height: 65px;
+$wp-controls-handle-height: 14px;
+$wp-controls-progress-height: 5px;
+$wp-mobile-controls-height: 137px;
+$wp-play-button-size: 55px;
+$wp-next-prev-button-size: 30px;
+$wp-controls-action-button-size: 20px;
+
+//web-player video
+$wp-video-minimized-width: 250px;
+$wp-video-minimized-height: 207px;
+
+//auth pages
+$login-page-border-color: $wp-bg-color-400;
+$login-page-bg-color: $wp-bg-color-500;
+$login-page-panel-bg-color: $wp-nav-sidebar-bg-color;
+$login-page-input-bg-color: $wp-bg-color-300;
+$login-page-text-color: $wp-text-color-200;
+
+//dropdowns
+$panel-background-color: #fff;
+$dropdown-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+$dropdown-border-radius: 0;
+$dropdown-max-height: 260px;
+$dropdown-width: 235px;
+$dropdown-item-hover-bg-color: #ebf2fc;
+
+//toasts
+$toast-default-background-color: #323232;
+$toast-default-text-color: #fff;
+$toast-error-background-color: $danger-bg-color;
+$toast-error-text-color: $danger-text-color;
+$toast-success-background-color: $success-bg-color;
+$toast-success-text-color: $success-text-color;
+$toast-border-radius: 2px;
+$toast-height: 20px;
+$toast-padding: 14px 20px;
+$toast-min-width: 288px + 48px;
+$toast-max-width: 568px;
+$toast-font-size: 1.4rem;
+$toast-box-shadow: $box-shadow-3;
+
+//modals
+$modal-backdrop-color: rgba(33,33,33,0.48);
+$modal-content-background-color: #fff;
+$modal-content-padding: 24px;
+$modal-content-width: 530px;
+$modal-content-max-width: 90%;
+$modal-content-max-height: 95%;
+$modal-content-box-shadow: $box-shadow-3;
+$modal-content-text-color: $text-color;
+$modal-header-text-color: $text-color;
+$modal-header-font-size: 2rem;
+$modal-header-font-weight: 500;
+$modal-header-margin: 0 0 35px;
+$modal-input-bg-color: transparent;
+$modal-input-hint-text-color: $text-color-secondary;
+$modal-close-button-size: 35px;
+$modal-close-button-color: $icon-color-dark;
+$modal-error-text-color: $danger-bg-color;
+
+//inputs
+$input-height: 38px;
+$input-border-color: #E0E0E0;
+
+//admin
+$admin-background-color: #fff;
+$admin-left-col-background-color: lighten($wp-bg-color-400, 2%);
+$admin-left-col-text-color: #eee;
+$admin-left-col-border-color: lighten($admin-left-col-background-color, 5%);
+$admin-left-col-active-color: lighten($admin-left-col-background-color, 3%);
+$admin-left-col-width: 225px;
+$admin-nav-text-color: #777;
+$admin-nav-box-shadow: none;
+$admin-nav-background-color: $gray-bg-color;
+$admin-nav-height: 64px;
+$admin-table-background-color: #fff;
+$admin-hover-color: #ebf2fc;
+
+//Social services colors
+$envato-color: #82B541;
+$facebook-color: #3b5998;
+$twitter-color: #1da1f2;
+$google-color: #d34836;
+
+//text editor
+$text-editor-header-background-color: $gray-bg-color;
+$text-editor-header-height: 37px;
+$text-editor-button-color: #788593;
+$text-editor-min-height: 218px;
+$text-editor-max-height: 600px;
+$text-editor-submit-button-bg-color: darken($text-editor-button-color, 5%);
+$text-editor-submit-button-color: $accent-text-color;
+$text-editor-button-icon-size: 22px;
+$text-editor-button-size: $text-editor-header-height - 1;
+$text-editor-button-padding: ($text-editor-button-size - $text-editor-button-icon-size) / 2;
+
+//pagination controls
+$pagination-controls-height: 40px;
+$pagination-controls-bg-color: transparent;
+$pagination-controls-text-color: $text-color-secondary;
+
+//buttons
+$flat-button-background-color: rgba(158, 158, 158, 0.2);
+$flat-button-text-color: #555;
+
+//flex table
+//Table panel and table styles
+$table-panel-active-header-background-color: #F9F9F9;
+$table-panel-active-header-text-color: $text-color-secondary;
+$table-panel-active-header-font-size: 1.5rem;
+$table-panel-header-height: 38px;
+$table-panel-header-padding: 15px;
+
+//Tables
+$table-background-color: #fff;
+$table-row-hover-background-color: $admin-hover-color;
+$table-hover-background-color: $admin-hover-color;
+$table-row-height: 70px;
+$table-header-height: $table-row-height;
+$table-text-less-emphasis-color: #999;
+$table-selected-row-bg-color: $table-row-hover-background-color;
+

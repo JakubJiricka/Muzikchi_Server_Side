@@ -1,0 +1,29 @@
+<div class="backdrop"></div>
+
+<form class="modal-content" (ngSubmit)="confirm()" ngNativeValidate customScrollbar>
+    <div class="modal-header">
+        <h2 class="modal-title">
+            <span *ngIf="localization.id" trans>Update Localization</span>
+            <span *ngIf="!localization.id" trans>Create New Localization</span>
+        </h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button">
+            <svg-icon name="close"></svg-icon>
+        </button>
+    </div>
+
+    <div class="input-container">
+        <label for="localization-name" trans>Localization Name</label>
+        <input type="text" [(ngModel)]="localization.name" name="localization-name" id="localization-name" required>
+        <div class="error" *ngIf="errors.name">{{errors.name}}</div>
+    </div>
+
+    <div class="buttons right">
+        <button (click)="close()" type="button" class="button cancel" trans>Cancel</button>
+        <button type="submit" class="button primary submit-button" trans>
+            <span *ngIf="localization.id" trans>Update</span>
+            <span *ngIf="!localization.id" trans>Create</span>
+        </button>
+    </div>
+</form>
+
+<loading-indicator [isVisible]="loading" class="overlay"></loading-indicator>

@@ -1,0 +1,136 @@
+@import "../../../../scss/variables";
+
+mail-template-preview {
+  display: block;
+  position: relative;
+
+  .email-inbox {
+    > .header {
+      display: flex;
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      font-family: arial,sans-serif;
+
+      > .title {
+        display: flex;
+        align-items: center;
+        flex: 1 1 auto;
+
+        > .text {
+          font-size: 17.6px;
+          color: #222;
+          padding-right: 10px;
+        }
+
+        > .tag {
+          background-color: rgb(221, 221, 221);
+          color: rgb(102, 102, 102);
+          font: 11px arial,sans-serif;
+          line-height: 16px;
+          width: 60px;
+          padding: 0 4px;
+
+          > svg-icon {
+            width: 11px;
+            height: 11px;
+            vertical-align: text-bottom;
+            padding-left: 12px;
+          }
+        }
+      }
+
+      > .actions {
+        margin-right: auto;
+        color: $icon-color-dark;
+
+        > svg-icon {
+          width: 16px;
+          height: 16px;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    > .toolbar {
+      display: flex;
+      margin-bottom: 12px;
+
+      > .user {
+        display: flex;
+
+        > img {
+          width: 32px;
+          height: 32px;
+        }
+
+        > .meta {
+          margin-left: 12px;
+          color: #222;
+          font-size: 12.8px;
+
+          > .username {
+            font-weight: bold;
+          }
+
+          > .info {
+            color: #777;
+
+            > svg-icon {
+              width: 12px;
+              height: 12px;
+              border: 1px solid $border-color-light;
+              border-radius: 2px;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+
+      > .actions {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+
+        > .date {
+          margin-right: 3px;
+        }
+
+        > .star-icon {
+          color: $icon-color-light;
+        }
+
+        > .buttons {
+          display: flex;
+          height: 30px;
+          background-color: #f5f5f5;
+          border: 1px solid $border-color;
+          border-radius: 2px;
+          margin-left: 3px;
+          color: $icon-color-dark;
+
+          > .reply {
+            padding: 0 8px;
+            border-right: 1px solid $border-color;
+
+            > svg-icon {
+              width: 18px;
+              height: 18px;
+              padding-top: 4px;
+            }
+          }
+
+          > .more {
+            padding: 0 8px;
+
+            > svg-icon {
+              width: 16px;
+              height: 16px;
+              padding-top: 7px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

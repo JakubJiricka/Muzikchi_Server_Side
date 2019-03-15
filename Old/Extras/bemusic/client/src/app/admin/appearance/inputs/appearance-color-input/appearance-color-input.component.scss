@@ -1,0 +1,28 @@
+@import "../../../../../scss/variables";
+
+appearance-color-input {
+  display: block;
+
+  > .color-picker-container {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .color-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .name {
+    margin-left: 3px;
+    margin-top: 3px;
+    font-size: 1.4rem;
+  }
+
+  .change {
+    color: $link-color;
+    font-size: 1.3rem;
+    margin-left: auto;
+  }
+}

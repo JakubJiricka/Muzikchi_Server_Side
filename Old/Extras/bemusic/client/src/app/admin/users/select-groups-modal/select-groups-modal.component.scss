@@ -1,0 +1,22 @@
+@import "../../../../scss/variables";
+
+select-groups-modal {
+  display: block;
+
+  .groups {
+    text-transform: capitalize;
+
+    > .group {
+      margin-bottom: 7px;
+
+      &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        > input, > label {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

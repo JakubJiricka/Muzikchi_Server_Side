@@ -1,0 +1,43 @@
+<div class="header">
+    <span class="title" trans>New Menu Item</span>
+    <svg-icon name="close" (click)="closeClick.emit()"></svg-icon>
+</div>
+<div class="new-item-tabs">
+    <div class="collapse-panel" [class.expanded]="activePanel === 'link'">
+        <div class="collapse-header nav-item" (click)="togglePanel('link')">
+            <span class="name" trans>Link</span>
+            <svg-icon name="keyboard-arrow-down" class="arrow-icon"></svg-icon>
+        </div>
+        <form class="collapse-body many-inputs" (ngSubmit)="addLinkMenuItem()">
+            <div class="input-container">
+                <label for="external-link-url" trans>URL</label>
+                <input type="url" id="external-link-url" name="external-link-url" [(ngModel)]="linkModel.url" required>
+            </div>
+            <div class="input-container">
+                <label for="external-link-url" trans>Link Text</label>
+                <input type="text" id="external-link-text" name="external-link-text" [(ngModel)]="linkModel.linkText" required>
+            </div>
+            <button class="button flat" type="submit" trans>Add</button>
+        </form>
+    </div>
+    <div class="collapse-panel" [class.expanded]="activePanel === 'route'">
+        <div class="collapse-header nav-item" (click)="togglePanel('route')">
+            <span class="name" trans>Route</span>
+            <svg-icon name="keyboard-arrow-down" class="arrow-icon"></svg-icon>
+        </div>
+        <div class="collapse-body items-list" customScrollbar="lite">
+            <div class="item" *ngFor="let route of appearance.getDefaultSetting('routes')"
+                 (click)="addRouteMenuItem(route)">{{route}}
+            </div>
+        </div>
+    </div>
+    <div class="collapse-panel" [class.expanded]="activePanel === 'page'">
+        <div class="collapse-header nav-item" (click)="togglePanel('page')">
+            <span class="name" trans>Page</span>
+            <svg-icon name="keyboard-arrow-down" class="arrow-icon"></svg-icon>
+        </div>
+        <div class="collapse-body items-list">
+            <div class="item" *ngFor="let page of allPages" (click)="addPageMenuItem(page)">{{page.slug}}</div>
+        </div>
+    </div>
+</div>

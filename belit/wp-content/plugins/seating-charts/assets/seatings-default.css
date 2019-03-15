@@ -1,0 +1,17 @@
+.tc_cart_seat_remove {
+    float: left;
+    margin-right: 5px;
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+.tc-single-cart-seat {
+    display: inline-block;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.tc-cart-seat-wrap {
+    float: left;
+    width: 90%;
+}

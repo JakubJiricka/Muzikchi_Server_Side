@@ -1,0 +1,30 @@
+<div class="scroll-container" customScrollbar infinite-scroll (onInfiniteScroll)="loadMore()" [infiniteScrollEnabled]="canLoadMore()">
+
+    <filterable-page-header [filterQuery]="library.tracks.filterQuery">
+        <sorting-header [name]="library.tracks.order">
+            <div class="dropdown-item" #menuItem (click)="library.tracks.sort('name')" trans>Name</div>
+            <div class="dropdown-item" #menuItem (click)="library.tracks.sort('date added')" trans>Date Added</div>
+            <div class="dropdown-item" #menuItem (click)="library.tracks.sort('duration')" trans>Duration</div>
+            <div class="dropdown-item" #menuItem (click)="library.tracks.sort('album name')" trans>Album Name</div>
+            <div class="dropdown-item" #menuItem (click)="library.tracks.sort('artist name')" trans>Artist Name</div>
+        </sorting-header>
+    </filterable-page-header>
+
+    <ad-host slot="ad_slot_1" class="margin-bottom"></ad-host>
+
+    <track-list
+        [tracks]="library.tracks.get()"
+        [showArtist]="true"
+        [showPopularity]="false"
+        [showAddedAt]="true"
+        [showAlbum]="true"
+        [handleContinuousPlayback]="false"
+        [queueItemId]="'library-tracks'"
+    ></track-list>
+
+    <no-results-message *ngIf="!library.tracks.get().length">
+        <span primary-text trans>Nothing to display.</span>
+        <span secondary-text trans>You have not added any songs to your library yet.</span>
+    </no-results-message>
+</div>
+

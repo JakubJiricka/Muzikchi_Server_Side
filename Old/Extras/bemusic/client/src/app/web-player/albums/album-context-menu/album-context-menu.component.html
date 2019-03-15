@@ -1,0 +1,20 @@
+<div class="header">
+    <img [src]="item.image">
+    <div class="meta">
+        <a class="primary-name hover-underline" [routerLink]="urls.album(item)">{{item.name}}</a>
+        <a class="secondary-name hover-underline" [routerLink]="urls.artist(item.artist)">{{item.artist.name}}</a>
+    </div>
+</div>
+
+<div class="context-menu-panel primary-panel" [class.hidden]="!activePanelIs('primary')">
+    <div class="panel-body">
+        <div class="menu-item" (click)="addToQueue()" trans>Add to Queue</div>
+        <div class="menu-item" (click)="openPanel('playlist')"><span trans>Add to Playlist</span> <svg-icon name="keyboard-arrow-right"></svg-icon></div>
+        <div class="menu-item" (click)="saveToLibrary()" trans>Save to Your Music</div>
+        <div class="menu-item" (click)="copyLinkToClipboard()" trans>Copy Album Link</div>
+        <div class="menu-item" (click)="openShareModal()" trans>Share</div>
+        <a class="menu-item"  routerLink="admin/albums" [queryParams]="{album_id: item.id}" *ngIf="currentUser.hasPermission('albums.update')" trans>Edit</a>
+    </div>
+</div>
+
+<context-menu-playlist-panel class="context-menu-panel" [class.hidden]="!activePanelIs('playlist')" [tracks]="getTracks()" (close$)="openPanel('primary')"></context-menu-playlist-panel>

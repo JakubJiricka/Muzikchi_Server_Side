@@ -1,0 +1,136 @@
+@import "../../../scss/variables";
+
+$spacing: 20px;
+
+mail-templates {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  > .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+    padding: 0 $spacing;
+    flex: 0 0 53px;
+    margin-bottom: 25px;
+    background-color: $panel-background-color;
+
+    .title {
+      flex: 1 1 auto;
+      font-size: 2rem;
+      font-weight: 300;
+    }
+
+    .action {
+      display: flex;
+      border-right: 1px solid $border-color;
+      padding: 0 20px;
+      height: 100%;
+
+      > button {
+        color: $icon-color-light;
+
+        > svg-icon {
+          width: 26px;
+          height: 26px;
+        }
+
+        &:first-of-type {
+          margin-right: 5px;
+        }
+
+        &.active {
+          color: $icon-color-dark;
+        }
+      }
+
+      select {
+        height: 100%;
+        border: none;
+      }
+    }
+  }
+
+  > .many-inputs {
+    padding: 0 $spacing 10px;
+
+    input, select {
+      background-color: #fff;
+    }
+  }
+
+  > .label {
+    display: flex;
+    flex: 0 0 30px;
+    align-items: flex-end;
+    padding: 0 $spacing;
+
+    .type {
+      font-size: 1.5rem;
+      color: $text-color-secondary;
+      display: inline-block;
+      font-weight: bold;
+
+      &.selected {
+        color: $text-color;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      &:last-of-type {
+        border-left: 1px solid $border-color;
+        padding-left: 7px;
+        margin-left: 5px;
+      }
+    }
+
+    > .actions {
+      margin-left: auto;
+    }
+  }
+
+  > .template {
+    display: flex;
+    height: 100%;
+    margin: $spacing;
+
+    &.column {
+      flex-direction: column;
+
+      .editor {
+        min-height: 450px;
+      }
+
+      mail-template-preview {
+        overflow: visible;
+        border-left: 1px solid $border-color;
+        margin: 25px 0;
+      }
+    }
+
+    > .editor {
+      flex: 0 0 50%;
+      border: 1px solid $border-color;
+      background-color: $panel-background-color;
+    }
+
+    > mail-template-preview {
+      flex: 0 0 50%;
+      border: 1px solid $border-color;
+      border-left: none;
+      background-color: $panel-background-color;
+      overflow: auto;
+      padding: 15px;
+
+      > iframe {
+        border: none;
+        width: 100%;
+        padding-left: 43px;
+      }
+    }
+    
+
+  }
+}

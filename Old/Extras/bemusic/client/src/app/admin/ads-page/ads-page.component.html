@@ -1,0 +1,41 @@
+<div class="panel many-inputs">
+    <div class="header" trans>Predefined AD Slots</div>
+
+    <div class="input-container">
+        <label for="ad_slot_1" trans>Slot #1</label>
+        <textarea name="ad_slot_1" id="ad_slot_1" [(ngModel)]="ads['ad_slot_1']"></textarea>
+        <p trans>This ad will appear at the top of most pages. Best size <= 150px height or responsive.</p>
+    </div>
+
+    <div class="input-container">
+        <label for="ad_slot_2" trans>Slot #2</label>
+        <textarea name="ad_slot_2" id="ad_slot_2" [(ngModel)]="ads['ad_slot_2']"></textarea>
+        <p trans>This ad will appear at the bottom of most pages. Best size <= 150px height or responsive.</p>
+    </div>
+
+    <div class="input-container">
+        <label for="ad_slot_3" trans>Slot #3</label>
+        <textarea name="ad_slot_3" id="ad_slot_3" [(ngModel)]="ads['ad_slot_3']"></textarea>
+        <p trans>This ad will appear in artist page only (below popular songs). Best size <= 1000px width or responsive.</p>
+    </div>
+
+    <div class="input-container">
+        <label for="ad_slot_4" trans>Slot #4</label>
+        <textarea name="ad_slot_4" id="ad_slot_4" [(ngModel)]="ads['ad_slot_4']"></textarea>
+        <p trans>This ad will appear in artist page only (below similar artists). Best size <= 430px width or responsive.</p>
+    </div>
+
+    <div class="input-container">
+        <label for="ad_slot_5" trans>Slot #5</label>
+        <textarea name="ad_slot_5" id="ad_slot_5" [(ngModel)]="ads['ad_slot_5']"></textarea>
+        <p trans>This ad will appear in album page only (above album tracks). Best size is as wide as possible or responsive.</p>
+    </div>
+
+    <div class="setting-checkbox margin-top">
+        <input type="checkbox" class="pretty-checkbox" name="ads.disable" id="ads.disable" [(ngModel)]="ads['ads.disable']">
+        <label for="ads.disable" trans>Disable Ads</label>
+        <p trans>Disable all ad related functionality.</p>
+    </div>
+
+    <button class="button primary save-button" (click)="saveAds()" trans>Save</button>
+</div>

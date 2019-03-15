@@ -1,0 +1,70 @@
+<div class="scroll-container" customScrollbar #scrollContainer>
+    <header class="profile-header" [style.background-image]="'url(' + getProfileBackground() + ')'">
+        <img class="avatar" [src]="user.avatar">
+        <div class="meta">
+            <div class="name">{{user['display_name']}}</div>
+            <ng-container *ngIf="user.id !== currentUser.get('id')">
+                <button class="no-style" (click)="follow(user)" *ngIf="!currentUserIsFollowing(user)" trans>Follow</button>
+                <button class="no-style" (click)="unfollow(user)" *ngIf="currentUserIsFollowing(user)" trans>Unfollow</button>
+            </ng-container>
+        </div>
+    </header>
+
+    <div class="nav-links">
+        <a class="nav-link" [routerLink]="urls.user(user, 'playlists')" [class.active]="activeTabIs('playlists')" trans>Public Playlists</a>
+        <a class="nav-link" [routerLink]="urls.user(user, 'following')" [class.active]="activeTabIs('following')" trans>Following</a>
+        <a class="nav-link" [routerLink]="urls.user(user, 'followers')" [class.active]="activeTabIs('followers')" trans>Followers</a>
+    </div>
+
+    <ad-host slot="ad_slot_1" class="margin-top"></ad-host>
+
+    <div class="tabs">
+        <div class="tab playlists-tab" *ngIf="activeTabIs('playlists')">
+            <media-grid *ngIf="user.playlists.length">
+                <playlist-item [playlist]="playlist" [creator]="user" *ngFor="let playlist of user.playlists" [scrollContainer]="scrollContainer"></playlist-item>
+            </media-grid>
+
+            <no-results-message *ngIf="!user.playlists.length">
+                <span primary-text trans>Seems like this user has not created any playlists yet.</span>
+            </no-results-message>
+        </div>
+
+        <div class="tab following-tab" *ngIf="activeTabIs('following')">
+            <div class="followed-users" *ngIf="user.followed_users.length">
+                <div class="follower-row" *ngFor="let followedUser of user.followed_users">
+                    <img [src]="followedUser.avatar">
+                    <div class="meta">
+                        <a class="name hover-underline" [routerLink]="urls.user(followedUser)">{{followedUser['display_name']}}</a>
+                        <div class="followers">{{followedUser.followers_count}} <span trans>Followers</span></div>
+                    </div>
+                    <button class="no-style follow-button" (click)="follow(followedUser)" *ngIf="!currentUserIsFollowing(followedUser) && ! isCurrentUser(followedUser)" trans>Follow</button>
+                    <button class="no-style follow-button" (click)="unfollow(followedUser)" *ngIf="currentUserIsFollowing(followedUser) && ! isCurrentUser(followedUser)" trans>Unfollow</button>
+                </div>
+            </div>
+
+            <no-results-message *ngIf="!user.followed_users.length">
+                <span primary-text trans>Seems like this user is not following anyone yet.</span>
+            </no-results-message>
+        </div>
+
+        <div class="tab followers-tab" *ngIf="activeTabIs('followers')">
+            <div class="following-users" *ngIf="user.followers.length">
+                <div class="follower-row" *ngFor="let follower of user.followers">
+                    <img [src]="follower.avatar">
+                    <div class="meta">
+                        <a class="name hover-underline" [routerLink]="urls.user(follower)">{{follower['display_name']}}</a>
+                        <div class="followers">{{follower.followers_count}} <span trans>Followers</span></div>
+                    </div>
+                    <button class="no-style follow-button" (click)="follow(follower)" *ngIf="!currentUserIsFollowing(follower) && ! isCurrentUser(follower)" trans>Follow</button>
+                    <button class="no-style follow-button" (click)="unfollow(follower)" *ngIf="currentUserIsFollowing(follower) && ! isCurrentUser(follower)" trans>Unfollow</button>
+                </div>
+            </div>
+
+            <no-results-message *ngIf="!user.followers.length">
+                <span primary-text trans>Seems like no one is following this user yet.</span>
+            </no-results-message>
+        </div>
+    </div>
+
+    <ad-host slot="ad_slot_2" class="margin-bottom"></ad-host>
+</div>

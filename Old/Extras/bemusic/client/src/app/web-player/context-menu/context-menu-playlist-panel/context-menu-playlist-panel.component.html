@@ -1,0 +1,16 @@
+<button class="no-style panel-header" (click)="closePanel()">
+    <svg-icon name="arrow-back"></svg-icon>
+    <span trans>Back</span>
+</button>
+<div class="panel-body">
+    <div class="title" trans>Select</div>
+
+    <button class="no-style new-playlist" (click)="openNewPlaylistModal()">
+        <svg-icon name="playlist-add"></svg-icon>
+        <span trans>New Playlist</span>
+    </button>
+
+    <div class="playlists" customScrollbar>
+        <button class="playlist no-style" *ngFor="let playlist of userPlaylists.get()" (click)="addTracks(playlist)" trans>{{playlist.name}}</button>
+    </div>
+</div>

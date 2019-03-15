@@ -1,0 +1,16 @@
+<div class="scroll-container" customScrollbar>
+    <filterable-page-header [filterQuery]="filterQuery" class="margin">
+        <span trans>Top 50</span>
+    </filterable-page-header>
+
+    <ad-host slot="ad_slot_1"></ad-host>
+
+    <track-list [tracks]="filteredItems" [showAlbum]="true" [showArtist]="true"></track-list>
+
+    <no-results-message *ngIf="!filteredItems || ! filteredItems.length">
+        <span primary-text trans>No charts found.</span>
+        <span secondary-text trans>Could not find charts. Please try again later.</span>
+    </no-results-message>
+
+    <ad-host slot="ad_slot_1" class="margin-bottom"></ad-host>
+</div>

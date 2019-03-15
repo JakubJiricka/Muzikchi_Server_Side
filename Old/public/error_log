@@ -1,0 +1,5 @@
+[04-Jun-2018 22:28:59 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/samantrade/public_html/Muzikchi.com/public/test.php on line 4
+[05-Jun-2018 00:26:49 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/samantrade/public_html/Muzikchi.com/public/test.php on line 4
+[05-Jun-2018 00:31:05 UTC] PHP Parse error:  syntax error, unexpected '?', expecting variable (T_VARIABLE) in /home/samantrade/public_html/Muzikchi.com/vendor/symfony/translation/Translator.php on line 79
+[05-Jun-2018 00:36:08 UTC] PHP Parse error:  syntax error, unexpected '?', expecting variable (T_VARIABLE) in /home/samantrade/public_html/Muzikchi.com/vendor/symfony/translation/Translator.php on line 79
+[05-Jun-2018 18:59:47 UTC] PHP Parse error:  syntax error, unexpected '?', expecting variable (T_VARIABLE) in /home/samantrade/public_html/Muzikchi.com/vendor/symfony/translation/Translator.php on line 79

@@ -1,0 +1,274 @@
+@import "../../../scss/variables";
+
+$seekbar-height: 40px;
+
+fullscreen-overlay {
+  width: $wp-video-minimized-width;
+  height: $wp-video-minimized-height;
+  position: fixed;
+  right: 0;
+  bottom: $wp-controls-height;
+  z-index: 3;
+  overflow: hidden;
+  transition: all .2s cubic-bezier(.25,.8,.25,1);
+  
+  &.mobile, &.hide-video {
+    display: none;
+  }
+
+  &.strategy-youtube .youtube-player {
+    display: block;
+  }
+
+  &.strategy-html5 .html5-player {
+    display: block;
+  }
+
+  &.strategy-soundcloud .soundcloud-player {
+    display: block;
+  }
+
+  &.maximized {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background: linear-gradient($wp-bg-color-400, $wp-bg-color-500 85%);
+    z-index: 5;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .carousel {
+      width: 100%;
+      padding: 25px 25px 0;
+    }
+  }
+
+  .box-shadow {
+    box-shadow: $box-shadow-2;
+  }
+
+  .player-container {
+    display: none;
+
+    &.html5-player > video {
+      width: 100%;
+      height: 100%;
+    }
+
+    #soundcloud-iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  > .top-nav {
+    display: flex;
+    width: 100%;
+    flex: 0 1 auto;
+    padding: 15px 25px 25px;
+    min-height: 55px;
+
+    > .toggle-queue {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+    
+    > button {
+      width: 35px;
+      height: 35px;
+      vertical-align: middle;
+      
+      > svg-icon {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  > .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    > .current {
+      height: 100%;
+      max-width: 100%;
+      flex: 1 0 auto;
+      position: relative;
+
+      > .player-container, > .video-overlay {
+        width: 100%;
+        height: 100%;
+      }
+
+      > .player-container {
+        background-color: #000;
+      }
+
+      > .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+      }
+    }
+
+    > .previous, > .next {
+      position: relative;
+      transition: transform 0.2s;
+      cursor: pointer;
+      color: $wp-text-color-100;
+
+      &:hover > svg-icon {
+        transform: scale(1.2);
+      }
+
+      > img {
+        filter: brightness(0.7);
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      > .track-meta {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+      }
+
+      > svg-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60px;
+        height: 60px;
+        margin: -30px 0 0 -30px;
+        border: 1px solid hsla(0,0%,100%,.6);
+        border-radius: 50%;
+        transition: transform 0.3s cubic-bezier(0,0,0,2.41);
+      }
+
+      @media only screen and (max-width: $tablet) {
+        > .track-meta, > svg-icon {
+          display: none;
+        }
+      }
+    }
+
+    > .previous {
+      margin-right: 20px;
+
+    }
+
+    > .next {
+      margin-left: 20px;
+    }
+  }
+
+  .track-meta {
+    margin: 20px 0;
+    text-align: center;
+
+    .track-name {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: $wp-text-color-100;
+    }
+  }
+
+  .current-track-meta {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+
+    > .names {
+      margin: 0 60px;
+    }
+    
+    button, svg-icon {
+      display: block;
+      width: 30px;
+      height: 30px;
+
+      &.remove-button {
+        color: $accent-color;
+      }
+    }
+  }
+
+  > player-seekbar {
+    width: 90%;
+    height: $seekbar-height;
+    flex: 0 0 $seekbar-height;
+    margin: 10px auto;
+
+    > .outer-track {
+      .progress-handle {
+        top: ($seekbar-height / 2) - ($wp-controls-handle-height / 2);
+      }
+
+      .progress-track {
+        top: ($seekbar-height / 2) - ($wp-controls-progress-height / 2);
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+    .shuffle-button {
+      margin-right: 25px;
+
+      &.active {
+        color: $accent-color;
+      }
+    }
+
+    .repeat-button {
+      margin-left: 25px;
+    }
+
+    main-playback-buttons {
+      .play-track, .pause-track, .buffering {
+        width: 85px;
+        height: 85px;
+      }
+
+      .buffering > .spinner {
+        width: 75px;
+        height: 75px;
+      }
+
+      .previous-track, .next-track {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+
+  .queue-container {
+    width: 100%;
+    height: calc(100% - 40px);
+    flex: 1 1 auto;
+    padding: 25px;
+
+    > track-list > .track-list-header {
+      background-color: transparent;
+    }
+  }
+}

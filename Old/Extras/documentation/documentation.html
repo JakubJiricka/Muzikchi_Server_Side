@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    	<title>BeMusic</title>
+    	<meta name="author" content="Vebto">
+    	<meta name="copyright" content="Vebto">
+    	<meta name="date" content="2015-06-19">
+    	
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    	
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/css/docs.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    </head>
+
+    <body>
+        <div id="docs-row" class="clearfix">
+            <h1 class="col-sm-4">Documentation</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <ul class="sidebar list-unstyled" data-spy="affix" data-offset-top="80" data-offset-bottom="200">
+                    <li class="header"><i class="fa fa-gears"></i><span>Installation</span></li>
+
+                    <li class="active"><a href="#create-db">Create a new database</a></li>
+                    <li><a href="#upload-files">Upload the files</a></li>
+                    <li><a href="#install">Installing</a></li>
+                    <li><a href="#update">Updating to new versions</a></li>
+                    <li><a href="#providers">Changing/adding data providers</a></li>
+
+                    <li class="header" data-toggle="collapse" data-target="#api-keys-list"><i class="fa fa-key"></i>API Keys <span class="caret"></span></li>
+                    <li class="collapse" id="api-keys-list">
+                    	<ul class="list-unstyled">
+                    		<li><a href="#api-keys">Overview</a></li>
+                    		<li><a href="#youtube-key">Youtube API Key</a></li>
+                    		<li><a href="#lastfm-key">Last.fm API Key</a></li>
+                    		<li><a href="#soundcloud-key">SoundCloud API Key</a></li>
+                    		<li><a href="#spotify-keys">Spotify Key and Secret</a></li>
+                    	</ul>
+                    </li>
+
+                    <li class="header" data-toggle="collapse" data-target="#social-list"><i class="fa fa-users"></i>Social Login <span class="caret"></span></li>
+                    <li class="collapse" id="social-list">
+                        <ul class="list-unstyled">
+                            <li><a href="#social-overview">Overview</a></li>
+                            <li><a href="#social-facebook">Facebook</a></li>
+                            <li><a href="#social-twitter">Twitter</a></li>
+                            <li><a href="#social-google">Google</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="header" data-toggle="collapse" data-target="#keybinds"><i class="fa fa-keyboard-o"></i>Keybinds <span class="caret"></span></li>
+                    <li class="collapse" id="keybinds">
+                        <ul class="list-unstyled">
+                            <li><a href="#keyboard-shortcuts">Player Keyboard Shortcuts</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="header" data-toggle="collapse" data-target="#genrating-sitemap"><i class="fa fa-sitemap"></i>Sitemap <span class="caret"></span></li>
+                    <li class="collapse" id="genrating-sitemap">
+                    	<ul class="list-unstyled">
+                    		<li><a href="#generating-sitemap">Generating Sitemap</a></li>
+                    	</ul>
+                    </li>
+
+                    <li class="header" data-toggle="collapse" data-target="#mail-list"><i class="fa fa-envelope"></i>Mail <span class="caret"></span></li>
+                    <li class="collapse" id="mail-list">
+                        <ul class="list-unstyled">
+                            <li><a href="#mail-outgoing">Outgoing Mail</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="header" data-toggle="collapse" data-target="#admin-list"><i class="fa fa-lock"></i>Admin <span class="caret"></span></li>
+                    <li class="collapse" id="admin-list">
+                        <ul class="list-unstyled">
+                           <li><a href="#admin-analytics">Analytics</a></li>
+                           <li><a href="#appearence">Appearence</a></li>
+                           <li><a href="#translations">Translations</a></li>
+                            <li><a href="#admin-users">Users</a></li>
+                            <li><a href="#admin-settings">Settings</a></li>
+                        </ul>
+                    </li>    
+
+                    <li class='header'><i class="fa fa-life-ring"></i>Support</li>
+                    <li><a href="#support">Send a support request</a></li>
+                 </ul>
+
+                <div class="col-sm-9 col-sm-offset-3" id="docs-content">
+                    <section id="create-db">
+                        <h2>Creating a new database</h2>
+                        <p>First thing you want to do before installing <strong>BeMusic</strong> is to create a new database on your mysql server. If you already know how to do this/or have already created one just skip to the <a href="#upload-files">next step</a>.</p> 
+                        <p>Your host will most likely be running <strong>phpMyAdmin</strong> as mysql manager, if that's the case here's a step by step guide (if not the proccess will be very similar on other managers).</p>
+                        <p>Login to your control panel, find and click phpMyAdmin link: <img src="assets/images/db_ex_2.png"> Click on the database tab in the top menu, enter any name you like and click create.<img src="assets/images/db_ex_3.png"></p>
+                    </section>
+                   
+                    <section id="upload-files">
+                        <h2>Uploading Files</h2>
+                        <p>After creating a database, unzpip the .zip file you donwloaded from CodeCanyon and upload the <strong>contents</strong> of <strong>bemusic/server</strong> folder to your servers root folder (usually called www or html or something similar) or a sub-directory, shared hosting providers usually have a web based file manager, but you should use something like <a href="https://filezilla-project.org/">Filezilla</a> to do the upload as the web based managers can cause various problems fairly often.</p>
+
+                        <p>Make sure that <strong>storage</strong> and all the <strong>sub-folders</strong> are writable by your server (have 777 permissions if you are on shared hosting). You can change files and folders permissions by right-clicking them in the filemanager, clicking file permissions, and then entering 777 in the permissions field.</p>
+
+                        <p>Optional. Point your domain or sub-domain to "public" folder inside BeMusic directory instead of BeMusic directory itself. While this is optional, you should do it if possible to increase security and potentially avoid issues on some servers.</p>
+
+                        <img src="assets/images/install_ex_2.png">
+                    </section>
+
+                    <section id="install">
+                        <h2>Installing BeMusic</h2>
+                        <p>After you uploaded BeMusic files, simply open up your site url and follow on-screen instructions to finish the installation.</p>
+                        <img src="assets/images/install_ex_1.png">
+                    </section>
+
+                    <section id="update">
+                        <h2>Updating from version <strong>2.0.7</strong> or earlier:</h2>
+                        
+                        <ol>
+                        	<li>Make sure you have at least PHP 5.6 on your server.</li>
+                        	<li>Extract the .zip file you downloaded from CodeCanyon.</li>
+                        	<li>Upload the <strong>contents&nbsp;</strong>of "bemusic/server" folder to the main BeMusic folder on your server.</li>
+                        	<li>On your server, copy<strong> application/.env</strong> file to main BeMusic folder.</li>
+                            <li>Rename <strong>BASE_URL</strong> to <strong>APP_UR</strong>L in .env file. Make sure the url is correct.</li>
+                            <li>Add this line to .env file: <strong>DB_STRICT_MODE=false</strong></li>
+                            <li>Surround any values that contain spaces in .env file with double quotes. For example <strong>DATABASE_NAME="name with spaces"</strong></li>
+                        	<li>Delete <strong>index.php</strong> file in main BeMusic folder.</li>
+                            <li>Move <strong>assets/avatars</strong> folder into <strong>public/assets</strong> folder.</li>
+                            <li>Move <strong>assets/images/albums, assets/images/artists, assets/images/playlists</strong> folders into <strong>public/assets/images</strong> folder.</li>
+                            <li>Move <strong>application/storage/app/music</strong> folder into <strong>storage/app</strong> folder.</li>
+                        	<li>Visit http://yoursite.com/secure/update url and click <strong>Update Now</strong> button. (make sure you are logged in as admin)</li>
+                        </ol>
+
+                        <h2>Updating from version <strong>2.1.0</strong> or newer:</h2>
+
+                        <ol>
+                            <li>Extract the .zip file you downloaded from CodeCanyon.</li>
+                            <li>Upload the <strong>contents&nbsp;</strong>of "bemusic/server" folder to the main BeMusic folder on your server.</li>
+                            <li>Visit http://yoursite.com/secure/update url and click <strong>Update Now</strong> button. (make sure you are logged in as admin)</li>
+                        </ol>
+						
+						<br>
+						<br>
+                        <p><strong>client</strong> folder inside the .zip can be ignored, unless your plan to modify BeMusic code.</p>
+                    </section>
+
+                    <section id="providers">
+                    	<h2>Changing or adding new data providers to <strong>BeMusic</strong></h2>
+
+                    	<p>By default only local provider is included with BeMusic, it allows you to use BeMusic as <strong>CMS</strong> (creating everything manually from admin area). If you want to fetch data (artists, albums, songs etc) automatically, you will need to download a data provider for a 3rd party site you want to use.</p>
+
+                    	<ul>
+                    		<li>1. Download a provider you want from <a target="_blank" href="https://github.com/Vebto/BeMusic-Providers">HERE</a>.</li>
+                    		<li>2. Upload it into <strong>app/Services/Providers</strong> folder.</li>
+                    		<li>3. Select the provider you want to use from <strong>admin area > settings > providers</strong> page.</li>
+                    	</ul>
+
+                    	<p>For example, let's say you want to use <strong>Spotify</strong> as a source for data on your site. Go <a target="_blank" href="https://github.com/Vebto/BeMusic-Providers">HERE</a>, download <strong>Spotify</strong> folder and paste it into <strong>app/Services/Providers</strong> folder on your server. Then get your spotify keys (instructions <a href="#spotify-keys">HERE</a>) and enter them into <strong>admin area > settings > 3rd party keys</strong> panel, select <strong>Spotify</strong> for all (or some) providers in <strong>admin area > settings > providers</strong> section.</p>
+
+                    	<p>You don't necessarily need to use one provider for everything, you can pick and choose. For example, you can use <strong>Spotify</strong> for artist information and <strong>local</strong> for top 50 songs, so you can fetch artist information automatically but create top 50 chart yourself from admin area.</p>
+
+                    	<p>Some providers might require you to register for an <strong>API Key</strong>. You can find instructions on how to acquire those keys in <strong>API Keys</strong> section of documentation.</p>
+
+                    	<p>Note that some providers might have restrictions on <strong>commercial</strong> usage of their APIs, you'll need to take a look into their <strong>Terms of Service</strong> and determine yourself if it's appropriate for you to use them!</p>
+
+                    	<img src="assets/images/git_ex_1.png">
+                    </section>
+
+                    <section id="api-keys" class="new-section">
+                    	<h2>API Keys</h2>
+
+                    	<p>In order make some features of the <strong>BeMusic</strong> work you will need to register for a some API Keys. Check out the sections below for information on how to get them. Once you've got your keys simply enter them in corresponding fields in admin area > settings page.</p>
+                    	<img src="assets/images/api_keys_ex_1.png">
+                    </section>
+
+                    <section id="youtube-key">
+                    	<h2>Youtube API Key</h2>
+
+                    	<p>This key is <strong>required</strong> in order to play music on BeMusic. You can use the same <strong>google app</strong> you have created for social login and google anlytics (refer to social login google section of the docs). Simply create a new api key from your google project page and enable youtube api from the same page. <strong>Note: leave refferers field empty</strong>. Then enter this key in admin area > settings > 3rd party keys > Youtube API Key.</p>
+                    	<img src="assets/images/youtube_key_ex_1.png">
+                    	<img src="assets/images/youtube_key_ex_2.png">
+                    	<img src="assets/images/youtube_key_ex_3.png">
+                    </section>
+
+                    <section id="lastfm-key">
+                    	<h2>Last.fm API Key</h2>
+
+                    	<p>This key is <strong>optional.</strong> It's needed to enable last.fm genres provider. To get last.fm api key, register for an account <a target="_blank" href="http://www.last.fm/api/account/create">here</a>, once registered you'll be able to see your api key, simply enter it in admin area > settings > 3rd party keys > Last.fm API Key.</p>
+                    	<img src="assets/images/lastfm_ex_1.png">
+                    	<img src="assets/images/lastfm_ex_2.png">
+                    </section>
+
+                    <section id="spotify-keys">
+                    	<h2>Spotify Key and Secret</h2>
+
+                    	<p>To get these keys, login or register <a href="https://developer.spotify.com/my-applications/#!/register">here</a>, accept all the terms, then create a new application at this <a href="https://developer.spotify.com/my-applications/#!/applications/create">url</a> (you can enter anything in name and description fields), then you will be able to see your keys, simply enter them in admin area > settings > 3rd party keys > Spotify ID and Spotify Secret fields.</p>
+                    	<img src="assets/images/spotify_ex_1.png">
+                    </section>
+
+                    <section id="soundcloud-key">
+                    	<h2>SoundCloud API Key</h2>
+
+                    	<p>This key is <strong>optional.</strong> It's only required if you will use soundcloud instead if youtube for streaming music. To get SoundClound api key, register for an account <a href="https://soundcloud.com/signup">here</a>, once you have created an activated your account you will need to create a new app <a href="http://soundcloud.com/you/apps/new">here</a> after creating your app, you'll be able to see your client ID and Secret, you will need to enter Client ID in admin area > settings > 3rd party keys > SoundCloud API Key.</p>
+                    	<img src="assets/images/soundcloud_key_ex_1.png">
+                    </section>
+
+                    <section id="social-overview" class="new-section">
+                        <h2>Social Login</h2>
+
+                        <p>In order for social logins to work properly, you will need to register for an application on their respective sites and enter the credentials you receive into <strong>admin area > settings > authentication</strong> page.</p>
+                        <img src="assets/images/social_login_ex1.png">
+                    </section>
+
+                    <section id="social-facebook">
+                        <h2>Facebook</h2>
+
+                        <ol>
+                            <li>Register for regular facebook account, if you don't already have one.</li>
+                            <li>Open <a href="https://developers.facebook.com" target="_blank" rel="noopener noreferrer">this url</a>, <strong>click my apps</strong> in the top navigation bar, then <strong>Add a New App</strong></li>
+                            <li>Enter any display name, your email address and click <strong>Create App ID</strong></li>
+                            <li>Click<strong> Add Product</strong> in the left sidebar, then <strong>Facebook Login</strong>, select <strong>Web</strong>, enter your site url. You can ignore the rest of the panels in quickstart wizard.</li>
+                            <li>Click <strong>Facebook Login &gt; Settings </strong>and enter <strong>http://your-site-url.com/secure/auth/social/facebook/callback </strong>into <strong>Valid OAuth redirect URIs</strong> field.</li>
+                            <li>Click<strong> Dashboard</strong> in left sidebar and copy/paste <strong>APP ID</strong> and <strong>APP</strong> <strong>SECRET</strong> into settings page.</li>
+                        </ol>
+                        <p><img src="assets/images/social_login_facebook_ex1.png"></p>
+                    </section>
+
+                    <section id="social-twitter">
+                        <h2>Twitter</h2>
+
+                        <ol>
+                            <li>Register for regular twitter account, if you don't already have one.</li>
+                            <li>Open <a href="https://apps.twitter.com" target="_blank" rel="noopener noreferrer">this url</a>, click <strong>Create New App, </strong>enter anything into name and description fields, enter your site url into <strong>Website</strong> and <strong>Callback URL</strong> fields and create the app.</li>
+                            <li>Copy <strong>Consumer Key</strong> and<strong> Consumer Secret </strong>from "Keys and Access Tokens" tab into settings page.</li>
+                        </ol>
+                        <p><img src="assets/images/social_login_twitter_ex1.png"></p>
+                    </section>
+
+                    <section id="social-google">
+                        <h2>Google</h2>
+
+                        <ol>
+                            <li>Register for regular google account, if you don't already have one.</li>
+                            <li>Open <a href="https://console.developers.google.com" target="_blank" rel="noopener noreferrer">this url</a>, create a new project, click <strong>Credentials</strong> in left sidebar,  select <strong>Oauth Client ID</strong> -&gt; <strong>Web Application.</strong></li>
+                            <li>Enter <strong>http://your-site-url.com/secure/auth/social/google/callback</strong> into <strong>Authorized Redirect URIs</strong> field and click<strong> Create.</strong></li>
+                            <li>Copy/paste <strong>Client ID</strong> and <strong>Client Secret</strong> into settings page.</li>
+                        </ol>
+                        <p><img src="assets/images/social_login_google_ex1.png"></p>
+                    </section>
+
+                    <section id="keybinds" class="new-section">
+                        <h2 id="keyboard-shortcuts">Player Keyboard Shortcuts</h2>
+
+                        <table class="table stripped">
+                            <tbody>
+                                <tr>
+                                    <th colspan="1" rowspan="1">Function</th>
+                                    <th colspan="1" rowspan="1">Windows</th>
+                                    <th colspan="1" rowspan="1">Mac</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">Delete track from playlist</td>
+                                    <td colspan="1" rowspan="1">Del</td>
+                                    <td colspan="1" rowspan="1">Del</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">Select all tracks</td>
+                                    <td colspan="1" rowspan="1">Ctrl-A</td>
+                                    <td colspan="1" rowspan="1">Cmd-A</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">Play/pause</td>
+                                    <td colspan="1" rowspan="1">Space</td>
+                                    <td colspan="1" rowspan="1">Space</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">Next track</td>
+                                    <td colspan="1" rowspan="1">Ctrl-Right</td>
+                                    <td colspan="1" rowspan="1">Ctrl-Cmd-Right</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">Previous track</td>
+                                    <td colspan="1" rowspan="1">Ctrl-Left</td>
+                                    <td colspan="1" rowspan="1">Ctrl-Cmd-Left</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">Volume up</td>
+                                    <td colspan="1" rowspan="1">Ctrl-Up</td>
+                                    <td colspan="1" rowspan="1">Cmd-Up</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">Volume down</td>
+                                    <td colspan="1" rowspan="1">Ctrl-Down</td>
+                                    <td colspan="1" rowspan="1">Cmd-Down</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">Mute</td>
+                                    <td colspan="1" rowspan="1">Ctrl-Shift-Down</td>
+                                    <td colspan="1" rowspan="1">Cmd-Shift-Down</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">Max volume</td>
+                                    <td colspan="1" rowspan="1">Ctrl-Shift-Up</td>
+                                    <td colspan="1" rowspan="1">Cmd-Shift-Up</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">Filter (in any page with filter field)</td>
+                                    <td colspan="1" rowspan="1">Ctrl-F</td>
+                                    <td colspan="1" rowspan="1">Cmd-F</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section id="generating-sitemap" class="new-section">
+                    	<h2>Generating Sitemap</h2>
+
+                    	<p>You can generate a sitemap by clicking <strong>Generate Sitemap</strong> button in admin area > settings > data providers page.</p>
+
+                    	<h3>Important things to note:</h3>
+                    	<ul>
+                    		<li>It might take anywhere from a few seconds to an hour to generate a full sitemap depending on your server and how much data you have in database.</li>
+                    		<li>Don't close the browser while sitemap generation is in progress otherwise it might get corrupted.</li>
+                    		<li>If you are receiving any errors or generation stops unexpectedly, it is most likely because of <strong>request time limit</strong> on your server, you will need to contact your hosting provider regarding that issue.</li>
+                    		<li>Sitemap files will be located in <strong>storage/app/public/sitemaps</strong> folder in main <strong>BeMusic</strong> folder on your server, you will want to submit <strong>sitemap-index.xml</strong> file to google, or simply use <strong>http://yoursite.com/storage/sitemaps/sitemap-index.xml</strong> url which will point to that file as well.</li>
+                    	</ul>
+
+                    	<img src="assets/images/sitemap_ex_1.png">
+                    </section>
+
+                    <section id="mail-outgoing" class="new-section">
+                        <h2>Outgoing Mail</h2>
+
+                        <p>Outgoing mail includes all emails that are sent from your application to the user. Password reset, user confirmation, notifications and more.</p>
+
+                        <p>In order for outgoing mail to work, you will need to configure it in <strong>admin area > settings > mail</strong> page.</p>
+                        <p>Unless you already have one of the other available mail methods set up, we highly recommend using <strong>mailgun</strong>. It's free for up to 10000 emails a month and you will avoid many of the problems associated with traditional SMTP servers.</p>
+
+                        <h3>Mailgun</h3>
+                        <p>Although you are not required to add a credit card for mailgun, it's recommended that you do, because you will be put on a lower priority queue without a credit card, which could result in slower email delivery.</p>
+
+                        <ol>
+                            <li>Register <a target="_blank" href="https://mailgun.com/signup">here</a></li>
+                            <li>In the next page click <strong>Add Your Domain</strong> button, then enter your site url in the <strong>Domain Name</strong> field and click <strong>Add Domain</strong></li>
+                            <li>Verify your domain on mailgun. This will differ depending on your hosting, but you should be able to find a guide in your hosting providers documentation, mailgun documentation or simply via google search. </li>
+                        </ol>
+                        <img src="assets/images/mailgun_ex_1.png">
+                        <img src="assets/images/mailgun_ex_2.png">
+
+                        <h3>SMTP</h3>
+                        <p>If you want to use SMTP, go to <strong>admin area > settings > mail</strong> page and simply enter your smtp server credentials.</p>
+                    </section>
+
+                    <section id="admin-analytics" class="new-section">
+                        <h2>Analytics</h2>
+
+                        <h3>Registering for google analytics account</h3>
+                        <p>Analytics page is powered by google analytics so you will need to register for google analytics and add their supplied code to your site. Here's how to do it.</p>
+
+                        <p><strong>Important!</strong> This will only enable tracking. See below on how to get the analytics page on the site working.</p>
+
+                        <ul>
+                            <li>1. Go to this <a href="https://www.google.com/analytics/web/">url</a>. You will be prompted to login to your google account or create a new one if you don't have it already. Do it.</li>
+                            <li>
+                                2. Click on Admin -> Property -> Create new Property -> fill out required fields -> click on get tracking ID
+                                <img src="assets/images/analytics_ex_1.png">
+                                <img src="assets/images/analytics_ex_2.png">
+                            </li>
+                            <li>
+                                3. Go to <strong>admin -> settings -> analytics</strong> and paste the code into <strong>google analytics tracking code</strong> field (only paste in the code that starts with UA, not the whole script).
+                                <img src="assets/images/analytics_ex_3.png">
+                            </li>
+                        </ul>
+						
+						<h3>Registering for google ID</h3>
+						<p>To get analytics page on the site working, you will need to enter your google ID in the admin > settings > analytics page. You can use the same ID as for google social login, you can find instructions on how to obtain it, in the social login documentation section.</p>
+
+						<p>Two additional things you need to do for this ID from google developers console:</p>
+						<ol>
+							<li>Enable google analytics API.</li>
+							<li>Enter your site url into <strong>authorized javascript origins</strong> field.</li>
+						</ol>
+
+                        <img src="assets/images/analytics_ex_6.png">
+                        <img src="assets/images/analytics_ex_7.png">
+
+                        <h3>Viewing analytics information</h3>
+                        <p>Once you have created analytics account and entered it in settings page, go to admin area -> analytics, click on <strong>Access google analytics button</strong>, then click <strong>accept</strong></p>
+                        <img src="assets/images/analytics_ex_5.png">
+                        <p>And you are done. You can now easily view analytics information right from the admin area. You can also select different analytics account, property and view from the bottom of the page.</p>
+                        <img src="assets/images/analytics_ex_4.png">
+                    </section>
+
+                    <section id="appearence">
+                    	<h2>Appearence</h2>
+
+                    	<p>From appearence page you can modify how your site looks by changing colors, fonts, sizes and more. Simply change the value in the field you want and click <strong>save</strong> on the right. BeMusic will compile a custom css stylesheet (just as if it was written by a programmer!) without you needing to have any coding knowledge. Original stylesheet will be preserved so you can switch back at any time. You can also create multiple stylesheets(light, dark etc) and switch them at any time from panel on the left. You can also insert custom css, by typing it into custom css panel.</p>
+
+                    	<p>Note that <strong>variables</strong> and <strong>functions</strong> might sometimes be used in some of the appearence fields. These are very simple to understand. For example, by default <strong>main background color</strong> is <strong>lighten($main-color, 5%)</strong>, this simply means that it will take the color value from $main-color field in appearence page (#19191b by default) and make that color 5% lighter.</p>
+
+                    	<img src="assets/images/appearence_ex_1.png">
+                    </section>
+
+                    <section id="translations">
+                    	<h2>Translations</h2>
+
+                    	<p>You can translate BeMusic right from the admin area so there's no need to mess with configuration files or 3rd party applications. Simpley open translations page and enter your translation for a particular line under <strong>translation</strong> column in the table.</p>
+
+                    	<p>Note that while you can translate the original (englsish) locale, it is recommended to create a new one (frome the panel on the left) so you don't need to worry about overwriting it with future updates.</p>
+
+                    	<img src="assets/images/translations_ex_1.png">
+                    </section>
+
+                    <section id="admin-users">
+                        <h2>Users</h2>
+
+                        <p>From users page, you can get an overview of your site users, create a new one, delete existing ones and edit their profile information.</p>
+                        <img src="assets/images/users_ex_1.png">
+                    </section>
+
+                    <section id="admin-settings">
+                        <h2>Settings</h2>
+
+                        <p>On the settings page you can change various options on your site from your homepage view to user registration. There's a description under each options so you shouldn't have any troubles figuring out which setting does what.</p>
+                        <img src="assets/images/settings_ex_1.png">
+                    </section>
+
+                    <section id="support" class="new-section">
+                        <h2>Support</h2>
+                        <p>If you have any issues or questions, you can submit a new ticket on our support site <a href="https://support.vebto.com" target="_blank">here</a>. Thank you!</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script>
+        	$(function() {
+			  $('a[href*=#]:not([href=#])').click(function() {
+			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			      var target = $(this.hash);
+			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			      if (target.length) {
+			        $('html,body').animate({
+			          scrollTop: target.offset().top
+			        }, 1000);
+			        return false;
+			      }
+			    }
+			  });
+			});
+        </script>
+    </body>
+</html>

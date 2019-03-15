@@ -1,0 +1,35 @@
+@import "../../../scss/variables";
+
+translations {
+  display: flex;
+  margin: 25px;
+
+  > .flex-table-panel {
+    flex: 1 1 auto;
+
+    > .flex-table .flex-table-item {
+      font-weight: 400;
+      height: auto;
+      min-height: 40px;
+    }
+
+    .translation {
+      border: none;
+      background-color: transparent;
+    }
+  }
+
+  > aside {
+    .new-localization {
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+
+    .update-translations {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid $border-color;
+    }
+  }
+}

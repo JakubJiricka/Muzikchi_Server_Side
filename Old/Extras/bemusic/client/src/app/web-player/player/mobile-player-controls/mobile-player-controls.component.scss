@@ -1,0 +1,103 @@
+@import "../../../../scss/variables";
+
+mobile-player-controls {
+  display: block;
+  background-color: inherit;
+  width: 100%;
+  color: $wp-text-color-100;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  
+  > .controls {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+
+    > .maximize {
+      display: block;
+
+      > svg-icon {
+        display: block;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    > main-playback-buttons {
+      width: 115px;
+      flex: 0 0 115px;
+    }
+
+    > .track-info {
+      flex: 1 1 auto;
+      text-align: center;
+      padding: 0 10px;
+      min-width: 0;
+
+      > .track-name {
+        font-size: 1.3rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      > .artist-name {
+        font-size: 1.2rem;
+        color: $wp-text-color-300;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  > .nav {
+    display: flex;
+    color: $wp-text-color-300;
+    border-top: 1px solid $wp-border-color-200;
+    padding: 15px;
+
+    > .nav-item {
+      flex: 1 1 auto;
+      text-align: center;
+      font-size: 1.1rem;
+      color: inherit;
+
+      > a {
+        color: inherit;
+
+        &.active {
+          color: $wp-text-color-100;
+        }
+      }
+
+      svg-icon {
+        display: block;
+        margin: 0 auto 3px;
+      }
+    }
+  }
+
+  > player-seekbar {
+    pointer-events: none;
+
+    > .elapsed-time, > .track-length {
+      display: none;
+    }
+
+    > .outer-track {
+      margin: 0;
+      
+      > .progress-handle {
+        display: none;
+        top: 0;
+      }
+
+      > .progress-track {
+        top: 0;
+      }
+    }
+  }
+}

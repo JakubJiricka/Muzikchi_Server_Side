@@ -1,0 +1,11 @@
+<div class="log-item" *ngFor="let item of log"  [class.has_seen]="item.has_seen">
+    <div class="title">{{item.title}}</div>
+    <div class="description">{{item.description}}</div>
+    <div class="meta">
+        <div class="date meta-item">{{item.date_ago}}</div>
+        <div class="error-type meta-item" [ngClass]="item.type">{{item.type}}</div>
+        <div class="stack-name meta-item">{{item.logger}}</div>
+    </div>
+</div>
+
+<loading-indicator [isVisible]="loading"></loading-indicator>

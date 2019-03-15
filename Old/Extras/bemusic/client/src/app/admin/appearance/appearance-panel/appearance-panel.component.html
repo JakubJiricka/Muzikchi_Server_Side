@@ -1,0 +1,25 @@
+<appearance-panel-meta [path]="[appearance.activePanel]" (backClick)="appearance.closeActivePanel()"></appearance-panel-meta>
+
+<div class="appearance-panel-content many-inputs">
+    <div class="field" *ngFor="let field of config.fields" [ngClass]="field.type+'-input'">
+        <ng-container *ngIf="field.type === 'text' || ! field.type">
+            <appearance-text-input [field]="field"></appearance-text-input>
+        </ng-container>
+
+        <ng-container *ngIf="field.type === 'image'">
+            <appearance-image-input [field]="field"></appearance-image-input>
+        </ng-container>
+
+        <ng-container *ngIf="field.type === 'color'">
+            <appearance-color-input [field]="field" class="nav-item"></appearance-color-input>
+        </ng-container>
+
+        <ng-container *ngIf="field.type === 'code'">
+            <appearance-code-input [field]="field" class="nav-item"></appearance-code-input>
+        </ng-container>
+
+        <ng-container *ngIf="field.type === 'list'">
+            <appearance-list-input [field]="field"></appearance-list-input>
+        </ng-container>
+    </div>
+</div>

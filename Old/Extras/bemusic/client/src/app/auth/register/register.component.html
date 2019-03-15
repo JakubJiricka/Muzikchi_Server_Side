@@ -1,0 +1,57 @@
+<form class="auth-page" id="auth-page" (ngSubmit)="register()">
+    <div class="many-inputs auth-panel">
+
+        <loading-indicator class="overlay" [isVisible]="isLoading"></loading-indicator>
+
+        <a class="logo" [routerLink]="['/']"><img [src]="settings.get('branding.site_logo')" alt="logo"></a>
+
+        <div class="general-error" *ngIf="errors.general">{{errors.general}}</div>
+
+        <div class="input-container">
+            <label for="email" class="hidden" trans>Email</label>
+            <input type="email" [(ngModel)]="model.email" name="email" id="email" required placeholder="Email" trans-placeholder>
+            <p class="error email-error" *ngIf="errors.email">{{errors.email}}</p>
+        </div>
+
+        <div class="input-container">
+            <label for="password" class="hidden" trans>Password</label>
+            <input type="password" [(ngModel)]="model.password" name="password" id="password" required placeholder="Password" trans-placeholder>
+            <p class="error password-error" *ngIf="errors.password">{{errors.password}}</p>
+        </div>
+
+        <div class="input-container">
+            <label for="password_confirmation" class="hidden" trans>Confirm Password</label>
+            <input type="password" [(ngModel)]="model.password_confirmation" name="password_confirmation" id="password_confirmation" required placeholder="Confirm Password" trans-placeholder>
+        </div>
+
+        <div class="social-icons-and-register-row">
+            <div class="social-icons">
+                <button type="button" (click)="socialAuth.loginWith('facebook')" *ngIf="settings.get('social.facebook.enable')" class="social-icon no-style facebook" tooltip="Login with facebook">
+                    <img src="{{settings.get('base_url')+'/assets/images/social-icons/facebook.png'}}">
+                </button>
+                <button type="button" (click)="socialAuth.loginWith('google')" *ngIf="settings.get('social.google.enable')" class="social-icon no-style googleplus" tooltip="Login with google">
+                    <img src="{{settings.get('base_url')+'/assets/images/social-icons/google-plus.png'}}">
+                </button>
+                <button type="button" (click)="socialAuth.loginWith('twitter')" *ngIf="settings.get('social.twitter.enable')" class="social-icon no-style twitter" tooltip="Login with twitter">
+                    <img src="{{settings.get('base_url')+'/assets/images/social-icons/twitter.png'}}">
+                </button>
+            </div>
+
+            <div class="register-button-container">
+                <button class="button primary register-button" type="submit" trans>Register</button>
+            </div>
+        </div>
+
+        <p class="info-row">
+            <span trans>Already have an account?</span>
+            <a class="login-link" [routerLink]="['/login']" trans>Login in here.</a>
+        </p>
+
+        <div class="login-with-envato" *ngIf="settings.get('envato.enable')">
+            <button type="button" class="button primary" (click)="socialAuth.loginWith('envato')">
+                <svg-icon name="envato-custom"></svg-icon>
+                <span trans>Login With Envato</span>
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,38 @@
+<div class="scroll-container" customScrollbar>
+    <div class="header">
+        <img [src]="album.image">
+        <div class="meta">
+            <div class="album-name">{{album.name}}</div>
+            <a class="artist-name" *ngIf="album.artist" [routerLink]="urls.artist(album.artist)">{{album.artist.name}}</a>
+
+            <div class="release-date meta-item">
+                <span class="name" trans>Release Date:</span>
+                <span class="value">{{album.release_date}}</span>
+            </div>
+            <div class="tracks-number meta-item">
+                <span class="name" trans>Number of Songs:</span>
+                <span class="value">{{album.tracks.length}}</span>
+            </div>
+            <div class="running-time meta-item">
+                <span class="name" trans>Running Time:</span>
+                <span class="value">{{totalDuration}}</span>
+            </div>
+
+            <div class="main-buttons">
+                <button class="no-style play-button" *ngIf="!playing()" (click)="play()">
+                    <svg-icon name="play-arrow"></svg-icon>
+                    <span trans>Play</span>
+                </button>
+                <button class="no-style play-button" *ngIf="playing()" (click)="pause()" trans>
+                    <svg-icon name="pause"></svg-icon>
+                    <span trans>Pause</span>
+                </button>
+                <button class="no-style more-button" (click)="openContextMenu($event)" trans>More...</button>
+            </div>
+        </div>
+    </div>
+
+    <ad-host slot="ad_slot_5" class="margin-bottom"></ad-host>
+
+    <track-list [tracks]="album.tracks"></track-list>
+</div>

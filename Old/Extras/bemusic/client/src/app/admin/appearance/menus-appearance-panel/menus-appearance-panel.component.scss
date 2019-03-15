@@ -1,0 +1,69 @@
+@import "../../../../scss/variables";
+
+menus-appearance-panel {
+  display: block;
+
+  .menu-settings {
+    margin: 10px 0;
+  }
+
+  .collapse-panel {
+    margin-bottom: 10px;
+
+    &.expanded {
+      > .collapse-body {
+        max-height: 492px;
+        padding: 10px;
+        border-width: 1px;
+        border-top: none;
+      }
+
+      > .collapse-header {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+
+        > .arrow-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    > .collapse-body {
+      max-height: 0;
+      padding: 0 10px;
+      border: 0 solid $border-color;
+      overflow: hidden;
+      transition: all .4s cubic-bezier(.25, .8, .25, 1);
+    }
+
+    > .collapse-header {
+      margin-bottom: 0;
+
+      > .arrow-icon {
+        transition: transform .4s cubic-bezier(.25, .8, .25, 1);
+      }
+
+      > .drag-handle {
+        color: $icon-color-dark;
+        margin-right: 8px;
+        cursor: move;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .action-buttons {
+    float: right;
+    margin: 10px 0;
+
+    > .delete-button {
+      color: $danger-bg-color;
+      text-decoration: underline;
+      margin-right: 8px;
+
+      &:hover {
+        color: darken($danger-bg-color, 15%);
+      }
+    }
+  }
+}

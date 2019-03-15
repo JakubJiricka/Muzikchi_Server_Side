@@ -1,0 +1,3 @@
+<a class="hover-underline" [routerLink]="urls.artist(artist)" *ngFor="let artist of artists; last as last">
+    <span>{{artist}}<ng-container *ngIf="!last">, </ng-container></span>
+</a>

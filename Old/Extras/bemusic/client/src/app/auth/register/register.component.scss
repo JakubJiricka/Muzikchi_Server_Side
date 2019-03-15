@@ -1,0 +1,36 @@
+@import "../../../scss/variables";
+
+register {
+  display: block;
+  height: 100%;
+
+  > .auth-page {
+    .social-icons-and-register-row {
+      display: flex;
+
+      &.social-icons-hidden {
+        .register-button {
+          width: 100%;
+        }
+      }
+
+      > .social-buttons {
+        flex: 1 1 auto;
+      }
+
+      > .register-button-container {
+        flex: 1 1 auto;
+        text-align: right;
+      }
+    }
+
+    .info-row {
+      margin: 35px 0 5px;
+      text-align: center;
+    }
+  }
+
+  .login-with-envato {
+    margin-top: 30px;
+  }
+}

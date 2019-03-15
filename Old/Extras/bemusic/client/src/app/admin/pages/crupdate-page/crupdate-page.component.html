@@ -1,0 +1,19 @@
+<div class="input-container slug-container">
+    <a class="back-button" routerLink="/admin/pages" tooltip="Back to pages">
+        <svg-icon class="align-middle" name="keyboard-backspace"></svg-icon>
+    </a>
+    <input type="text" [(ngModel)]="model.slug" placeholder="Page Slug">
+    <button class="button primary" *ngIf="model.id" (click)="updatePage()" trans>Update</button>
+    <button class="button primary" *ngIf="!model.id" (click)="createPage()" trans>Create</button>
+</div>
+
+<div class="errors">
+    <div class="error" *ngIf="errors.slug">{{errors.slug}}</div>
+    <div class="error" *ngIf="errors.body">{{errors.body}}</div>
+</div>
+
+<div class="editor-container">
+    <text-editor inlineUploadType="page" class="text-editor" minHeight="auto" [showAdvancedControls]="true" #editorEl></text-editor>
+</div>
+
+<loading-indicator [isVisible]="loading" class="overlay"></loading-indicator>

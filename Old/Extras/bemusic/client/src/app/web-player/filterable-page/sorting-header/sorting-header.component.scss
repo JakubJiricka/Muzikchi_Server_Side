@@ -1,0 +1,23 @@
+@import "../../../../scss/variables";
+
+sorting-header {
+  display: block;
+
+  .header-content {
+    display: flex;
+    align-items: center;
+
+    &:hover > .current-order {
+      text-decoration: underline;
+    }
+
+    > svg-icon, > .current-order {
+      display: block;
+      margin-left: 5px;
+    }
+
+    > .current-order {
+      color: lighten($wp-text-color-200, 5%);
+    }
+  }
+}

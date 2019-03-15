@@ -1,0 +1,53 @@
+<div class="header">
+    <div class="title" trans>General</div>
+    <div class="subtitle" trans>Configure general site settings like homepage and https behaviour.</div>
+</div>
+
+<form class="body many-inputs" (ngSubmit)="saveSettings()" ngNativeValidate>
+    <div class="input-container">
+        <label for="homepage.type" trans>Homepage Type</label>
+        <select name="homepage.type" id="homepage.type" [(ngModel)]="state.client['homepage.type']">
+            <option value="default">Default</option>
+            <option value="component">Application Page</option>
+            <option value="page">Custom Page</option>
+        </select>
+        <p trans>Type of the homepage.</p>
+    </div>
+
+    <div class="input-container" *ngIf="state.client['homepage.type'] === 'page'">
+        <label for="homepage.value" trans>Custom Page Name</label>
+        <select name="homepage.value" id="homepage.value" [(ngModel)]="state.client['homepage.value']" required>
+            <option *ngFor="let page of customPages" [value]="page.id">{{page.slug}}</option>
+        </select>
+        <p trans>Select a custom page that should be used for homepage.</p>
+    </div>
+
+    <div class="input-container" *ngIf="state.client['homepage.type'] === 'component'">
+        <label for="homepage.value" trans>Application Page</label>
+        <select name="homepage.value" id="homepage.value" [(ngModel)]="state.client['homepage.value']" required>
+            <option value="popular-genres" trans>Genres Page</option>
+            <option value="popular-albums" trans>Popular Albums Page</option>
+            <option value="new-releases" trans>New Releases Page</option>
+            <option value="top-50" trans>Top 50 Page</option>
+            <option value="login" trans>Login Page</option>
+            <option value="register" trans>Register Page</option>
+        </select>
+        <p trans>Select application page that should be used for homepage.</p>
+    </div>
+
+    <div class="setting-checkbox">
+        <input type="checkbox" class="pretty-checkbox" name="branding.use_custom_theme" id="branding.use_custom_theme" [(ngModel)]="state.client['branding.use_custom_theme']">
+        <label for="branding.use_custom_theme" trans>Custom Theme</label>
+        <p trans>Enable custom theme (generated via appearance editor).</p>
+    </div>
+
+    <div class="setting-checkbox">
+        <input type="checkbox" class="pretty-checkbox" name="site.force_https" id="site.force_https" [(ngModel)]="state.client['site.force_https']">
+        <label for="site.force_https" trans>Redirect to HTTPS</label>
+        <p trans>You must have SSL set up on the server for this to work.</p>
+    </div>
+
+    <button class="button primary update-button" type="submit" trans>Update</button>
+</form>
+
+<loading-indicator [isVisible]="loading" class="overlay"></loading-indicator>

@@ -1,0 +1,127 @@
+@import "../../scss/variables";
+
+text-editor {
+  display: flex;
+  flex-direction: column;
+  min-height: $text-editor-min-height;
+  max-height: $text-editor-max-height;
+  position: relative;
+  border: 1px solid $border-color;
+
+  textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 15px;
+  }
+
+  .mce-tinymce {
+    border: none;
+    flex: 1 1 auto;
+
+    .mce-edit-area {
+      border: none;
+    }
+
+    .mce-panel {
+      background-color: $gray-bg-color;
+      border-bottom: 1px solid $border-color;
+      padding: 0;
+    }
+  }
+
+  .dropdown-menu {
+    max-height: 350px;
+  }
+
+  .editor-header {
+    clear: both;
+    flex: 0 0 $text-editor-header-height;
+    background-color: $text-editor-header-background-color;
+
+    > .toolbar-row {
+      display: flex;
+      height: $text-editor-header-height;
+      border-bottom: 1px solid $border-color;
+      overflow: hidden;
+    }
+
+    .actions {
+      display: inline-block;
+      border-right: 1px solid $border-color;
+      height: 100%;
+      padding: 0 4px;
+
+      &.right {
+        margin-left: auto;
+        margin-right: 7px;
+      }
+
+      &.last {
+        border-right: none;
+      }
+    }
+
+    .editor-toggle-buttons {
+      border-right: none;
+      margin-left: auto;
+      padding: 0;
+      display: flex;
+
+      > .editor-button {
+        width: auto;
+      }
+    }
+
+    .editor-button {
+      color: $text-editor-button-color;
+      padding: $text-editor-button-padding;
+      width: $text-editor-button-size;
+      height: $text-editor-button-size;
+
+      > svg-icon {
+        height: $text-editor-button-icon-size;
+        width: $text-editor-button-icon-size;
+      }
+
+      > .caret {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        position: relative;
+        left: -3px;
+      }
+
+      &.text-button {
+        font-weight: 300;
+        font-size: 1.5rem;
+        width: auto;
+      }
+
+      &.disabled {
+        opacity: .4;
+      }
+
+      &.active {
+        background-color: darken($text-editor-header-background-color, 6%);
+      }
+
+      &.success {
+        color: $accent-color;
+      }
+
+      &:hover {
+        background-color: darken($text-editor-header-background-color, 4%);
+      }
+    }
+  }
+
+  .editor-footer {
+    position: relative;
+    height: $text-editor-header-height;
+    flex: 0 0 $text-editor-header-height;
+    background-color: $text-editor-header-background-color;
+    border-top: 1px solid $border-color;
+  }
+}

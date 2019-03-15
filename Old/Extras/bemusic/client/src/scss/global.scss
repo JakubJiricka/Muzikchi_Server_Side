@@ -1,0 +1,83 @@
+@import "variables";
+
+body, html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  touch-action: manipulation;
+}
+
+body {
+  font-family: $font-family;
+  line-height: 1.42857143;
+  font-size: 1.4rem;
+  margin: 0;
+  overflow: hidden;
+}
+
+.app-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+//box-sizing
+app-root {
+  box-sizing: inherit;
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+}
+
+//utils
+.scroll-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &.ps {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+img {
+  display: block;
+}
+
+.block {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &.hover-underline {
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}

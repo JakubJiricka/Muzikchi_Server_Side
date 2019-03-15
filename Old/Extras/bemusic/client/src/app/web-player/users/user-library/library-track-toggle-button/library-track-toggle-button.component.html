@@ -1,0 +1,8 @@
+<button class="no-style" (click)="library.add(track)" *ngIf="!library.has(track)">
+    <svg-icon name="add" class="block"></svg-icon>
+</button>
+
+<button class="no-style remove-button" (click)="library.remove(track)" *ngIf="library.has(track)">
+    <svg-icon name="check" class="check-icon"></svg-icon>
+    <svg-icon name="clear" class="remove-icon"></svg-icon>
+</button>

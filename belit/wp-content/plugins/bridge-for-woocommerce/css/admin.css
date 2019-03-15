@@ -1,0 +1,35 @@
+.tc_wc_product_title_event{
+    display: block;
+}
+
+.show_if_tc_ticket{
+    display: none;
+}
+
+.order-table hr{
+    display: none;
+}
+
+.order-table label{
+    color: #777;
+    font-weight: normal;
+}
+
+.order-table th label:after{
+    content: ": ";
+}
+
+h4.woo-order-details-extras-header{
+    margin-top: 10px;
+}
+
+#add-ticket-submit{
+    margin-top: 10px;
+    margin-right: 3px;
+    float: right;
+}
+
+label.tc_book_tickets_label{
+    display: inline-block;
+    margin-right: 10px;
+}

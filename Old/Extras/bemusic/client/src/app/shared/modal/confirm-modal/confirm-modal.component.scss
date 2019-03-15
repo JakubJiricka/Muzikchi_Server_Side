@@ -1,0 +1,24 @@
+confirm-modal.modal {
+  .modal-content {
+
+    > .modal-header {
+      margin-bottom: 10px;
+    }
+
+    > .buttons {
+      margin-top: 0;
+    }
+
+    > .confirm-content {
+      padding-bottom: 15px;
+
+      > .bold {
+        font-weight: 500;
+      }
+
+      > p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

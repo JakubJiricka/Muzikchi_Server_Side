@@ -1,0 +1,69 @@
+<section class="flex-table-panel spacing">
+    <div class="flex-table-panel-header">
+        <div class="header-inner default" *ngIf="!selectedItems.length">
+            <div class="left" trans>Tracks</div>
+            <div class="right">
+                <div class="input-container">
+                    <input type="text" class="search" placeholder="Search tracks" trans-placeholder
+                           [formControl]="searchQuery">
+                    <svg-icon name="search"></svg-icon>
+                </div>
+            </div>
+        </div>
+        <div class="header-inner selected" *ngIf="selectedItems.length">
+            <div class="left">{{selectedItems.length}} <span trans>Tracks Selected</span></div>
+            <div class="right">
+                <button type="button" class="no-style" tooltip="Delete" (click)="maybeDeleteSelectedTracks()">
+                    <svg-icon name="delete"></svg-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="flex-table flex-table-bordered flex-table-compact flex-table-center-vertical">
+        <div class="flex-table-row flex-table-header">
+            <div class="flex-table-item width-1">
+                <input type="checkbox" class="pretty-checkbox" id="toggle-all-tracks-checkbox"
+                       (click)="toggleAllSelectedItems()">
+                <label for="toggle-all-tracks-checkbox"><span>.</span></label>
+            </div>
+            <div class="flex-table-item width-2 image"></div>
+            <div class="flex-table-item width-3" trans>Name</div>
+            <div class="flex-table-item" trans>Number</div>
+            <div class="flex-table-item" trans>Artists</div>
+            <div class="flex-table-item" trans>Album</div>
+            <div class="flex-table-item" trans>Duration</div>
+            <div class="flex-table-item" trans>Plays</div>
+            <div class="flex-table-item width-1"></div>
+        </div>
+        <div class="flex-table-row" *ngFor="let track of items; let index = index;" [class.selected]="isItemSelected(track.id)">
+            <ng-container *ngIf="track.album">
+                <div class="flex-table-item width-1" (click)="$event.stopPropagation()">
+                    <input type="checkbox" class="pretty-checkbox" id="track-checkbox-{{index}}"
+                           (change)="toggleSelectedItem(track.id)"
+                           [checked]="isItemSelected(track.id)">
+                    <label for="track-checkbox-{{index}}"><span>.</span></label>
+                </div>
+                <div class="flex-table-item width-2 image"><img [src]="track.album.image"></div>
+                <div class="flex-table-item width-3">{{track.name}}</div>
+                <div class="flex-table-item">{{track.number}}</div>
+                <div class="flex-table-item">{{track.artists.join(', ')}}</div>
+                <div class="flex-table-item">{{track.album.name}}</div>
+                <div class="flex-table-item">{{track['formatted_duration']}}</div>
+                <div class="flex-table-item">{{track.plays}}</div>
+                <div class="flex-table-item width-1 center edit-icon">
+                    <button type="button" class="no-style lyric-button" (click)="openCrupdateLyricModal(track)" tooltip="Edit Lyrics"><svg-icon name="closed-caption"></svg-icon></button>
+                    <button type="button" class="no-style" (click)="openCrupdateTrackModal(track)" tooltip="Edit Track"><svg-icon name="edit"></svg-icon></button>
+                </div>
+            </ng-container>
+        </div>
+
+        <no-results-message *ngIf="paginator.doesNotHaveResults()">
+            <span primary-text trans>Nothing To Display.</span>
+            <span secondary-text trans>Seems like no tracks have been created yet.</span>
+        </no-results-message>
+    </div>
+
+    <div class="flex-table-panel-footer" [class.hidden]="paginator.params.perPage >= paginator.params.total">
+        <pagination-controls [paginator]="paginator" itemsName="Tracks" [hideLastPageBtn]="true"></pagination-controls>
+    </div>
+</section>

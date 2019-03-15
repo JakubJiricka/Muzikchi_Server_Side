@@ -1,0 +1,87 @@
+<div class="backdrop"></div>
+
+<form class="modal-content" (ngSubmit)="confirm()" ngNativeValidate>
+    <div class="modal-header">
+        <h2 class="modal-title" trans>
+            <span *ngIf="updating" trans>Update Track</span>
+            <span *ngIf="!updating" trans>New Track</span>
+        </h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button">
+            <svg-icon name="close"></svg-icon>
+        </button>
+    </div>
+
+    <div class="many-inputs admin-artist-edit-inputs">
+        <div class="input-container">
+            <label for="track-name" trans>Name</label>
+            <input type="text" id="track-name" name="name" [(ngModel)]="track.name" required>
+            <div class="error" *ngIf="errors.name">{{errors.name}}</div>
+        </div>
+
+        <div class="input-container">
+            <label for="track-number" trans>Number</label>
+            <input type="number" id="track-number" name="number" [(ngModel)]="track.number" required min="1">
+            <div class="error" *ngIf="errors.number">{{errors.number}}</div>
+        </div>
+
+        <div class="input-container" *ngIf="!album">
+            <label for="track-album-name" trans>Album Name</label>
+            <input type="text" id="track-album-name" name="album_name" [(ngModel)]="track.album_name" required>
+            <div class="error" *ngIf="errors.album_name">{{errors.album_name}}</div>
+        </div>
+
+        <div class="input-container">
+            <label for="track-artists" trans>Artists</label>
+            <input type="text" id="track-artists" name="artists" enterKeybind (blur)="attachArtist()" [(ngModel)]="artistsInput.model" placeholder="Add new..." trans-placeholder>
+            <div class="artists tags">
+                <div class="artist tag" *ngFor="let artist of artistsInput.artists">
+                    <span>{{artist}}</span>
+                    <button type="button" class="no-style" (click)="detachArtist(artist)">
+                        <svg-icon name="close"></svg-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="error" *ngIf="errors.artists">{{errors.artists}}</div>
+        </div>
+
+        <div class="input-container">
+            <label for="track-duration" trans>Duration (ms)</label>
+            <input type="number" id="track-duration" name="duration" [(ngModel)]="track.duration" required min="1">
+            <div class="error" *ngIf="errors.duration">{{errors.duration}}</div>
+        </div>
+
+        <div class="input-container">
+            <label for="track-spotify_popularity" trans>Popularity (1 to 100)</label>
+            <input type="number" id="track-spotify_popularity" name="spotify_populity" [(ngModel)]="track.spotify_popularity" min="1" max="100">
+            <div class="error" *ngIf="errors.spotify_popularity">{{errors.spotify_popularity}}</div>
+        </div>
+
+        <div class="input-container">
+            <label for="track-youtube_id" trans>Youtube ID</label>
+            <input type="text" id="track-youtube_id" name="youtube_id" [(ngModel)]="track.youtube_id" min="1" max="10">
+            <div class="error" *ngIf="errors.youtube_id">{{errors.youtube_id}}</div>
+            <p>ID only. https://www.youtube.com/watch?v=<strong>EPyh41zPg4Z</strong></p>
+        </div>
+
+        <div class="input-container with-addon">
+            <label for="track-url" trans>Url</label>
+            <button type="button" class="no-style addon" (click)="openUploadMusicModal()" tooltip="Upload Music or Video">
+                <svg-icon name="file-upload"></svg-icon>
+            </button>
+            <input type="url" id="track-url" name="url" [(ngModel)]="track.url">
+            <p>(Optional) Absolute url from where track should be streamed.</p>
+            <div class="error" *ngIf="errors.url">{{errors.url}}</div>
+        </div>
+    </div>
+
+    <div class="buttons right">
+        <button type="button" class="button primary upload-button" (click)="openUploadMusicModal()" tooltip="Upload Music or Video" trans>Upload</button>
+        <button (click)="close()" type="button" class="button cancel cancel-button" trans>Close</button>
+        <button type="submit" class="button primary submit-button" trans>
+            <span *ngIf="updating" trans>Update</span>
+            <span *ngIf="!updating" trans>Create</span>
+        </button>
+    </div>
+
+    <loading-indicator [isVisible]="loading" class="overlay opacity-high"></loading-indicator>
+</form>

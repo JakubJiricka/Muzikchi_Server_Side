@@ -1,0 +1,27 @@
+<div class="social-login-row google-row" *ngIf="settings.get('social.google.enable')">
+    <img src="{{settings.get('base_url')+'/assets/images/social-icons/google-plus.png'}}">
+    <div class="name" trans>Google+ Account</div>
+    <ng-container *ngIf="getSocialAccountUsername('google') as username; else googleBlock">
+        <span class="social-account-username">{{username}}</span>
+        <button class="button primary disable-button" (click)="disconnectSocialAccount('google')" trans>Disable</button>
+    </ng-container>
+    <ng-template #googleBlock><button class="button primary enable-button" (click)="connectSocialAccount('google')" trans>Enable</button></ng-template>
+</div>
+<div class="social-login-row facebook-row" *ngIf="settings.get('social.facebook.enable')">
+    <img src="{{settings.get('base_url')+'/assets/images/social-icons/facebook.png'}}">
+    <div class="name" trans>Facebook Account</div>
+    <ng-container *ngIf="getSocialAccountUsername('facebook') as username; else facebookBlock">
+        <span class="social-account-username">{{username}}</span>
+        <button class="button primary disable-button" (click)="disconnectSocialAccount('facebook')" trans>Disable</button>
+    </ng-container>
+    <ng-template #facebookBlock><button class="button primary enable-button" (click)="connectSocialAccount('facebook')" trans>Enable</button></ng-template>
+</div>
+<div class="social-login-row twitter-row last" *ngIf="settings.get('social.twitter.enable')">
+    <img src="{{settings.get('base_url')+'/assets/images/social-icons/twitter.png'}}">
+    <div class="name" trans>Twitter Account</div>
+    <ng-container *ngIf="getSocialAccountUsername('twitter') as username; else twitterBlock">
+        <span class="social-account-username">{{username}}</span>
+        <button class="button primary disable-button" (click)="disconnectSocialAccount('twitter')" trans>Disable</button>
+    </ng-container>
+    <ng-template #twitterBlock><button class="button primary enable-button" (click)="connectSocialAccount('twitter')" trans>Enable</button></ng-template>
+</div>

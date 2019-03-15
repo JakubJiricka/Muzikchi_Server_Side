@@ -1,0 +1,14 @@
+@import "../../../scss/variables";
+
+not-found-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #B0BEC5;
+
+  > h1 {
+    font-size: 9rem;
+  }
+}

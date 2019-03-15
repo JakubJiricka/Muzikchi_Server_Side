@@ -1,0 +1,94 @@
+<div class="header">
+    <div class="title" trans>Player</div>
+    <div class="subtitle" trans>Select streaming method and configure player defaults and interface.</div>
+</div>
+
+<form class="body many-inputs" (submit)="saveSettings()" ngNativeValidate>
+
+    <div class="input-container">
+        <label for="audio_search_provider" trans>Streaming Method</label>
+        <select name="audio_search_provider" id="audio_search_provider" [(ngModel)]="state.client['audio_search_provider']">
+            <option value="youtube">Youtube</option>
+            <option value="soundcloud">Soundcloud</option>
+            <option value="local">Local (music files uploaded via admin area)</option>
+        </select>
+        <p trans>What method should be used to stream music on the site.</p>
+    </div>
+
+    <ng-container *ngIf="state.client['audio_search_provider'] === 'youtube'">
+        <div class="input-container">
+            <label for="youtube_api_key" trans>Youtube Api Key</label>
+            <input name="youtube_api_key" id="youtube_api_key" [(ngModel)]="state.client['youtube_api_key']" required>
+        </div>
+
+        <div class="input-container">
+            <label for="youtube.suggested_quality" trans>Suggested Quality</label>
+            <select name="youtube.suggested_quality" id="youtube.suggested_quality" [(ngModel)]="state.client['youtube.suggested_quality']" required>
+                <option value="default" trans>Default</option>
+                <option value="small" trans>Small</option>
+                <option value="medium" trans>Medium</option>
+                <option value="large" trans>Large</option>
+                <option value="hd720" trans>HD720</option>
+                <option value="hd1080" trans>HD1080</option>
+                <option value="highres" trans>Highres</option>
+            </select>
+            <p trans>What quality should be used for youtube videos.</p>
+        </div>
+
+        <div class="input-container">
+            <label for="youtube.region_code" trans>Youtube Region Code</label>
+            <input name="youtube.region_code" id="youtube.region_code" [(ngModel)]="state.client['youtube.region_code']">
+            <p trans>For what country should youtube results be returned. US recommended. ISO 3166-1 alpha-2 Code.</p>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="state.client['audio_search_provider'] === 'soundcloud'">
+        <div class="input-container">
+            <label for="soundcloud_api_key" trans>Soundcloud Api Key</label>
+            <input name="soundcloud_api_key" id="soundcloud_api_key" [(ngModel)]="state.server['soundcloud_api_key']" required>
+        </div>
+    </ng-container>
+
+    <div class="input-container">
+        <label for="player.default_volume" trans>Default Player Volume (1 to 100)</label>
+        <input type="number" name="player.default_volume" id="player.default_volume" [(ngModel)]="state.client['player.default_volume']" min="1" max="100">
+    </div>
+
+    <div class="setting-checkbox margin-top">
+        <input type="checkbox" class="pretty-checkbox" name="player.mobile.auto_open_overlay" id="player.mobile.auto_open_overlay" [(ngModel)]="state.client['player.mobile.auto_open_overlay']">
+        <label for="player.mobile.auto_open_overlay" trans>Automatically Open Overlay on Mobile</label>
+        <p trans>Should fullscreen video overlay be opened automatically on mobile when user starts playback.</p>
+    </div>
+
+    <div class="setting-checkbox margin-top">
+        <input type="checkbox" class="pretty-checkbox" name="player.hide_queue" id="player.hide_queue" [(ngModel)]="state.client['player.hide_queue']">
+        <label for="player.hide_queue" trans>Hide Queue</label>
+        <p trans>Should player queue (right sidebar) be hidden by default.</p>
+    </div>
+
+    <div class="setting-checkbox">
+        <input type="checkbox" class="pretty-checkbox" name="player.hide_video" id="player.hide_video" [(ngModel)]="state.client['player.hide_video']">
+        <label for="player.hide_video" trans>Hide Video</label>
+        <p trans>Should small video in the bottom right corner be hidden.</p>
+    </div>
+
+    <div class="setting-checkbox">
+        <input type="checkbox" class="pretty-checkbox" name="player.hide_lyrics" id="player.hide_lyrics" [(ngModel)]="state.client['player.hide_lyrics']">
+        <label for="player.hide_lyrics" trans>Hide Lyrics Button</label>
+        <p trans>Hide "Lyrics" button in player controls bar.</p>
+    </div>
+
+    <div class="setting-checkbox">
+        <input type="checkbox" class="pretty-checkbox" name="player.hide_video_button" id="player.hide_video_button" [(ngModel)]="state.client['player.hide_video_button']">
+        <label for="player.hide_video_button" trans>Hide Video Button</label>
+        <p trans>Hide video toggle button in player controls bar.</p>
+    </div>
+
+    <div class="setting-checkbox">
+        <input type="checkbox" class="pretty-checkbox" name="player.hide_radio_button" id="player.hide_radio_button" [(ngModel)]="state.client['player.hide_radio_button']">
+        <label for="player.hide_radio_button" trans>Hide Radio Button</label>
+        <p trans>Hide all "go to radio" buttons across the site.</p>
+    </div>
+
+    <button class="button primary update-button" type="submit" trans>Update</button>
+</form>

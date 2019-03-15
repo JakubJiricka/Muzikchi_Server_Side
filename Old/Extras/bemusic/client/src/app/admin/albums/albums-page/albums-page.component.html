@@ -1,0 +1,66 @@
+<section class="flex-table-panel spacing">
+    <div class="flex-table-panel-header">
+        <div class="header-inner default" *ngIf="!selectedItems.length">
+            <div class="left" trans>Albums</div>
+            <div class="right">
+                <div class="input-container">
+                    <input type="text" class="search" placeholder="Search albums" trans-placeholder [formControl]="searchQuery">
+                    <svg-icon name="search"></svg-icon>
+                </div>
+            </div>
+        </div>
+        <div class="header-inner selected" *ngIf="selectedItems.length">
+            <div class="left">{{selectedItems.length}} <span trans>Albums Selected</span></div>
+            <div class="right">
+                <button type="button" class="no-style" tooltip="Delete" (click)="maybeDeleteSelectedAlbums()">
+                    <svg-icon name="delete"></svg-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="flex-table flex-table-bordered flex-table-compact flex-table-center-vertical">
+        <div class="flex-table-row flex-table-header">
+            <div class="flex-table-item width-1">
+                <input type="checkbox" class="pretty-checkbox" id="toggle-all-albums-checkbox"
+                       (click)="toggleAllSelectedItems()">
+                <label for="toggle-all-albums-checkbox"><span>.</span></label>
+            </div>
+            <div class="flex-table-item width-2 image"></div>
+            <div class="flex-table-item width-3" trans>Name</div>
+            <div class="flex-table-item" trans>Release Date</div>
+            <div class="flex-table-item" trans>Popularity</div>
+            <div class="flex-table-item" trans>Number of Tracks</div>
+            <div class="flex-table-item width-1"></div>
+        </div>
+        <div class="flex-table-row" *ngFor="let album of items; let index = index;"
+             [class.selected]="isItemSelected(album.id)">
+            <div class="flex-table-item width-1" (click)="$event.stopPropagation()">
+                <input type="checkbox" class="pretty-checkbox" id="album-checkbox-{{index}}"
+                       (change)="toggleSelectedItem(album.id)"
+                       [checked]="isItemSelected(album.id)">
+                <label for="album-checkbox-{{index}}"><span>.</span></label>
+            </div>
+            <div class="flex-table-item width-2 image">
+                <img [src]="getAlbumImage(album)">
+            </div>
+            <div class="flex-table-item width-3">{{album.name}}</div>
+            <div class="flex-table-item">{{album.release_date}}</div>
+            <div class="flex-table-item">{{album.spotify_popularity}}</div>
+            <div class="flex-table-item">{{album.tracks.length}}</div>
+            <div class="flex-table-item width-1 center edit-icon" tooltip="Edit Album">
+                <button type="button" class="no-style" (click)="openCrupdateAlbumModal(album)">
+                    <svg-icon name="edit"></svg-icon>
+                </button>
+            </div>
+        </div>
+
+        <no-results-message *ngIf="paginator.doesNotHaveResults()">
+            <span primary-text trans>Nothing To Display.</span>
+            <span secondary-text trans>Seems like no albums have been created yet.</span>
+        </no-results-message>
+    </div>
+
+    <div class="flex-table-panel-footer" [class.hidden]="paginator.params.perPage >= paginator.params.total">
+        <pagination-controls [paginator]="paginator" itemsName="Albums" [hideLastPageBtn]="true"></pagination-controls>
+    </div>
+</section>

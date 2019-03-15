@@ -1,0 +1,33 @@
+@import "../../../scss/variables";
+
+login {
+  display: block;
+  height: 100%;
+
+  > .auth-page {
+    .remember-and-login-row {
+      display: flex;
+
+      > .remember-me-checkbox {
+        flex: 1 1 auto;
+        padding-top: 8px;
+      }
+
+      > .login-button {
+        flex: 1 1 auto;
+        text-align: right;
+      }
+    }
+
+    .info-row {
+      margin: 35px 0;
+      text-align: center;
+      color: inherit;
+    }
+
+    .social-icons {
+      text-align: center;
+    }
+  }
+}
+

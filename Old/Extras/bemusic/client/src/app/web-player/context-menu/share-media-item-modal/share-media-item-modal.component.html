@@ -1,0 +1,49 @@
+<div class="backdrop"></div>
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h2 class="modal-title"><span trans>Share</span> {{mediaItem.name}}</h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button">
+            <svg-icon name="close"></svg-icon>
+        </button>
+    </div>
+
+    <div class="input-container link-input-container">
+        <label for="media-item-link" class="hidden">Media item link</label>
+        <input type="text" [(ngModel)]="link" (click)="selectLink($event)" id="media-item-link" readonly>
+        <button class="button primary input-addon" (click)="copyLink()" trans>Copy</button>
+    </div>
+
+    <div class="share-icons">
+        <button class="no-style" (click)="shareUsing('facebook')"><img src="{{getShareImage('facebook')}}"></button>
+        <button class="no-style" (click)="shareUsing('twitter')"><img src="{{getShareImage('twitter')}}"></button>
+        <button class="no-style" (click)="shareUsing('google-plus')"><img src="{{getShareImage('google-plus')}}"></button>
+        <button class="no-style" (click)="shareUsing('tumblr')"><img src="{{getShareImage('tumblr')}}"></button>
+        <button class="no-style" (click)="shareUsing('stumbleupon')"><img src="{{getShareImage('stumbleupon')}}"></button>
+        <button class="no-style" (click)="shareUsing('blogger')"><img src="{{getShareImage('bloggr')}}"></button>
+    </div>
+
+    <div class="share-via-email">
+        <div class="title"><span trans>Share</span> <strong>{{mediaItem.name}}</strong> <span trans>via email</span></div>
+        <form class="input-container email-address-input" (ngSubmit)="addEmail()" ngNativeValidate>
+            <label for="email-input" class="hidden">Email address</label>
+            <input type="email" [(ngModel)]="email.address" id="email-input" name="email-input" placeholder="+Email address" trans-placeholder>
+        </form>
+        <div class="input-container email-message-input">
+            <label for="email-message" class="hidden">Email message</label>
+            <textarea id="email-message" [(ngModel)]="email.message" rows="10" placeholder="(Optional) Email message" trans-placeholder></textarea>
+        </div>
+        <div class="emails" *ngIf="email.addresses.length">
+            <span class="title" trans>Sharing with:</span>
+            <button class="email no-style" *ngFor="let address of email.addresses" (click)="removeEmail(address)" tooltip="Remove address">
+                <span>{{address}}</span>
+                <svg-icon name="close"></svg-icon>
+            </button>
+        </div>
+    </div>
+
+    <div class="buttons right">
+        <button (click)="close()" type="button" class="button cancel cancel-button" trans>Close</button>
+        <button type="submit" class="button primary submit-button" (click)="confirm()">Share</button>
+    </div>
+</div>

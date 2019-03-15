@@ -1,0 +1,64 @@
+<section class="flex-table-panel spacing">
+    <div class="flex-table-panel-header">
+        <div class="header-inner default" *ngIf="!selectedItems.length">
+            <div class="left"><div class="title" trans>Lyrics</div></div>
+            <div class="right">
+                <div class="input-container">
+                    <input type="text" class="search" placeholder="Search Lyrics" trans-placeholder [formControl]="searchQuery">
+                    <svg-icon name="search"></svg-icon>
+                </div>
+            </div>
+        </div>
+        <div class="header-inner selected" *ngIf="selectedItems.length">
+            <div class="left">{{selectedItems.length}} <span trans>Lyric Selected</span></div>
+            <div class="right">
+                <button class="no-style" tooltip="Delete" *ngIf="currentUser.hasPermission('lyrics.delete')"
+                        (click)="confirmLyricsDeletion()">
+                    <svg-icon name="delete"></svg-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="flex-table flex-table-bordered flex-table-compact flex-table-center-vertical">
+        <div class="flex-table-row flex-table-header">
+            <div class="flex-table-item width-1">
+                <input type="checkbox" class="pretty-checkbox" id="toggle-all-lyrics-checkbox"
+                       (click)="toggleAllSelectedItems()">
+                <label for="toggle-all-lyrics-checkbox"><span>.</span></label>
+            </div>
+            <div class="flex-table-item width-2 image"></div>
+            <div class="flex-table-item" trans>Song</div>
+            <div class="flex-table-item" trans>Artist</div>
+            <div class="flex-table-item" trans>Album</div>
+            <div class="flex-table-item" trans>Last Updated</div>
+            <div class="flex-table-item width-1"></div>
+        </div>
+        <div class="flex-table-row" *ngFor="let lyric of items; let index = index;"
+             [class.selected]="isItemSelected(lyric.id)">
+            <div class="flex-table-item width-1" (click)="$event.stopPropagation()">
+                <input type="checkbox" class="pretty-checkbox" id="lyric-checkbox-{{index}}"
+                       (change)="toggleSelectedItem(lyric.id)" [checked]="isItemSelected(lyric.id)">
+                <label for="lyric-checkbox-{{index}}"><span>.</span></label>
+            </div>
+            <div class="flex-table-item width-2 image"><img [src]="getLyricImage(lyric)"></div>
+            <div class="flex-table-item">{{lyric.track.name}}</div>
+            <div class="flex-table-item">{{lyric.track.album.artist.name}}</div>
+            <div class="flex-table-item">{{lyric.track.album.name}}</div>
+            <div class="flex-table-item">{{lyric.updated_at}}</div>
+            <div class="flex-table-item width-1 center edit-icon" tooltip="Edit Lyric">
+                <button class="no-style" type="button" (click)="showCrupdateLyricModal(lyric)" *ngIf="currentUser.hasPermission('lyrics.update')">
+                    <svg-icon name="edit"></svg-icon>
+                </button>
+            </div>
+        </div>
+
+        <no-results-message *ngIf="paginator.doesNotHaveResults()">
+            <span primary-text trans>Nothing To Display.</span>
+            <span secondary-text trans>Seems like no lyrics have been created yet.</span>
+        </no-results-message>
+    </div>
+
+    <div class="flex-table-panel-footer" [class.hidden]="paginator.params.perPage >= paginator.params.total">
+        <pagination-controls [paginator]="paginator" itemsName="Lyrics"></pagination-controls>
+    </div>
+</section>

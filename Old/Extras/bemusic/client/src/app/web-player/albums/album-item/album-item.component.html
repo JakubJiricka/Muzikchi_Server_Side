@@ -1,0 +1,8 @@
+<div class="img-container">
+    <img [src]="settings.getDefaultImage('album')" [lazyLoad]="album.image" [scrollTarget]="scrollContainer" class="lazy-loaded">
+    <playback-control-button (play)="play()" (pause)="pause()" [playing]="playing()"></playback-control-button>
+</div>
+<div class="footer">
+    <a class="album-name primary-text" [routerLink]="urls.album(album)">{{album.name}}</a>
+    <a class="artist-name secondary-text" *ngIf="album.artist" [routerLink]="urls.artist(album.artist)">{{album.artist.name}}</a>
+</div>

@@ -1,0 +1,35 @@
+@import "../../../../scss/variables";
+
+popular-genres {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  .genres {
+    > .genre {
+      position: relative;
+
+      &:hover img {
+        filter: brightness(0.4);
+      }
+
+      .ng-lazyloaded {
+        filter: brightness(0.3);
+      }
+
+      > .name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: capitalize;
+        font-size: 2rem;
+        color: $wp-text-color-100;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
+    }
+  }
+}

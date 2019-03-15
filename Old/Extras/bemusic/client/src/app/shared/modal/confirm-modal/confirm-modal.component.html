@@ -1,0 +1,18 @@
+<div class="backdrop"></div>
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h2 class="modal-title">{{title}}</h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button"><svg-icon name="close"></svg-icon></button>
+    </div>
+
+    <div class="confirm-content">
+        <p>{{body}}</p>
+        <p class="bold" *ngIf="bodyBold">{{bodyBold}}</p>
+    </div>
+
+    <div class="buttons right">
+        <button (click)="close()" type="button" class="button cancel cancel-button">{{cancel}}</button>
+        <button type="submit" class="button primary submit-button" (click)="confirm()">{{ok}}</button>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<appearance-panel-meta [path]="['Menus', menus.activeMenu && menus.activeMenu.name]" (backClick)="openPreviousPanel()"></appearance-panel-meta>
+
+<div class="appearance-panel-content">
+    <div class="menus" *ngIf="!menus.activeMenu">
+        <div class="menu nav-item" *ngFor="let menu of menus.getAll()" (click)="setActiveMenu(menu)">
+            <span class="name">{{menu.name}}</span>
+            <svg-icon name="keyboard-arrow-right" class="arrow-icon"></svg-icon>
+        </div>
+
+        <div class="action-buttons">
+            <button class="button primary" (click)="menus.create()" trans>Add a Menu</button>
+        </div>
+    </div>
+
+    <div class="menu-panel" *ngIf="menus.activeMenu">
+        <div class="many-inputs menu-settings">
+            <div class="input-container">
+                <label for="menu-name" trans>Menu Name</label>
+                <input type="text" id="menu-name" [(ngModel)]="menus.activeMenu.name" (ngModelChange)="menus.commitChanges()">
+            </div>
+
+            <div class="input-container">
+                <label for="menu-position" trans>Menu Position</label>
+                <select id="menu-position" [(ngModel)]="menus.activeMenu.position" (ngModelChange)="menus.commitChanges()">
+                    <option value="sidebar-primary" trans>Primary</option>
+                    <option value="sidebar-secondary" trans>Secondary</option>
+                    <option value="mobile-bottom" trans>Mobile Bottom</option>
+                </select>
+            </div>
+        </div>
+
+        <menu-items></menu-items>
+
+        <div class="action-buttons">
+            <button class="no-style delete-button" (click)="confirmMenuDeletion()" trans>Delete Menu</button>
+            <button class="button flat add-item-button" (click)="toggleNewMenuItemPanel()" trans>Add Items</button>
+        </div>
+    </div>
+
+    <add-menu-item-panel *ngIf="newMenuItemPanelActive" (closeClick)="toggleNewMenuItemPanel()"></add-menu-item-panel>
+</div>

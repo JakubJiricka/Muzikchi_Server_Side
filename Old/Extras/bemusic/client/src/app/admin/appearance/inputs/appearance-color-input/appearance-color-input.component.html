@@ -1,0 +1,5 @@
+<div class="color-picker-container" [(colorPicker)]="field.value" (colorPickerChange)="compileTheme()" [cpPosition]="'bottom'">
+    <svg-icon name="drop-custom" class="color-icon" [style.color]="field.value"></svg-icon>
+    <span class="name">{{field.name}}</span>
+    <span class="change" trans>Change</span>
+</div>

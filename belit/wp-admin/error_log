@@ -1,0 +1,24 @@
+[15-Jul-2018 09:32:24 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/samantrade/public_html/Muzikchi.com/belit/wp-content/plugins/fontiran/core/class-upload-page.php on line 199
+[15-Jul-2018 09:32:24 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/samantrade/public_html/Muzikchi.com/belit/wp-content/plugins/fontiran/core/class-upload-page.php on line 157
+[15-Jul-2018 09:36:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/samantrade/public_html/Muzikchi.com/belit/wp-content/plugins/fontiran/core/class-upload-page.php on line 199
+[15-Jul-2018 09:36:44 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/samantrade/public_html/Muzikchi.com/belit/wp-content/plugins/fontiran/core/class-upload-page.php on line 157
+[19-Jul-2018 21:08:49 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 21:08:49 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 21:12:22 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 21:12:22 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 21:46:05 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 21:46:05 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 21:46:05 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 21:46:05 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 22:04:09 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 22:04:09 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 22:04:09 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 22:04:09 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 22:04:09 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[19-Jul-2018 22:04:09 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[30-Jul-2018 10:33:46 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[30-Jul-2018 10:33:46 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[30-Jul-2018 10:33:46 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[30-Jul-2018 10:33:46 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[30-Jul-2018 10:33:46 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[30-Jul-2018 10:33:46 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.

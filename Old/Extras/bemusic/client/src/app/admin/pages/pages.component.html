@@ -1,0 +1,61 @@
+<section class="flex-table-panel spacing">
+    <div class="flex-table-panel-header">
+        <div class="header-inner default" *ngIf="!selectedItems.length">
+            <div class="left">
+                <a class="button primary" routerLink="new" *ngIf="currentUser.hasPermission('pages.create')" trans>Add</a>
+            </div>
+            <div class="right">
+                <div class="input-container">
+                    <input type="text" class="search" placeholder="Search Pages" trans-placeholder
+                           [formControl]="searchQuery">
+                    <svg-icon name="search"></svg-icon>
+                </div>
+            </div>
+        </div>
+        <div class="header-inner selected" *ngIf="selectedItems.length">
+            <div class="left">{{selectedItems.length}} <span trans>Pages Selected</span></div>
+            <div class="right">
+                <button class="no-style" tooltip="Delete" *ngIf="currentUser.hasPermission('pages.delete')" (click)="confirmPagesDeletion()">
+                    <svg-icon name="delete"></svg-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="flex-table flex-table-bordered flex-table-compact flex-table-center-vertical">
+        <div class="flex-table-row flex-table-header">
+            <div class="flex-table-item width-1">
+                <input type="checkbox" class="pretty-checkbox" id="toggle-all-pages-checkbox" (click)="toggleAllSelectedItems()">
+                <label for="toggle-all-pages-checkbox"><span>.</span></label>
+            </div>
+            <div class="flex-table-item" trans>Slug</div>
+            <div class="flex-table-item" trans>Body</div>
+            <div class="flex-table-item" trans>Created At</div>
+            <div class="flex-table-item" trans>Last Updated</div>
+            <div class="flex-table-item width-1"></div>
+        </div>
+        <div class="flex-table-row" *ngFor="let page of items; let index = index;"
+             [class.selected]="isItemSelected(page.id)">
+            <div class="flex-table-item width-1" (click)="$event.stopPropagation()">
+                <input type="checkbox" class="pretty-checkbox" id="page-checkbox-{{index}}"
+                       (change)="toggleSelectedItem(page.id)" [checked]="isItemSelected(page.id)">
+                <label for="page-checkbox-{{index}}"><span>.</span></label>
+            </div>
+            <div class="flex-table-item">{{page.slug}}</div>
+            <div class="flex-table-item page-body">{{page.body}}</div>
+            <div class="flex-table-item">{{page.created_at}}</div>
+            <div class="flex-table-item">{{page.updated_at}}</div>
+            <div class="flex-table-item width-1 center edit-icon" tooltip="Edit Page">
+                <a [routerLink]="[page.id, 'edit']" *ngIf="currentUser.hasPermission('pages.update')"><svg-icon name="edit"></svg-icon></a>
+            </div>
+        </div>
+
+        <no-results-message *ngIf="paginator.doesNotHaveResults()">
+            <span primary-text trans>Nothing To Display.</span>
+            <span secondary-text trans>Seems like no pages have been created yet.</span>
+        </no-results-message>
+    </div>
+
+    <div class="flex-table-panel-footer" [class.hidden]="paginator.params.perPage >= paginator.params.total">
+        <pagination-controls [paginator]="paginator" itemsName="Pages"></pagination-controls>
+    </div>
+</section>

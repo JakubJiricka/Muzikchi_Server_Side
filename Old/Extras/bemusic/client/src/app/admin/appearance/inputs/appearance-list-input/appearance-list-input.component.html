@@ -1,0 +1,13 @@
+<div class="title">{{field.name}}</div>
+
+<div class="list-items">
+    <div class="list-item input-container" *ngFor="let item of field.value; index as index">
+        <input type="text" class="title" [(ngModel)]="item.title" (ngModelChange)="commitChanges()" (focus)="onFocus('.title', index)" (blur)="preview.removeHighlight()">
+        <input type="text" class="content" [(ngModel)]="item.content" (ngModelChange)="commitChanges()" (focus)="onFocus('.content', index)" (blur)="preview.removeHighlight()">
+        <button class="no-style remove-item-button" type="button" (click)="removeItem(item)" tooltip="Remove"><svg-icon name="close"></svg-icon></button>
+    </div>
+</div>
+
+<div class="add-button-container">
+    <button class="button flat" type="button" (click)="addNewItem()" trans>Add</button>
+</div>

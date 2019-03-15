@@ -1,0 +1,64 @@
+@import "variables";
+
+.flex-table-panel {
+  > .flex-table-panel-header {
+    > .header-inner {
+      display: flex;
+      line-height: $table-panel-header-height;
+      padding: $table-panel-header-padding;
+      border-bottom: 1px solid transparent;
+
+      &.selected {
+        background-color: $table-panel-active-header-background-color;
+        color: $table-panel-active-header-text-color;
+        font-size: $table-panel-active-header-font-size;
+        border-color: $border-color;
+
+        > .right {
+          > button {
+            margin: 0 4px;
+            border: 1px solid $border-color;
+            padding: 0 8px;
+            vertical-align: middle;
+          }
+        }
+      }
+
+      > .left {
+        flex: 0 0 50%;
+
+        > .title {
+          font-size: 1.8rem;
+          color: #676a6c;
+        }
+      }
+
+      > .right {
+        flex: 0 0 50%;
+        display: flex;
+        justify-content: flex-end;
+
+        > .input-container {
+          max-width: 300px;
+          position: relative;
+
+          > input {
+            font-weight: 400;
+          }
+
+          > svg-icon {
+            position: absolute;
+            top: 8px;
+            right: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  > .flex-table-panel-footer {
+    > pagination-controls {
+      padding: 5px 0;
+    }
+  }
+}

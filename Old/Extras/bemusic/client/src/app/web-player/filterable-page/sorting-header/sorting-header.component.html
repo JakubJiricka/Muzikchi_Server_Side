@@ -1,0 +1,11 @@
+<dropdown [menuItems]="menuItems">
+    <button class="no-style header-content" #trigger>
+        <span trans>Sorted by</span>
+        <span class="current-order">{{name}}</span>
+        <svg-icon name="sort"></svg-icon>
+    </button>
+
+    <div class="dropdown-menu" #menu>
+        <ng-content></ng-content>
+    </div>
+</dropdown>

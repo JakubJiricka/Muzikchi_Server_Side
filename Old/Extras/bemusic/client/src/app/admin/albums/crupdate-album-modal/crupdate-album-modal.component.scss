@@ -1,0 +1,27 @@
+@import "../../../../scss/variables";
+@import "../../../../scss/admin-artist-edit-main-info";
+@import "../../../../scss/admin-artist-edit-inputs";
+
+new-album-modal.modal {
+  > .modal-content {
+    width: 90%;
+    height: 90%;
+  }
+
+  .content {
+    background-color: $admin-table-background-color;
+    padding: 15px;
+    border-radius: 3px;
+
+    > .album-tracks {
+      margin-top: 15px;
+    }
+  }
+
+  .close-button {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 0;
+  }
+}

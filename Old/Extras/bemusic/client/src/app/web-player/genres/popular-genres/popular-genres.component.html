@@ -1,0 +1,23 @@
+<div class="scroll-container" customScrollbar #scrollContainer>
+    <filterable-page-header [filterQuery]="filterQuery" class="margin">
+        <span trans>Popular Genres</span>
+    </filterable-page-header>
+
+    <ad-host slot="ad_slot_1"></ad-host>
+
+    <media-grid class="genres">
+        <a class="media-grid-item genre" *ngFor="let genre of filteredItems" [routerLink]="urls.genre(genre)">
+            <div class="img-container">
+                <img class="lazy-loaded" [src]="settings.getDefaultImage('artist')" [lazyLoad]="genre['image']" [scrollTarget]="scrollContainer">
+            </div>
+            <div class="name">{{genre.name}}</div>
+        </a>
+    </media-grid>
+
+    <no-results-message *ngIf="!filteredItems || ! filteredItems.length">
+        <span primary-text trans>No genres found.</span>
+        <span secondary-text trans>Could not find any popular genres. Please try again later.</span>
+    </no-results-message>
+
+    <ad-host slot="ad_slot_2" class="margin-bottom"></ad-host>
+</div>

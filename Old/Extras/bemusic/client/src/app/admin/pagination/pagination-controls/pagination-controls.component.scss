@@ -1,0 +1,67 @@
+@import "../../../../scss/variables";
+
+pagination-controls {
+  display: block;
+  width: 100%;
+
+  .pagination-controls-inner {
+    border-top: 1px solid $border-color;
+    background-color: $pagination-controls-bg-color;
+    color: $pagination-controls-text-color;
+    white-space: nowrap;
+    padding: 0 15px;
+    height: $pagination-controls-height;
+    display: flex;
+
+    .meta {
+      flex: 1 1 50%;
+      width: 50%;
+      line-height: $pagination-controls-height + 2;
+
+      > .separator {
+        padding: 0 7px;
+      }
+
+      > label {
+        padding-right: 7px;
+      }
+
+      > select {
+        border-color: $border-color;
+        color: inherit;
+      }
+    }
+
+    .controls {
+      flex: 1 1 50%;
+      width: 50%;
+      text-align: right;
+      line-height: $pagination-controls-height;
+
+      button {
+        color: $text-color;
+        vertical-align: middle;
+        padding: 5px 6px;
+
+        > svg-icon {
+          width: 16px;
+          height: 16px;
+        }
+
+        &:hover {
+          background-color: lighten($border-color, 5%);
+        }
+
+        &.disabled {
+          cursor: default;
+          pointer-events: none;
+          color: lighten($pagination-controls-text-color, 70%);
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

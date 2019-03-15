@@ -1,0 +1,44 @@
+@import "../../../scss/variables";
+
+media-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px;
+
+  > .media-grid-item {
+    padding: 10px;
+    flex: 0 0 50%;
+    width: 50%;
+    overflow: hidden;
+
+    @media only screen and (min-width: $tablet) {
+      flex: 0 0 (100% / 3);
+      width: (100% / 3);
+    }
+
+    @media only screen and (min-width: $laptop) {
+      flex: 0 0 (100% / 4);
+      width: (100% / 4);
+    }
+
+    @media only screen and (min-width: $desktop) {
+      flex: 0 0 (100% / 5);
+      width: (100% / 5);
+    }
+
+    > .img-container {
+      width: 100%;
+      padding-top: 100%;
+      position: relative;
+
+      > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+}

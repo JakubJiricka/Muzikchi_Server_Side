@@ -1,0 +1,11 @@
+<div class="img-container">
+    <img [src]="settings.getDefaultImage('album')" [lazyLoad]="playlist.image" [scrollTarget]="scrollContainer" class="lazy-loaded">
+    <playback-control-button (play)="play()" (pause)="pause()" [playing]="playing()"></playback-control-button>
+</div>
+<div class="footer">
+    <a class="playlist-name primary-text" [routerLink]="urls.playlist(playlist)">{{playlist.name}}</a>
+    <div class="creator-name secondary-text">
+        <span trans>By</span>
+        <a [routerLink]="urls.user(getCreator())" class="hover-underline">{{getCreator()['display_name']}}</a>
+    </div>
+</div>

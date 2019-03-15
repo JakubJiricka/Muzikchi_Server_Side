@@ -1,0 +1,39 @@
+@import "../../../../scss/variables";
+
+appearance-panel-meta {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $border-color;
+  background-color: #fff;
+
+  > .back-button {
+    > svg-icon.align-middle {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  > .title {
+    padding: 10px;
+
+    > .path {
+      font-size: 2rem;
+      font-weight: 300;
+      max-width: 250px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      .name {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .last {
+        color: $accent-color;
+      }
+    }
+  }
+}

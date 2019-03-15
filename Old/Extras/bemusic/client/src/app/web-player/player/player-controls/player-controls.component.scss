@@ -1,0 +1,41 @@
+@import "../../../../scss/variables";
+
+player-controls {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  height: $wp-controls-height;
+  background-color: $wp-nav-sidebar-bg-color;
+  color: $wp-text-color-100;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  position: relative;
+
+  button:hover {
+    color: $wp-text-color-200;
+  }
+
+  .lyrics {
+    color: $wp-text-color-200;
+    font-size: 1.3rem;
+    margin: 0 35px 0 15px;
+  }
+
+  .player-action {
+    color: $wp-text-color-200;
+    margin: 0 5px;
+
+    &.active {
+      color: $accent-color;
+    }
+
+    > svg-icon {
+      display: block;
+      width: $wp-controls-action-button-size;
+      height: $wp-controls-action-button-size;
+    }
+  }
+
+  > player-seekbar {
+    margin-left: 20px;
+  }
+}

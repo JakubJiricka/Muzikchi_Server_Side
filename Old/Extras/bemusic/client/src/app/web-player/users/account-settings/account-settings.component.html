@@ -1,0 +1,112 @@
+<div class="scroll-container" customScrollbar>
+    <div class="content">
+        <h1 class="header" trans>Account Settings</h1>
+
+        <div class="panels">
+            <form class="panel account-settings-panel" (ngSubmit)="updateAccountSettings()">
+                <div class="panel-header" trans>Update Name or Profile Image</div>
+                <div class="panel-body">
+                    <div class="input-container input-inline">
+                        <label for="first_name" trans>First Name</label>
+                        <input type="text" id="first_name" name="first_name" [(ngModel)]="user.first_name">
+                        <div class="error first-name-error" *ngIf="errors.account.first_name">{{errors.account.first_name}}</div>
+                    </div>
+
+                    <div class="input-container input-inline">
+                        <label for="last_name" trans>Last Name</label>
+                        <input type="text" id="last_name" name="last_name" [(ngModel)]="user.last_name">
+                        <div class="error last-name-error" *ngIf="errors.account.last_name">{{errors.account.last_name}}</div>
+                    </div>
+
+                    <div class="input-container input-inline avatar-input-container">
+                        <label for="last_name" trans>Profile image</label>
+                        <div class="avatar-input">
+                            <img src="{{user.avatar}}" alt="User avatar">
+                            <div class="avatar-actions-container">
+                                <div class="info" trans>For best results, upload a high resolution image</div>
+                                <button type="button" class="button flat avatar-upload-button" (click)="openAvatarUploadDialog()" trans>Upload Image</button>
+                                <button type="button" class="no-style avatar-remove-button" (click)="deleteAvatar()" trans>Remove Image</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="submit" class="button primary submit-button" trans>Save Changes</button>
+                </div>
+            </form>
+
+            <div class="panel social-login-panel" *ngIf="settings.anySocialLoginEnabled()">
+                <div class="panel-header" trans>Manage Social Logins</div>
+                <div class="panel-body">
+                    <div class="info" trans>Enable or disable connected social services</div>
+                    <connect-social-accounts-panel [user]="user"></connect-social-accounts-panel>
+                </div>
+            </div>
+
+            <form class="panel change-password-panel" (ngSubmit)="changeUserPassword()">
+                <div class="panel-header" trans>Update Password</div>
+                <div class="panel-body">
+                    <div class="input-container input-inline" *ngIf="user.has_password">
+                        <label for="current_password" trans>Current Password</label>
+                        <input type="password" id="current_password" name="current_password" [(ngModel)]="password.current_password" required>
+                        <div class="error current-password-error" *ngIf="errors.password.current_password">{{errors.password.current_password}}</div>
+                    </div>
+
+                    <div class="input-container input-inline">
+                        <label for="new_password" trans>New Password</label>
+                        <input type="password" id="new_password" name="new_password" [(ngModel)]="password.new_password" required>
+                        <div class="error new-password-error" *ngIf="errors.password.new_password">{{errors.password.new_password}}</div>
+                    </div>
+
+                    <div class="input-container input-inline">
+                        <label for="new_password_confirmation" trans>Confirm Password</label>
+                        <input type="password" id="new_password_confirmation" name="new_password_confirmation" [(ngModel)]="password.new_password_confirmation" required>
+                        <div class="error new-password-confirmation-error" *ngIf="errors.password.new_password_confirmation">{{errors.password.new_password_confirmation}}</div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="submit" class="button primary submit-button" trans>Update</button>
+                </div>
+            </form>
+
+            <form class="panel preferences-panel" (ngSubmit)="updateAccountSettings()">
+                <div class="panel-header" trans>Update Account Preferences</div>
+                <div class="panel-body">
+                    <div class="input-container input-inline">
+                        <label for="language" trans>Language</label>
+                        <select name="language" id="language" [(ngModel)]="user.language" (ngModelChange)="changeLanguage($event)">
+                            <option value="{{language}}" *ngFor="let language of selects.languages">{{language}}</option>
+                        </select>
+                        <div class="error language-error" *ngIf="errors.account.language">{{errors.account.language}}</div>
+                    </div>
+
+                    <div class="input-container input-inline">
+                        <label for="country" trans>Country</label>
+                        <select name="country" id="country" [(ngModel)]="user.country">
+                            <option value="{{country}}" *ngFor="let country of selects.countries">{{country}}</option>
+                        </select>
+                        <div class="error country-error" *ngIf="errors.account.country">{{errors.account.country}}</div>
+                    </div>
+
+                    <div class="input-container input-inline">
+                        <label for="timezone" trans>Timezone</label>
+                        <select name="timezone" id="timezone" [(ngModel)]="user.timezone">
+                            <option value="{{timezone['value']}}" *ngFor="let timezone of selects.timezones">{{timezone.text}}</option>
+                        </select>
+                        <div class="error timezone-error" *ngIf="errors.account.timezone">{{errors.account.timezone}}</div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="submit" class="button primary submit-button" trans>Save Changes</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="logout-button-container">
+            <button class="button danger logout-button" type="button" (click)="auth.logOut()">
+                <svg-icon name="exit-to-app"></svg-icon>
+                <span>Logout</span>
+            </button>
+        </div>
+    </div>
+</div>

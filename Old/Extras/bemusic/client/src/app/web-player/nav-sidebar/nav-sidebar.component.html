@@ -1,0 +1,98 @@
+<div class="content scroll-container" customScrollbar>
+    <a class="logo-container" routerLink="/">
+        <img [src]="settings.get('branding.site_logo')">
+    </a>
+
+    <form class="search-bar-container" (ngSubmit)="searchPanel.goToSearchPage()">
+        <label for="search" class="hidden" trans>Main site search</label>
+        <input id="search" placeholder="Search..." [formControl]="searchPanel.searchQuery" trans-placeholder>
+
+        <svg-icon name="search" [class.hidden]="searchPanel.searching || searchPanel.searchQuery.value" (click)="searchPanel.goToSearchPage()"></svg-icon>
+
+        <button type="button" class="no-style" (click)="searchPanel.close()">
+            <svg-icon name="close" [class.hidden]="searchPanel.searching || ! searchPanel.searchQuery.value"></svg-icon>
+        </button>
+
+        <loading-indicator [isVisible]="searchPanel.searching"></loading-indicator>
+    </form>
+
+    <custom-menu position="sidebar-primary" class="sidebar-nav"></custom-menu>
+
+    <div class="separator"></div>
+
+    <div class="auth-container">
+        <div *ngIf="currentUser.isLoggedIn()" class="current-user">
+            <a [routerLink]="urls.user(currentUser.getModel())" class="img-container">
+                <img [src]="currentUser.get('avatar')">
+            </a>
+            <a class="name hover-underline" [routerLink]="urls.user(currentUser.getModel())">{{currentUser.get('display_name')}}</a>
+            <dropdown>
+                <button class="no-style dropdown-trigger" #trigger><svg-icon name="settings"></svg-icon></button>
+
+                <div class="dropdown-menu indent" #menu>
+                    <a class="dropdown-item" #menuItem routerLink="/admin" *ngIf="currentUser.hasPermission('access.admin')">
+                        <svg-icon name="dashboard"></svg-icon>
+                        <span trans>Admin Area</span>
+                    </a>
+                    <a class="dropdown-item" #menuItem routerLink="/account-settings">
+                        <svg-icon name="account-circle"></svg-icon>
+                        <span trans>Account Settings</span>
+                    </a>
+                    <a class="dropdown-item" #menuItem routerLink="/admin/artists/new" *ngIf="currentUser.hasPermission('artists.create')">
+                        <svg-icon name="mic"></svg-icon>
+                        <span trans>New Artist</span>
+                    </a>
+                    <a class="dropdown-item" #menuItem routerLink="/admin/albums" [queryParams]="{newAlbum: true}"  *ngIf="currentUser.hasPermission('albums.create')">
+                        <svg-icon name="album"></svg-icon>
+                        <span trans>New Album</span>
+                    </a>
+                    <a class="dropdown-item" #menuItem routerLink="/admin/tracks" [queryParams]="{newTrack: true}" *ngIf="currentUser.hasPermission('tracks.create')">
+                        <svg-icon name="audiotrack"></svg-icon>
+                        <span trans>New Track</span>
+                    </a>
+                    <div class="dropdown-item" #menuItem (click)="auth.logOut()">
+                        <svg-icon class="logout-icon" name="exit-to-app"></svg-icon>
+                        <span trans>Logout</span>
+                    </div>
+                </div>
+            </dropdown>
+        </div>
+
+        <ng-container *ngIf="!currentUser.isLoggedIn()">
+            <a routerLink="/login" class="button primary" trans>Login</a>
+            <a routerLink="/register" class="button" trans>Register</a>
+        </ng-container>
+    </div>
+
+    <div class="your-music-container">
+        <div class="title" trans>Your Music</div>
+        <custom-menu position="sidebar-secondary" class="sidebar-nav"></custom-menu>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="playlists-container">
+        <div class="header">
+            <div class="name" trans>Playlists</div>
+            <button class="no-style new-playlist-button" (click)="openNewPlaylistModal()">
+                <svg-icon name="playlist-add"></svg-icon>
+            </button>
+        </div>
+        <div class="playlists sidebar-nav">
+            <div class="sidebar-nav-item playlist" *ngFor="let playlist of playlists.get()" [contextMenu]="{item: playlist, type: 'playlist'}">
+                <a [routerLink]="urls.playlist(playlist)">{{playlist.name}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="current-track" *ngIf="player.cued()" [contextMenu]="{item: player.getCuedTrack(), type: 'track'}">
+    <img [src]="getTrackImage(player.getCuedTrack())">
+    <div class="meta">
+        <a class="track-name hover-underline" [routerLink]="urls.track(player.getCuedTrack())">{{player.getCuedTrack().name}}</a>
+        <artists-links-list class="artist-name" [artists]="player.getCuedTrack().artists"></artists-links-list>
+    </div>
+    <div class="toggle-track">
+        <library-track-toggle-button [track]="player.getCuedTrack()"></library-track-toggle-button>
+    </div>
+</div>

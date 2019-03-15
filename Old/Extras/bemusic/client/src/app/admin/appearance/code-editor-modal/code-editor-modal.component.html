@@ -1,0 +1,21 @@
+<div class="backdrop"></div>
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h2 class="modal-title" trans>Code Editor</h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button">
+            <svg-icon name="close"></svg-icon>
+        </button>
+    </div>
+
+    <div class="editor-container">
+        <div class="editor" #editor></div>
+    </div>
+
+    <div class="buttons right">
+        <button (click)="close()" type="button" class="button cancel" trans>Cancel</button>
+        <button type="submit" class="button primary submit-button" (click)="confirm()" trans>Update</button>
+    </div>
+
+    <loading-indicator [isVisible]="loading" class="overlay"></loading-indicator>
+</div>

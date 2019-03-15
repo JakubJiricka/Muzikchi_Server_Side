@@ -1,0 +1,17 @@
+<button class="no-style previous-track" (click)="player.playPrevious()" [disabled]="!player.ready()">
+  <svg-icon name="skip-previous"></svg-icon>
+</button>
+
+<button class="no-style play-track" [disabled]="!player.ready()" [class.hidden]="player.isPlaying() || player.isBuffering()" (click)="player.play()">
+  <svg-icon name="play-arrow"></svg-icon>
+</button>
+
+<button class="no-style pause-track" [disabled]="!player.ready()" [class.hidden]="!player.isPlaying()" (click)="player.pause()">
+  <svg-icon name="pause"></svg-icon>
+</button>
+
+<div class="buffering" [class.hidden]="!player.isBuffering()"><div class="spinner"></div></div>
+
+<button class="no-style next-track" (click)="player.playNext()" [disabled]="!player.ready()">
+  <svg-icon name="skip-next"></svg-icon>
+</button>

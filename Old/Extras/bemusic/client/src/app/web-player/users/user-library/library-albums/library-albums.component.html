@@ -1,0 +1,20 @@
+<div class="scroll-container" customScrollbar #scrollContainer>
+    <filterable-page-header class="margin" [filterQuery]="filterQuery">
+        <sorting-header [name]="order">
+            <div class="dropdown-item" #menuItem (click)="sort('added_at')" trans>Date Added</div>
+            <div class="dropdown-item" #menuItem (click)="sort('name')" trans>Name</div>
+            <div class="dropdown-item" #menuItem (click)="sort('artist.name')" trans>Artist Name</div>
+        </sorting-header>
+    </filterable-page-header>
+
+    <ad-host slot="ad_slot_1" class="margin-bottom"></ad-host>
+
+    <media-grid>
+        <album-item *ngFor="let album of filteredItems" [album]="album" [contextMenu]="{item: album, type: 'album'}" [scrollContainer]="scrollContainer"></album-item>
+    </media-grid>
+
+    <no-results-message *ngIf="! filteredItems || ! filteredItems.length">
+        <span primary-text trans>Nothing to display.</span>
+        <span secondary-text trans>You have not added any albums to your library yet.</span>
+    </no-results-message>
+</div>

@@ -1,0 +1,224 @@
+@import "../../scss/variables";
+@import "../../scss/admin-pill-nav";
+@import "../../scss/setting-checkbox";
+@import "../../scss/flex-table";
+@import "../../scss/flex-table-panel";
+
+admin {
+  height: 100%;
+  background-color: $admin-background-color;
+
+  .navbar {
+    background-color: $admin-nav-background-color;
+    color: $admin-nav-text-color;
+    height: $admin-nav-height;
+    box-shadow: $admin-nav-box-shadow;
+    position: relative;
+    z-index: 2;
+
+    .nav-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      padding-right: 20px;
+
+      .toggle-sidebar > button {
+        display: block;
+        vertical-align: middle;
+        margin-left: 20px;
+
+        > svg-icon {
+          vertical-align: middle;
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    .nav-group {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $border-color;
+
+      &.logo-group {
+        justify-content: center;
+        flex: 0 0 $admin-left-col-width;
+        width: $admin-left-col-width;
+        background-color: $admin-left-col-background-color;
+        border-bottom: 1px solid $admin-left-col-border-color;
+      }
+
+      &.flex-grow-none {
+        flex-grow: 0;
+      }
+    }
+
+    .left {
+      flex: 1 1 auto;
+      flex-grow: 3;
+    }
+
+    .right {
+      flex: 1 1 auto;
+      text-align: right;
+      justify-content: flex-end;
+    }
+
+    .logo {
+      display: block;
+      width: auto;
+      height: 55px;
+
+      @media only screen and (max-width: $tablet) {
+        height: 26px;
+      }
+    }
+
+    .logged-in-user-widget {
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+      font-weight: normal;
+      position: relative;
+      cursor: pointer;
+
+      &:empty {
+        display: none;
+      }
+
+      .email {
+        margin: 0 20px 0 10px;
+
+        .dropdown-icon {
+          position: absolute;
+          top: 8px;
+          right: -4px;
+        }
+      }
+
+      .avatar {
+        height: 40px;
+        width: 40px;
+
+        > img {
+          height: inherit;
+          width: inherit;
+          object-fit: cover;
+        }
+      }
+
+      .mobile-toggle {
+        display: none;
+
+        > svg-icon {
+          display: block;
+        }
+      }
+
+      .dropdown-menu {
+        top: 10px;
+
+        .logout-item {
+          border-top: 1px solid $border-color;
+
+          > svg-icon {
+            color: $danger-bg-color;
+          }
+        }
+      }
+
+      @media only screen and (max-width: $tablet) {
+        .avatar, .email {
+          display: none;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+      }
+    }
+  }
+
+  > .content {
+    display: flex;
+    height: calc(100% - #{$admin-nav-height+1});
+
+    > .left-column {
+      display: flex;
+      flex-direction: column;
+      width: $admin-left-col-width;
+      flex: 0 0 $admin-left-col-width;
+      background-color: $admin-left-col-background-color;
+      height: 100%;
+      color: $admin-left-col-text-color;
+      transition: all .4s cubic-bezier(.25, .8, .25, 1);
+      box-shadow: $box-shadow-2;
+      z-index: 1;
+      overflow: auto;
+
+      &.closed {
+        transform: translateX(-$admin-left-col-width);
+        width: 0;
+        flex: 0;
+      }
+
+      > .menu-items {
+        width: 100%;
+
+        > .menu-item {
+          display: block;
+          width: 100%;
+          padding: 15px 10px 15px 25px;
+          border-left: 5px solid transparent;
+          border-bottom: 1px solid $admin-left-col-border-color;
+          font-size: 1.54rem;
+          font-weight: 400;
+          color: $admin-left-col-text-color;
+
+          > svg-icon {
+            position: relative;
+            vertical-align: middle;
+            margin-right: 6px;
+            top: -1px;
+            width: 20px;
+            height: 20px;
+          }
+
+          &:hover {
+            background-color: $admin-left-col-active-color;
+          }
+
+          &.router-link-active {
+            background-color: $admin-left-col-active-color;
+            border-left-color: $accent-color;
+          }
+        }
+      }
+
+      > .version {
+        margin-top: auto;
+        padding: 5px 8px;
+        font-size: 1.3rem;
+      }
+    }
+
+    > .content-inner {
+      height: 100%;
+      flex: 1 1 auto;
+      overflow: auto;
+      background-color: $gray-bg-color;
+    }
+
+    .flex-table-panel {
+      border: 1px solid $border-color;
+      background-color: $admin-table-background-color;
+      border-radius: 3px;
+      font-weight: 500;
+
+      &.spacing {
+        margin: 25px;
+      }
+    }
+  }
+}

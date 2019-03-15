@@ -1,0 +1,537 @@
+.tc_wrap td mark{
+    background: transparent;
+}
+
+.tc_wrap td mark.yes {
+    color: #7BBBA9;
+}
+
+.tc_wrap td mark.error {
+    color: #E48888;
+}
+
+.tc_wrap td mark.tip {
+    color: #D2BF5B;
+}
+
+.tc_wrap td code {
+    background: transparent;
+}
+
+.tc_wrap #poststuff h3 {
+    background-color: #FFFFFF;
+    padding: 15px 20px 15px 30px;
+    font-family: 'Open Sans', Arial, serif;
+    font-weight: 500;
+    font-size: 1.6em;
+    letter-spacing: 0.05em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #5d5d5d;
+}
+
+.post-type-tc_tickets_instances #poststuff h2 {
+    background-color: #FFFFFF;
+    padding: 15px 20px 15px 30px;
+    font-family: 'Open Sans', Arial, serif;
+    font-weight: 500;
+    font-size: 1.3em;
+    letter-spacing: 0.05em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #5d5d5d;
+}
+
+.post-type-tc_tickets_instances #poststuff .inside {
+    padding: 22px 30px 30px;
+}
+
+.post-type-tc_tickets_instances .checkins-table.widefat td, 
+.post-type-tc_tickets_instances .checkins-table.widefat th,
+.post-type-tc_orders .order-details.widefat td, 
+.post-type-tc_orders .order-details.widefat th {
+    padding: 10px 19px;
+}
+
+.post-type-tc_tickets_instances .order-details.widefat th,
+.post-type-tc_orders .order-details.widefat th {
+    background-color: #fff;
+}
+
+
+
+.tc_events_page_tc_ticket_templates .widefat th {
+    padding: 10px 19px 10px 10px;
+}
+
+.tc_wrap #poststuff .inside {
+    padding-left: 30px;
+}
+
+.tc_events_page_tc_settings {
+    background-color: #FBFBFB;
+    height: auto;
+}
+
+.tc_wrap .nav-tab-small .nav-tab, 
+.tc_wrap h3 .nav-tab {
+    padding: 10px 20px;
+    border-color: #E2E2E2;
+    -moz-box-shadow: inset 0px -2px 10px -6px #888;
+    -webkit-box-shadow: inset 0px -2px 10px -6px #888;
+    box-shadow: inset 0px -2px 10px -6px #888;
+    border-left: none;
+    margin-left: 0;
+    box-shadow: none;
+}
+
+.tc_wrap  .postbox {
+    border-radius: 5px;
+}
+
+.post-type-tc_events #poststuff .tc_tooltip,
+.tc_wrap #poststuff .tc_tooltip,
+.post-type-tc_tickets #poststuff .tc_tooltip {
+    color: #6b5f89;
+}
+
+.post-type-tc_events .ui-tooltip .ui-tooltip-content a,
+.tc_wrap .ui-tooltip .ui-tooltip-content a,
+.post-type-tc_tickets .ui-tooltip .ui-tooltip-content a {
+    color: #fff;
+    font-weight: bold;
+}
+
+body .ui-tooltip {
+    background: #6b5f89;
+    color: #fff;
+    box-shadow: none;
+    border: none;
+    padding: 15px 18px;
+    font-weight: lighter;
+    font-family: 'Open Sans', Arialm sans-serif;
+    font-size: 1.05em;
+    line-height: 1.6em;
+}
+
+
+.nav-tab {
+    background-color: #FBFBFB;
+}
+
+.tc_wrap .nav-tab-active, 
+.tc_wrap .nav-tab-active:focus, 
+.tc_wrap .nav-tab-active:focus:active, 
+.tc_wrap .nav-tab-active:hover {
+    background-color: #6b5f89;
+    color: #fff;
+    border-color: #6b5f89;
+}
+
+.tc_wrap .chosen-container-active.chosen-with-drop .chosen-single,
+.tc_wrap .chosen-container .chosen-drop {
+    border: 1px solid #DADADA;
+}
+
+.tc_wrap .wrap h2.nav-tab-wrapper, 
+.tc_wrap h1.nav-tab-wrapper, 
+.tc_wrap h3.nav-tab-wrapper {
+    border-color: #E2E2E2;
+}
+
+.tc_wrap h3.nav-tab-wrapper .nav-tab:first-child {
+    margin-left: 0;
+    border-left: 1px solid #E2E2E2;
+}
+
+.tc_wrap .chosen-container-single .chosen-single {
+    box-shadow: none;
+    background: #fff;
+    border: 1px solid #dde4ef;
+    -moz-box-shadow: inset 0 0 4px 1px rgba(185, 196, 211, 0.1);
+    -webkit-box-shadow: inset 0 0 4px 1px rgba(185, 196, 211, 0.1);
+    box-shadow: inset 0 0 4px 1px rgba(185, 196, 211, 0.1);
+}
+
+.tc_wrap input[type="text"], 
+.post-type-tc_events input[type="text"], 
+.post-type-tc_orders input[type="text"],
+.post-type-tc_tickets input[type="text"],
+.tc_wrap textarea {
+    border: 1px solid #dde4ef;
+    -moz-box-shadow: inset 0 0 4px 1px rgba(185, 196, 211, 0.1);
+    -webkit-box-shadow: inset 0 0 4px 1px rgba(185, 196, 211, 0.1);
+    box-shadow: inset 0 0 4px 1px rgba(185, 196, 211, 0.1);
+}
+
+.post-type-tc_tickets_instances.wp-admin .checkin-table label {
+    margin: 4px 0 0 0;
+}
+
+.post-type-tc_orders select {
+    padding: 3px;
+    border: 1px solid #dde4ef;
+    -moz-box-shadow: inset 0 0 4px 1px rgba(185, 196, 211, 0.1);
+    -webkit-box-shadow: inset 0 0 4px 1px rgba(185, 196, 211, 0.1);
+    box-shadow: inset 0 0 4px 1px rgba(185, 196, 211, 0.1);
+}
+
+.tc_wrap .chosen-container-active.chosen-with-drop .chosen-single {
+    background: none;
+}
+.post-type-tc_events .button-primary,
+.tc_wrap .button-primary,
+.post-type-tc_tickets .button-primary,
+.post-type-tc_tickets_instances .button-primary,
+.post-type-tc_orders .button-primary,
+.tc_events_page_tc_ticket_templates .button-primary {
+    background-color: #6b5f89;/*#ffdf3b;   */
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+    color: #fff;/*#3b3b3b*/
+    border: 1px solid #6b5f89; /*#ffdf3b;*/
+    font-weight: bold;
+    transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+}
+
+.post-type-tc_events .button-secondary,
+.post-type-tc_events .preview.button,
+.tc_wrap .button-secondary,
+.post-type-tc_tickets h1 a.page-title-action,
+.post-type-tc_events h1 a.page-title-action {
+    box-shadow: none;
+}
+
+.post-type-tc_tickets h1 a.page-title-action,
+.post-type-tc_events h1 a.page-title-action,
+.tc_events_page_tc_ticket_templates h2 a.add-new-h2,
+.post-type-tc_events h2 a.add-new-h2 {
+    padding: 4px 10px 6px 10px;
+}
+
+.post-type-tc_tickets h1 a.page-title-action:hover,
+.post-type-tc_tickets h1 a.page-title-action:focus,
+.post-type-tc_events h1 a.page-title-action:hover,
+.post-type-tc_events h1 a.page-title-action:focus,
+.tc_events_page_tc_ticket_templates h2 a.add-new-h2:hover,
+.tc_events_page_tc_ticket_templates h2 a.add-new-h2:focus,
+.post-type-tc_events h2 a.add-new-h2:hover,
+.post-type-tc_events h2 a.add-new-h2:focus {
+    background-color: #6b5f89;
+    border: 1px solid #6b5f89;
+}
+
+.post-type-tc_events .button-secondary:focus,
+.post-type-tc_events .preview.button:focus,
+.tc_wrap .button-secondary:focus {
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+} 
+
+.tc_wrap .button-primary:hover,
+.tc_wrap .button-primary:focus,
+.post-type-tc_events .button-primary:hover,
+.post-type-tc_events .button-primary:focus,
+.post-type-tc_tickets .button-primary:hover,
+.post-type-tc_tickets .button-primary:focus,
+.post-type-tc_tickets_instances .button-primary:hover,
+.post-type-tc_tickets_instances .button-primary:focus,
+.post-type-tc_orders .button-primary:hover,
+.post-type-tc_orders .button-primary:focus,
+.tc_events_page_tc_ticket_templates .button-primary:hover,
+.tc_events_page_tc_ticket_templates .button-primary:focus{
+    color: #9a9a9a;    
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+.wp-core-ui .tc_wrap .button-primary-disabled, 
+.wp-core-ui .tc_wrap .button-primary.disabled,
+.wp-core-ui .tc_wrap .button-primary:disabled, 
+.wp-core-ui .tc_wrap .button-primary[disabled],
+.post-type-tc_events.wp-core-ui .button-primary-disabled, 
+.post-type-tc_events.wp-core-ui .button-primary.disabled,
+.post-type-tc_events.wp-core-ui .button-primary:disabled, 
+.post-type-tc_events.wp-core-ui .button-primary[disabled],
+.post-type-tc_tickets.wp-core-ui .button-primary-disabled, 
+.post-type-tc_tickets.wp-core-ui .button-primary.disabled,
+.post-type-tc_tickets.wp-core-ui .button-primary:disabled, 
+.post-type-tc_tickets.wp-core-ui .button-primary[disabled],
+.post-type-tc_orders.wp-core-ui .button-primary-disabled, 
+.post-type-tc_orders.wp-core-ui .button-primary.disabled,
+.post-type-tc_orders.wp-core-ui .button-primary:disabled, 
+.post-type-tc_orders.wp-core-ui .button-primary[disabled],
+.tc_events_page_tc_ticket_templates.wp-core-ui .button-primary-disabled, 
+.tc_events_page_tc_ticket_templates.wp-core-ui .button-primary.disabled,
+.tc_events_page_tc_ticket_templates.wp-core-ui .button-primary:disabled, 
+.tc_events_page_tc_ticket_templates.wp-core-ui .button-primary[disabled]{
+    color: #9a9a9a !important;
+    background-color: transparent !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.button-primary.tc-tickera-button {
+    background-color: #6b5f89;   
+    text-shadow: none;
+    border: none;
+    padding: 7px 20px;
+    height: 40px;
+    box-shadow: none;
+    border: 1px solid #6b5f89;
+}
+
+.button-primary.tc-tickera-button:hover {
+    color: #9a9a9a;
+    border: 1px solid rgba(0, 0, 0, 0.2);    
+    background-color: transparent;
+}
+
+.post-type-tc_tickets_instances .checkins-table .status_green {
+    padding: 4px 10px;
+    color: #fff;
+    background-color: #7BBBA9;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;   
+}
+
+
+.post-type-tc_tickets_instances .checkins-table .status_red {
+    padding: 4px 10px;
+    color: #fff;
+    background-color: #E48888;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;   
+}
+
+.post-type-tc_orders #poststuff .inside {
+    padding: 10px 30px 30px 30px ;
+}
+
+#ticket_elements li {
+    border-bottom: 5px solid #6b5f89;
+}
+
+#ticket_elements li:hover {
+    border-bottom: 5px solid rgba(135, 117, 170, 0.4);
+}
+
+#ticket_elements li:hover i,
+#ticket_elements li:hover .element_title {
+    color: #6b5f89;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.tc_events_page_tc_ticket_templates .ui-state-default, 
+.tc_events_page_tc_ticket_templates .ui-widget-content .ui-state-default, 
+.tc_events_page_tc_ticket_templates .ui-widget-header .ui-state-default {
+    border: 1px solid #E8E8E8;
+}
+
+.ticket-elements-drop-area li.ui-sortable-helper, 
+.ticket-elements-drop-area li:hover {
+    border-color: rgba(135, 117, 170, 0.4);
+}
+
+
+
+/* barcode scanner */
+
+.tc_wrap .barcode_status.error, 
+.tc_wrap .barcode_status.error_exists {
+    color: #fff;
+    padding: 6px 12px;
+    background-color: #E48888;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.tc_wrap .barcode_status.default {
+    padding: 4px 10px;
+    display: inline-block;
+    color: #5D5D5D;
+    background-color: #E6E6E6;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.tc_wrap .barcode_status.success {
+    padding: 4px 10px;
+    display: inline-block;
+    color: #fff;
+    background-color: #7BBBA9;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.tc_wrap .barcode_holder h1 {
+    font-size: 3.4em;
+    font-weight: lighter;
+    font-family: 'Open Sans', Arial, serif;
+    display: inline-block;
+    margin: 0 0 20px;
+}
+
+
+/* addons page */
+
+.tc_addon:hover,
+.tc_wrap .tc-custom-forms-droparea > ul > li:hover {
+    border-bottom: 4px solid #6b5f89;
+}
+
+.tc_addon,
+.tc_wrap .tc-custom-forms-droparea > ul > li {
+    border-bottom: 4px solid rgba(107, 95, 137, 0.4);
+}
+
+.post-type-tc_events .search-box input[type="text"] {
+    height: 28px;
+}
+
+.tc_wrap #form_elements .ui-state-default:hover {
+    background-color: #6b5f89;
+    border-color: #6b5f89;
+}
+
+/* orders */
+
+.order_status .tc_order_cancelled {
+    padding: 4px 10px;
+    display: inline-block;
+    color: #fff;
+    font-size: 0.9em;
+    background-color: #CCC;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin: 7px 0 0 0;
+}
+
+.order_status .tc_order_paid {
+    padding: 4px 10px;
+    display: inline-block;
+    color: #fff;
+    font-size: 0.9em;
+    background-color: #7BBBA9;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin: 7px 0 0 0;
+}
+
+.order_status .tc_order_recieved {
+    padding: 4px 10px;
+    display: inline-block;
+    color: #5D5D5D;
+    font-size: 0.9em;
+    background-color: #E6E6E6;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin: 7px 0 0 0;
+}
+
+.order_status .tc_order_fraud {
+    padding: 4px 10px;
+    display: inline-block;
+    color: #fff;
+    font-size: 0.9em;
+    background-color: #E48888;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin: 7px 0 0 0;
+}
+
+
+/* events */
+
+.misc-pub-section.event_end_date_time:before,
+.misc-pub-section.event_date_time:before {
+    margin: 23px 0 0 0 ;
+}
+
+/* orders */
+
+.post-type-tc_orders .order-table td,
+.post-type-tc_orders .order-table th {
+    padding: 10px;
+}
+
+/* date & time icons */
+.post-type-tc_events .misc-pub-section.event_date_time:before{
+    color: #7BBBA9;/*rgb(107,187,26);*/
+}
+
+.post-type-tc_events .misc-pub-section.event_end_date_time:before{
+    color: #E48888;/*#D54E21;*/
+}
+
+.tc-control.tc-on {
+    background: #6b5f89 !important;
+}
+
+/* datepicker */
+
+.post-type-tc_tickets .datepicker > .datepicker_header {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #8a7da9;
+}
+
+.post-type-tc_tickets .datepicker > .datepicker_header > span {
+    color: #fff;
+}
+
+.post-type-tc_tickets .datepicker > .datepicker_header > a {
+    color: #fff;
+}
+
+.post-type-tc_tickets .datepicker > .datepicker_header > a:hover {
+    background: none;
+    color: #fff;
+}
+
+.post-type-tc_tickets .datepicker > .datepicker_header > .icon-home > svg > g > path {
+    fill: #fff;
+}
+
+.post-type-tc_tickets .datepicker > .datepicker_inner_container > .datepicker_calendar > .datepicker_table > tbody > tr > td.wday_sat {
+    color: #8a7da9;
+}
+
+/* menu color */
+
+#adminmenu li.wp-has-current-submenu#menu-posts-tc_events a.wp-has-current-submenu {
+    background-color: #6b5f89;
+}
+
+#post_event_append_tickets label span {
+    float: right;
+    margin-left: 10px;
+}
+
+.tc_wrap .wp-picker-container .iris-picker {
+    z-index: 5;
+}
+
+.post-type-tc_tickets_instances .toggle-indicator{
+    display: none;
+}

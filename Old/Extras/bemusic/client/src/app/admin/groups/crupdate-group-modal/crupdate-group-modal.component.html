@@ -1,0 +1,56 @@
+<div class="backdrop"></div>
+
+<form class="modal-content" autocomplete="off" (submit)="confirm()" ngNativeValidate>
+    <div class="modal-header">
+        <h2 class="modal-title" *ngIf="updating" trans>Update Group</h2>
+        <h2 class="modal-title" *ngIf="!updating" trans>Create a New Group</h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button"><svg-icon name="close"></svg-icon></button>
+    </div>
+
+   <div class="many-inputs">
+       <div class="input-container">
+           <label for="name" trans>Name</label>
+           <input type="text" [(ngModel)]="model.name" name="name" id="name" required>
+           <div class="error" *ngIf="errors.name">{{errors.name}}</div>
+       </div>
+
+       <div class="permissions-panel">
+           <div class="header">
+               <span class="title" trans>Group Permissions</span>
+               <button class="button primary flat" (click)="showAddPermissionsModal()" type="button" trans>Add</button>
+           </div>
+           <div class="manage-permissions" *ngIf="!addNewPermissionsActive">
+               <div class="no-permissions" *ngIf="!(model.permissions | mapToIterable).length" trans>No permissions yet.</div>
+
+               <div class="permission" *ngFor="let permission of model.permissions | mapToIterable">
+                   <span>{{permission.key}}</span>
+                   <button class="remove-icon round-close-button" title="Remove" (click)="removePermission(permission.key)"><svg-icon name="close"></svg-icon></button>
+               </div>
+           </div>
+
+           <div class="error no-input-error" *ngIf="errors.permissions">{{errors.permissions}}</div>
+       </div>
+
+       <div class="setting-checkbox">
+           <input type="checkbox" class="pretty-checkbox" name="default" id="default" [(ngModel)]="model.default">
+           <label for="default" trans>Default</label>
+           <p trans>Assign this group to new users automatically.</p>
+           <div class="error" *ngIf="errors.default">{{errors.default}}</div>
+       </div>
+
+       <div class="setting-checkbox">
+           <input type="checkbox" class="pretty-checkbox" name="guest" id="guest" [(ngModel)]="model.guests">
+           <label for="guest" trans>Guests</label>
+           <p trans>Assign this group to guests (not logged in users).</p>
+           <div class="error" *ngIf="errors.guests">{{errors.guests}}</div>
+       </div>
+   </div>
+
+    <div class="buttons right">
+        <button (click)="close()" type="button" class="button cancel" trans>Cancel</button>
+        <button type="submit" class="button primary">
+            <span *ngIf="updating" trans>Update</span>
+            <span *ngIf="!updating" trans>Create</span>
+        </button>
+    </div>
+</form>

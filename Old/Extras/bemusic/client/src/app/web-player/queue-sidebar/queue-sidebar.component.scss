@@ -1,0 +1,113 @@
+@import "../../../scss/variables";
+
+queue-sidebar {
+  display: block;
+  flex: 0 0 250px;
+  width: 250px;
+  max-width: 250px;
+  height: calc(100% - #{$wp-video-minimized-height});
+  overflow: auto;
+  background-color: $wp-nav-sidebar-bg-color;
+  border-left: 1px solid $wp-border-color-200;
+  transition: flex .4s cubic-bezier(.25,.8,.25,1);
+
+  @media only screen and (max-width: $laptop - 1) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: $box-shadow-4;
+  }
+
+  &.hide {
+    width: 0;
+    flex: 0;
+  }
+
+  &.full-height {
+    height: 100%;
+  }
+
+  .queue-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 8px;
+    margin-bottom: 5px;
+    background-color: lighten($wp-bg-color-400, 2%);
+    position: relative;
+
+    &.active {
+      background-color: $accent-color;
+
+      > .meta > .track-name, > .meta > .artist-name {
+        color: $wp-text-color-100;
+      }
+      
+      playback-control-button {
+        display: flex;
+      }
+    }
+    
+    &:hover {
+      playback-control-button {
+        display: flex;
+      }
+      
+      > .toggle-menu {
+        display: block;
+      }
+    }
+
+    > .img-container {
+      width: 35px;
+      height: 35px;
+      flex: 0 0 35px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+
+      > img, > playback-control-button {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      > playback-control-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+      }
+    }
+
+    > .meta {
+      flex: 1 1 auto;
+      margin-left: 10px;
+      overflow: hidden;
+
+      > .track-name, > .artist-name {
+        max-width: 190px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      > .track-name {
+        font-size: 1.4rem;
+        color: #C2C2CA;
+      }
+
+      > .artist-name {
+        font-size: 1.2rem;
+        color: $wp-text-color-300;
+      }
+    }
+
+    > .toggle-menu {
+      display: none;
+      
+      > svg-icon {
+        display: block;
+      }
+    }
+  }
+}

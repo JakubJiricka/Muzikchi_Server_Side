@@ -1,0 +1,20 @@
+<div class="header">
+    <div class="title">Analytics</div>
+    <div class="subtitle" trans>Configure google analytics integration and credentials.</div>
+</div>
+
+<form class="body many-inputs" (submit)="saveSettings()" ngNativeValidate>
+    <div class="input-container">
+        <label for="analytics.google_id" trans>Google Analytics Application ID</label>
+        <input name="analytics.google_id" id="analytics.google_id" [(ngModel)]="state.client['analytics.google_id']" required>
+        <p trans>Google application ID. Can be the same one used for google social login.</p>
+    </div>
+
+    <div class="input-container">
+        <label for="analytics.tracking_code" trans>Google Analytics Tracking Code</label>
+        <input name="analytics.tracking_code" id="analytics.tracking_code" [(ngModel)]="state.client['analytics.tracking_code']" required min="1" max="20" placeholder="UA-******-2">
+        <p trans>Google analytics tracking code only, not the whole javascript code snippet.</p>
+    </div>
+
+    <button class="button primary update-button" type="submit">Update</button>
+</form>

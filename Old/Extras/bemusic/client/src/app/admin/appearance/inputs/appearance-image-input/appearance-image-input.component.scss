@@ -1,0 +1,60 @@
+@import "../../../../../scss/variables";
+
+appearance-image-input {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 15px;
+
+  .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 80px;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background-color: darken(#fff, 8%);
+    overflow: hidden;
+
+    > img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+
+    > .no-image {
+      text-align: center;
+
+      > svg-icon {
+        display: block;
+        color: $icon-color-light;
+        width: 40px;
+        height: 40px;
+      }
+
+      > .text {
+        color: $link-color;
+        margin-top: 3px;
+        font-size: 1.3rem;
+      }
+    }
+
+    > .actions-dropdown {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      color: $icon-color-dark;
+
+      .trigger-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<button class="no-style play-button" [class.visible]="!trackIsPlaying()" (click)="play.emit(); $event.stopPropagation()">
+    <svg-icon name="play-arrow"></svg-icon>
+</button>
+
+<button class="no-style pause-button" [class.visible]="trackIsPlaying()" (click)="pause.emit(); $event.stopPropagation()">
+    <svg-icon name="pause"></svg-icon>
+</button>
+
+<playing-indicator [class.visible]="trackIsPlaying()"></playing-indicator>
+
+<ng-content></ng-content>

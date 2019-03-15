@@ -1,0 +1,22 @@
+<div class="player-content" [class.mobile]="state.isMobile">
+    <ng-container *ngIf="!state.isMobile">
+        <nav-sidebar *ngIf="!state.isMobile"></nav-sidebar>
+        <search-slideout-panel customScrollbar></search-slideout-panel>
+        <div class="search-panel-overlay" [class.visible]="searchPanel.isOpen"></div>
+    </ng-container>
+
+    <router-outlet></router-outlet>
+
+    <queue-sidebar *ngIf="!state.isMobile" [class.full-height]="shouldHideVideo"></queue-sidebar>
+</div>
+
+<player-controls *ngIf="!state.isMobile"></player-controls>
+<mobile-player-controls *ngIf="state.isMobile"></mobile-player-controls>
+
+<fullscreen-overlay [class.mobile]="state.isMobile" ngClass="strategy-{{player.getPlaybackStrategy()}}" [class.hide-video]="shouldHideVideo" customScrollbar>
+    <div class="player-container youtube-player" id="youtube-player"></div>
+    <div class="player-container html5-player"></div>
+    <div class="player-container soundcloud-player"></div>
+</fullscreen-overlay>
+
+<loading-indicator [isVisible]="state.loading" class="overlay"></loading-indicator>

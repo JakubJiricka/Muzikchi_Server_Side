@@ -1,0 +1,40 @@
+@import "../../../scss/variables";
+
+error-log {
+  display: block;
+  position: relative;
+
+  .log-item {
+    border-bottom: 1px solid $border-color;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+
+    &.has-seen .title {
+      font-weight: 400;
+    }
+    
+    > .title {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    > .description {
+      color: $text-color-secondary;
+    }
+    
+    > .meta {
+      display: flex;
+      color: $text-color-secondary;
+      margin-top: 5px;
+
+      > .meta-item {
+        border-left: 1px solid $border-color-light;
+        padding: 0 5px;
+
+        &:first-of-type {
+          border-left: none;
+        }
+      }
+    }
+  }
+}

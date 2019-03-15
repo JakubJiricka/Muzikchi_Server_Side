@@ -1,0 +1,68 @@
+<section class="flex-table-panel spacing">
+    <div class="flex-table-panel-header">
+        <div class="header-inner default" *ngIf="!selectedItems.length">
+            <div class="left">
+                <button type="button" class="button primary" (click)="showCrupdatePlaylistModal()" trans>New Playlist</button>
+            </div>
+            <div class="right">
+                <div class="input-container">
+                    <input type="text" class="search" placeholder="Search Playlists" trans-placeholder [formControl]="searchQuery">
+                    <svg-icon name="search"></svg-icon>
+                </div>
+            </div>
+        </div>
+        <div class="header-inner selected" *ngIf="selectedItems.length">
+            <div class="left">{{selectedItems.length}} <span trans>Playlist Selected</span></div>
+            <div class="right">
+                <button class="no-style" tooltip="Delete" *ngIf="currentUser.hasPermission('playlists.delete')"
+                        (click)="confirmPlaylistsDeletion()">
+                    <svg-icon name="delete"></svg-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="flex-table flex-table-bordered flex-table-compact flex-table-center-vertical">
+        <div class="flex-table-row flex-table-header">
+            <div class="flex-table-item width-1">
+                <input type="checkbox" class="pretty-checkbox" id="toggle-all-playlists-checkbox"
+                       (click)="toggleAllSelectedItems()">
+                <label for="toggle-all-playlists-checkbox"><span>.</span></label>
+            </div>
+            <div class="flex-table-item width-2 image"></div>
+            <div class="flex-table-item" trans>Name</div>
+            <div class="flex-table-item" trans>Creator</div>
+            <div class="flex-table-item" trans>Public</div>
+            <div class="flex-table-item" trans>Views</div>
+            <div class="flex-table-item" trans>Last Updated</div>
+            <div class="flex-table-item width-1"></div>
+        </div>
+        <div class="flex-table-row" *ngFor="let playlist of items; let index = index;"
+             [class.selected]="isItemSelected(playlist.id)">
+            <div class="flex-table-item width-1" (click)="$event.stopPropagation()">
+                <input type="checkbox" class="pretty-checkbox" id="playlist-checkbox-{{index}}"
+                       (change)="toggleSelectedItem(playlist.id)" [checked]="isItemSelected(playlist.id)">
+                <label for="playlist-checkbox-{{index}}"><span>.</span></label>
+            </div>
+            <div class="flex-table-item width-2 image"><img [src]="getPlaylistImage(playlist)"></div>
+            <div class="flex-table-item">{{playlist.name}}</div>
+            <div class="flex-table-item">{{playlist.editors[0] && playlist.editors[0]['display_name']}}</div>
+            <div class="flex-table-item">{{playlist.public ? 'Yes' : 'No'}}</div>
+            <div class="flex-table-item">{{playlist.views}}</div>
+            <div class="flex-table-item">{{playlist.updated_at}}</div>
+            <div class="flex-table-item width-1 center edit-icon" tooltip="Edit Playlist">
+                <button class="no-style" type="button" (click)="showCrupdatePlaylistModal(playlist)" *ngIf="currentUser.hasPermission('playlists.update')">
+                    <svg-icon name="edit"></svg-icon>
+                </button>
+            </div>
+        </div>
+
+        <no-results-message *ngIf="paginator.doesNotHaveResults()">
+            <span primary-text trans>Nothing To Display.</span>
+            <span secondary-text trans>Seems like no playlists have been created yet.</span>
+        </no-results-message>
+    </div>
+
+    <div class="flex-table-panel-footer" [class.hidden]="paginator.params.perPage >= paginator.params.total">
+        <pagination-controls [paginator]="paginator" itemsName="Playlists"></pagination-controls>
+    </div>
+</section>

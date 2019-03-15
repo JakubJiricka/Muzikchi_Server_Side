@@ -1,0 +1,28 @@
+@import "variables";
+
+// Colors
+$ps-border-radius: 3px;
+
+$ps-rail-default-opacity: 0.8;
+$ps-rail-container-hover-opacity: 0.9;
+$ps-rail-hover-opacity: 0.9;
+
+$ps-bar-bg: transparent;
+$ps-bar-container-hover-bg: $wp-bg-color-300;
+$ps-bar-hover-bg: $wp-bg-color-200;
+$ps-rail-hover-bg: trasparent;
+
+// Sizes
+$ps-scrollbar-x-rail-bottom: 0px;
+$ps-scrollbar-x-rail-height: 15px;
+$ps-scrollbar-x-bottom: 2px;
+$ps-scrollbar-x-height: 8px;
+$ps-scrollbar-x-hover-height: 11px;
+
+$ps-scrollbar-y-rail-right: 0;
+$ps-scrollbar-y-rail-width: 8px;
+$ps-scrollbar-y-right: 0;
+$ps-scrollbar-y-width: 8px;
+$ps-scrollbar-y-hover-width: 8px;
+
+@import "~perfect-scrollbar/src/css/main";

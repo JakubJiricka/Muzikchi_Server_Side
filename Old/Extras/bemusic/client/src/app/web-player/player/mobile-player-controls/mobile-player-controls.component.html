@@ -1,0 +1,14 @@
+<ng-container *ngIf="player.cued()">
+    <player-seekbar></player-seekbar>
+
+    <div class="controls">
+        <button class="no-style maximize" (click)="overlay.maximize()"><svg-icon name="keyboard-arrow-up"></svg-icon></button>
+        <div class="track-info">
+            <div class="track-name">{{player.getCuedTrack().name}}</div>
+            <artists-links-list class="artist-name" [artists]="player.getCuedTrack().artists"></artists-links-list>
+        </div>
+        <main-playback-buttons></main-playback-buttons>
+    </div>
+</ng-container>
+
+<custom-menu position="mobile-bottom" class="nav"></custom-menu>

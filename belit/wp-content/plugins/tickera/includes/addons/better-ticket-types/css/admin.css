@@ -1,0 +1,96 @@
+.ticket_preview_link{
+    display: inline-block;
+    float: right;
+}
+
+#post-visibility-display .tc-control{
+    display: inline-block;
+}
+
+#poststuff .description{
+    padding-left: 2px;
+    padding-top: 2px;
+    display: block;
+}
+
+.misc-pub-post-status, .misc-pub-visibility,
+#preview-action{
+    display: none;
+}
+
+.misc-pub-section.event_date_time,
+.misc-pub-section.event_end_date_time{
+    position: relative; 
+}
+
+.misc-pub-section.event_date_time label,
+.misc-pub-section.event_end_date_time label{
+    margin-left: 25px;
+    display: block;
+}
+
+.misc-pub-section.event_date_time:before,
+.misc-pub-section.event_end_date_time:before{
+    content: '\f145';
+    top: 5px;
+    font: 400 20px/1 dashicons;
+    position: absolute;
+    color: #82878c;
+}
+
+.misc-pub-section.event_date_time:before{
+    color: rgb(107,187,26);
+}
+
+.misc-pub-section.event_end_date_time:before{
+    color: #D54E21;
+}
+
+.misc-pub-section .description{
+    display: none;
+}
+
+.misc-pub-section #event_date_time,
+.misc-pub-section #event_end_date_time{
+    width: 100%;
+}
+
+#side-sortables .file_url,
+#side-sortables .regular-text,
+#side-sortables select{
+    width: 100%;
+}
+
+.notice-success a{
+    display: none;
+}
+
+.misc-pub-section.event_append_tickets {
+    position: relative;
+}
+
+.misc-pub-section.event_append_tickets:before {
+    color: #82878c;
+}
+
+#post-body #append_tickets:before {
+    content: '\f524';
+    font: 400 20px/1 dashicons;
+    speak: none;
+    display: inline-block;
+    padding: 0 2px 0 0;
+    top: 0;
+    left: -1px;
+    position: relative;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none!important;
+}
+
+#post_event_append_tickets {
+    margin-top: 1px;
+    display: inline-block;
+    margin-right: 0px;
+    float: right;
+}

@@ -1,0 +1,50 @@
+@import "../../../../../scss/variables";
+
+player-seekbar {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  height: 100%;
+  cursor: pointer;
+
+  > .outer-track {
+    flex: 1 1 auto;
+    height: 100%;
+    margin: 0 10px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > .inner-track {
+      height: 5px;
+      background-color: $wp-bg-color-200;
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    > .progress-track {
+      position: absolute;
+      left: 0;
+      top: floor(($wp-controls-height / 2) - ($wp-controls-progress-height / 2));
+      height: 5px;
+      background-color: $accent-color;
+      width: 0;
+    }
+  }
+
+  .progress-handle {
+    position: absolute;
+    left: 0;
+    top: floor(($wp-controls-height / 2) - ($wp-controls-handle-height / 2));
+    width: $wp-controls-handle-height;
+    height: $wp-controls-handle-height;
+    background-color: $wp-text-color-100;
+    border-radius: 50%;
+  }
+
+  .elapsed-time, .track-length, .lyrics {
+    color: $wp-text-color-200;
+    font-size: 1.3rem;
+  }
+}

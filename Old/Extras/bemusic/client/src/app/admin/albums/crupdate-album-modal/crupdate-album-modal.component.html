@@ -1,0 +1,45 @@
+<div class="backdrop"></div>
+
+<div class="modal-content">
+    <button type="button" (click)="close()" class="close-button no-style icon-button">
+        <svg-icon name="close"></svg-icon>
+    </button>
+    <form class="content" (ngSubmit)="confirm()" ngNativeValidate>
+        <div class="edit-main-info">
+            <div class="left-col">
+                <img [src]="getAlbumImage()">
+                <button type="submit" class="button primary main-button" *ngIf="updating" trans>Update</button>
+                <button type="submit" class="button primary main-button" *ngIf="!updating" trans>Create</button>
+            </div>
+            <div class="right-col many-inputs admin-artist-edit-inputs">
+                <div class="input-container">
+                    <label for="album-name" trans>Name</label>
+                    <input type="text" [(ngModel)]="album.name" id="album-name" name="name" required>
+                    <div class="error" *ngIf="errors.name">{{errors.name}}</div>
+                </div>
+                <div class="input-container">
+                    <label for="album-popularity" trans>Popularity</label>
+                    <input type="number" [(ngModel)]="album.spotify_popularity" id="album-popularity" min="1" max="100" name="spotify_popularity">
+                    <div class="error" *ngIf="errors.spotify_popularity">{{errors.spotify_popularity}}</div>
+                </div>
+                <div class="input-container">
+                    <label for="album-release-date" trans>Release Date</label>
+                    <input type="text" [(ngModel)]="album.release_date" id="album-release-date" name="release_date" required>
+                    <div class="error" *ngIf="errors.release_date">{{errors.release_date}}</div>
+                </div>
+                <div class="input-container with-addon">
+                    <label for="album-image" trans>Image</label>
+                    <button type="button" class="no-style addon" (click)="openInsertImageModal()" tooltip="Upload image">
+                        <svg-icon name="file-upload"></svg-icon>
+                    </button>
+                    <input type="url" [(ngModel)]="album.image" id="album-image" name="image">
+                    <div class="error" *ngIf="errors.image">{{errors.image}}</div>
+                </div>
+            </div>
+        </div>
+
+        <album-tracks-table [album]="album" [artist]="artist"></album-tracks-table>
+    </form>
+
+    <loading-indicator [isVisible]="loading" class="overlay opacity-high"></loading-indicator>
+</div>

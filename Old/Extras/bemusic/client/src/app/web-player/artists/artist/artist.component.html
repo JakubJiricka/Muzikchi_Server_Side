@@ -1,0 +1,107 @@
+<div class="scroll-container" customScrollbar #scrollContainer infinite-scroll (onInfiniteScroll)="artist.loadMore()" [infiniteScrollEnabled]="artist.canLoadMore()">
+    <header class="artist-header" [style.background-image]="'url(' + artist.get().image_large + ')'" [contextMenu]="{item: artist.get(), type: 'artist'}">
+        <div class="genres" *ngIf="!state.isMobile">
+            <a [routerLink]="urls.genre(genre)" class="genre hover-underline" *ngFor="let genre of artist.get().genres">{{genre.name}}</a>
+        </div>
+        <h1 class="artist-name">{{artist.get().name}}</h1>
+        <div class="main-buttons">
+            <button class="no-style play-button" *ngIf="!artist.playing()" (click)="artist.play()">
+                <svg-icon name="play-arrow"></svg-icon>
+                <span trans>Play</span>
+            </button>
+            <button class="no-style play-button" *ngIf="artist.playing()" (click)="artist.pause()" trans>
+                <svg-icon name="pause"></svg-icon>
+                <span trans>Pause</span>
+            </button>
+            <button class="no-style more-button" (click)="showArtistContextMenu($event)" trans>More...</button>
+        </div>
+        <div class="nav-links">
+            <a class="nav-link" [routerLink]="urls.artist(artist.get())" [class.active]="activeTab === 'overview'" trans>Overview</a>
+            <a class="nav-link" [routerLink]="urls.artist(artist.get(), 'similar')" [class.active]="activeTab === 'similar'" trans>Similar Artists</a>
+            <a class="nav-link" [routerLink]="urls.artist(artist.get(), 'about')" [class.active]="activeTab === 'about'" trans>About</a>
+        </div>
+    </header>
+
+    <div class="content overview" [class.hidden]="activeTab !== 'overview'">
+        <div class="left-col">
+            <div class="popular-tracks">
+                <div class="title" trans>Popular Songs</div>
+                <track-list [tracks]="artist.getTopTracks(popularTracksCount)" [showHeader]="false" (play)="playFrom($event)"></track-list>
+                <button class="no-style dark-button" (click)="togglePopularTracksCount()">
+                    <span *ngIf="popularTracksCount === 5" trans>Show More</span>
+                    <span *ngIf="popularTracksCount !== 5" trans>Show Less</span>
+                </button>
+            </div>
+
+            <ad-host slot="ad_slot_3" class="margin-top"></ad-host>
+
+            <section class="albums" [ngClass]="albumsLayout">
+                <div class="albums-section-header">
+                    <span trans>Albums</span>
+                    <div class="actions" *ngIf="albumsLayoutShouldBeToggleable">
+                        <button class="no-style" [class.active]="albumsLayout === 'list'" (click)="toggleAlbumsLayout()"><svg-icon name="view-list"></svg-icon></button>
+                        <button class="no-style" [class.active]="albumsLayout === 'grid'" (click)="toggleAlbumsLayout()"><svg-icon name="view-comfy"></svg-icon></button>
+                    </div>
+                </div>
+
+                <ng-container *ngFor="let album of artist.getAlbums()">
+                    <ng-container *ngIf="albumsLayout === 'list'">
+                        <div class="album" *ngIf="album.tracks.length">
+                            <div class="album-header">
+                                <img [src]="settings.getDefaultImage('artist')" [lazyLoad]="album.image" [scrollTarget]="scrollContainer" class="lazy-loaded">
+                                <div class="meta">
+                                    <div class="release-date">{{album.release_date}}</div>
+                                    <a class="album-name hover-underline" [routerLink]="urls.album(album, artist.get())">{{album.name}}</a>
+                                    <button class="no-style dark-button" (click)="showAlbumContextMenu(album, $event)" trans>More...</button>
+                                </div>
+                            </div>
+                            <track-list [tracks]="album.tracks" [album]="album" (play)="playFrom($event)"></track-list>
+                        </div>
+                    </ng-container>
+                </ng-container>
+
+                <media-grid *ngIf="albumsLayout === 'grid'">
+                    <album-item *ngFor="let album of artist.getAlbums()" [album]="album" [scrollContainer]="scrollContainer"></album-item>
+                </media-grid>
+            </section>
+        </div>
+        <div class="right-col" *ngIf="!state.isMobile && albumsLayout === 'list'">
+            <div class="similar-artists">
+                <div class="title" trans>Similar Artists</div>
+                <a class="similar-artist" *ngFor="let artist of artist.getSimilar(4)" [routerLink]="urls.artist(artist)">
+                    <img [src]="artist.image_small">
+                    <div class="artist-name">{{artist.name}}</div>
+                </a>
+
+                <ad-host slot="ad_slot_4" class="margin-top"></ad-host>
+            </div>
+        </div>
+    </div>
+    <div class="content similar" *ngIf="activeTab === 'similar'">
+        <media-grid *ngIf="artist.hasSimilar()">
+            <artist-item [artist]="artist" *ngFor="let artist of artist.getSimilar(20)" [scrollContainer]="scrollContainer"></artist-item>
+        </media-grid>
+
+        <no-results-message *ngIf="!artist.hasSimilar()">
+            <span primary-text>
+                <span trans>Could not find any similar artists for </span>
+                <span>{{artist.get().name}}</span>
+            </span>
+        </no-results-message>
+    </div>
+    <div class="content bio" *ngIf="activeTab === 'about'">
+        <ng-container *ngIf="artist.getBio().bio">
+            <div class="bio-images" *ngIf="artist.getBio().images">
+                <img [src]="image.url" *ngFor="let image of artist.getBio().images">
+            </div>
+            <div class="bio-text">{{artist.getBio().bio}}</div>
+        </ng-container>
+
+        <no-results-message *ngIf="!artist.getBio().bio">
+            <span primary-text>
+                <span trans>Could not find biography for</span>
+                <span>{{artist.get().name}}</span>
+            </span>
+        </no-results-message>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+@import "../../../../scss/variables";
+
+$input-height: 45px;
+
+crupdate-page {
+  display: block;
+  padding: 25px;
+  height: 100%;
+
+  > .slug-container {
+    display: flex;
+
+    > input {
+      height: $input-height;
+      margin-right: 10px;
+    }
+
+    > .back-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $border-color;
+      color: $icon-color-dark;
+      width: $input-height + 8px;
+      background-color: #fff;
+      border-right: none;
+    }
+  }
+
+  > .errors {
+    color: $danger-bg-color;
+
+    > .error {
+      padding: 5px 0;
+    }
+  }
+
+  > .editor-container {
+    margin-top: 15px;
+    height: calc(100% - #{$input-height});
+
+    > text-editor {
+      max-height: none;
+    }
+  }
+}

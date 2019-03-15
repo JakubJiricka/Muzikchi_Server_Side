@@ -1,0 +1,45 @@
+<aside class="admin-pill-nav solid with-actions">
+    <div class="new-localization">
+        <button class="button primary flat" (click)="showCrupdateLocalizationModal()" *ngIf="currentUser.hasPermission('localizations.create')" trans>New Localization</button>
+    </div>
+    <div class="nav-item" *ngFor="let localization of localizations" (click)="setSelectedLocalization(localization)" [class.selected]="selectedLocalization == localization">
+        <div class="name">{{localization.name}}</div>
+        <dropdown class="actions">
+            <button class="no-style"><svg-icon name="settings" class="size-22"></svg-icon></button>
+            <div class="dropdown-menu" #menu>
+                <div class="dropdown-item" #menuItem (click)="setDefaultLocalization()" *ngIf="currentUser.hasPermission('settings.update')" trans>Set as Default</div>
+                <div class="dropdown-item" #menuItem (click)="showCrupdateLocalizationModal(localization)" *ngIf="localization.name !== 'English' && currentUser.hasPermission('localizations.update')" trans>Rename</div>
+                <div class="dropdown-item" #menuItem (click)="confirmLocalizationDeletion(localization)" *ngIf="localization.name !== 'English' && currentUser.hasPermission('localizations.delete')" trans>Delete</div>
+            </div>
+        </dropdown>
+    </div>
+    <div class="update-translations">
+        <button class="button primary" (click)="updateLocalization()" *ngIf="currentUser.hasPermission('localizations.update')" trans>Update</button>
+    </div>
+</aside>
+
+<section class="flex-table-panel spacing">
+    <div class="flex-table-panel-header">
+        <div class="header-inner default">
+            <div class="left">
+                {{selectedLocalization.name}} <span trans>Translations</span>
+            </div>
+            <div class="right">
+                <div class="input-container">
+                    <input type="text" class="search" placeholder="Search Translations" trans-placeholder [formControl]="searchQuery">
+                    <svg-icon name="search"></svg-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex-table flex-table-bordered flex-table-compact flex-table-center-vertical">
+        <div class="flex-table-row flex-table-header">
+            <div class="flex-table-item" trans>Source Text</div>
+            <div class="flex-table-item" trans>Translation</div>
+        </div>
+        <div class="flex-table-row" *ngFor="let key of objectKeys(translations)">
+            <label for="{{key}}" class="flex-table-item">{{key}}</label>
+            <input type="text" class="flex-table-item translation" id="{{key}}" [(ngModel)]="selectedLocalization.lines[key]">
+        </div>
+    </div>
+</section>

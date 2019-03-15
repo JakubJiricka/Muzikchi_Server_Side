@@ -1,0 +1,65 @@
+<div class="backdrop"></div>
+
+<form class="modal-content" autocomplete="off" (ngSubmit)="confirm()" ngNativeValidate>
+    <div class="modal-header">
+        <h2 class="modal-title" *ngIf="updating" trans>Update User Details</h2>
+        <h2 class="modal-title" *ngIf="!updating" trans>Create a New User</h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button"><svg-icon name="close"></svg-icon></button>
+    </div>
+
+    <div class="many-inputs">
+        <div class="input-container" *ngIf="!updating">
+            <label for="email" trans>Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]="model.email" required>
+            <div class="error" *ngIf="errors.email">{{errors.email}}</div>
+        </div>
+
+        <div class="input-container" *ngIf="!updating">
+            <label for="password" trans>Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="model.password" required>
+            <div class="error" *ngIf="errors.password">{{errors.password}}</div>
+        </div>
+
+        <div class="input-container">
+            <label for="avatar" trans>Avatar</label>
+            <input type="text" id="avatar" name="avatar" [(ngModel)]="model.avatar">
+            <div class="error" *ngIf="errors.avatar">{{errors.avatar}}</div>
+        </div>
+
+        <div class="input-container">
+            <label for="first_name" trans>First Name</label>
+            <input type="text" id="first_name" name="first_name" [(ngModel)]="model.first_name">
+            <div class="error" *ngIf="errors.first_name">{{errors.first_name}}</div>
+        </div>
+
+        <div class="input-container">
+            <label for="last_name" trans>Last Name</label>
+            <input type="text" id="last_name" name="last_name" [(ngModel)]="model.last_name">
+            <div class="error" *ngIf="errors.last_name">{{errors.last_name}}</div>
+        </div>
+
+        <div class="input-container">
+            <label for="confirmed" trans>Email Confirmed</label>
+            <select type="text" id="confirmed" name="confirmed" [(ngModel)]="model.confirmed">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <div class="error" *ngIf="errors.confirmed">{{errors.confirmed}}</div>
+        </div>
+
+        <user-access-manager [user]="model"></user-access-manager>
+
+        <div class="errors">
+            <div class="error" *ngIf="errors.groups">{{errors.groups}}</div>
+            <div class="error" *ngIf="errors.permissions">{{errors.permissions}}</div>
+        </div>
+    </div>
+
+    <div class="buttons right">
+        <button (click)="close()" type="button" class="button cancel" trans>Cancel</button>
+        <button type="submit" class="button primary">
+            <span *ngIf="updating" trans>Update User</span>
+            <span *ngIf="!updating" trans>Create User</span>
+        </button>
+    </div>
+</form>

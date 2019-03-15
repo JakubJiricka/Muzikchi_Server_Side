@@ -1,0 +1,11 @@
+{
+    "name": "vendor/stripe-php-master",
+    "description": "Description of project stripe-php-master.",
+    "authors": [
+        {
+            "name": "marko",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {}
+}

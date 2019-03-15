@@ -1,0 +1,17 @@
+@import "variables";
+
+web-player, lyrics-modal, context-menu-playlist-panel {
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $wp-bg-color-300;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: $wp-bg-color-200;
+    }
+  }
+}

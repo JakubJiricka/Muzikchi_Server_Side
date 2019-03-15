@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "scss/variables";
+
+//VENDOR
+@import "~normalize.css";
+
+//SHARED STYLES
+@import "scss/global";
+@import "scss/buttons";
+@import "scss/webkit-scrollbar";
+@import "scss/perfect-scrollbar-theme";
+@import "scss/auth-page";
+@import "scss/input";
+@import "scss/pretty-checkbox";
+@import "scss/round-close-button";
+@import "app/web-player/context-menu/context-menu";
+@import "app/shared/modal/modal";
+@import "app/shared/tooltip/tooltip.directive";

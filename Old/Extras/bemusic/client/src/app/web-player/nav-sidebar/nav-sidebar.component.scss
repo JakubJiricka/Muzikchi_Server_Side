@@ -1,0 +1,243 @@
+@import "../../../scss/variables";
+
+$side-padding: 18px;
+
+nav-sidebar {
+  display: block;
+  width: $wp-nav-sidebar-width;
+  max-width: $wp-nav-sidebar-width;
+  flex: 0 0 $wp-nav-sidebar-width;
+  background-color: $wp-nav-sidebar-bg-color;
+  color: inherit;
+  z-index: 5;
+
+  @media only screen and (max-width: $tablet) {
+    display: none;
+  }
+
+  .content {
+    height: calc(100% - #{$wp-nav-sidebar-current-track-height});
+    padding: 15px 0;
+    overflow: auto;
+  }
+
+  .current-user {
+    display: flex;
+    align-items: center;
+
+    > .img-container {
+      display: block;
+      flex: 0 0 auto;
+
+      > img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        margin-right: 10px;
+      }
+    }
+
+    > .name {
+      color: inherit;
+      margin-right: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    > dropdown {
+      margin-left: auto;
+
+      > .dropdown-trigger {
+        display: block;
+        width: 20px;
+        height: 20px;
+
+        > svg-icon {
+          display: block;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  .playlists-container {
+    > .header {
+      display: flex;
+      align-items: center;
+      padding: 0 $side-padding;
+      margin-top: 20px;
+
+      > .name {
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+
+      > .new-playlist-button {
+        display: block;
+        margin-left: auto;
+        
+         > svg-icon {
+           display: block;
+         }
+      }
+    }
+  }
+
+  .current-track {
+    display: flex;
+    align-items: center;
+    height: $wp-nav-sidebar-current-track-height;
+    padding: 5px;
+    border-top: 1px solid $wp-border-color-100;
+
+    > img {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+    }
+
+    > .meta {
+      margin-left: 10px;
+      flex: 1 1 auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      > .track-name {
+        display: block;
+        color: inherit;
+      }
+
+      > .artist-name {
+        display: block;
+        color: $wp-text-color-300;
+        font-size: 1.3rem;
+
+        > a {
+          color: inherit;
+        }
+      }
+    }
+
+    .check-icon {
+      color: $accent-color;
+    }
+  }
+
+  .logo-container {
+    width: 100%;
+
+    > img {
+      width: 100%;
+      max-width: 155px;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  .search-bar-container {
+    margin-top: 5px;
+    position: relative;
+    padding: 0 $side-padding;
+
+    > input {
+      background-color: $wp-bg-color-300;
+      padding: 0 30px 0 10px;
+      border-radius: 3px;
+      border: 1px solid rgba(255,255,255,0.15);
+      height: 35px;
+      width: 100%;
+      color: inherit;
+
+      &:active, &:focus {
+        outline-color: $wp-border-color-100;
+      }
+    }
+
+    > svg-icon, > button {
+      position: absolute;
+      top: 6px;
+      right: $side-padding + 5px;
+    }
+
+    > loading-indicator {
+      position: absolute;
+      top: 8px;
+      right: $side-padding + 5px;
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      overflow: hidden;
+
+      > .spinner {
+        width: 20px;
+        height: 20px;
+      }
+
+      .rect {
+        width: 4px;
+      }
+    }
+  }
+
+  .sidebar-nav {
+    margin-top: 20px;
+
+    > .custom-menu-item, > .sidebar-nav-item {
+      svg-icon {
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+      }
+
+      > a {
+        display: block;
+        color: inherit;
+        padding: 8px $side-padding;
+        font-size: 1.5rem;
+        font-weight: 300;
+        border-right: 3px solid transparent;
+        white-space: nowrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &.active {
+          background-color: rgba(255,255,255,0.05);
+          border-color: $accent-color;
+        }
+
+        &:hover {
+          background-color: rgba(255,255,255,0.04);
+        }
+      }
+    }
+  }
+
+  .separator {
+    height: 1px;
+    margin: 25px $side-padding 0;
+    background-color: $wp-border-color-200;
+  }
+
+  .auth-container {
+    margin: 0 $side-padding 0;
+    padding: 25px 0;
+    white-space: nowrap;
+  }
+
+  .your-music-container {
+    > .title {
+      padding: 0 $side-padding;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    > custom-menu {
+      margin-top: 10px;
+    }
+  }
+}

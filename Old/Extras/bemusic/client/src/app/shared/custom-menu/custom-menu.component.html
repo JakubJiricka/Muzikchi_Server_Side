@@ -1,0 +1,20 @@
+<div class="nav-item custom-menu-item" *ngFor="let item of menu.items">
+    <ng-container *ngIf="shouldShow(item)">
+        <a *ngIf="item.type === 'link'" href="{{item.action}}" [ngClass]="toSnakeCase(item.label)">
+            <svg-icon [name]="item.icon" *ngIf="item.icon"></svg-icon>
+            {{item.label}}
+        </a>
+
+        <a *ngIf="item.type === 'route'" [routerLink]="'/' + item.action" [ngClass]="toSnakeCase(item.label)" routerLinkActive="active">
+            <svg-icon [name]="item.icon" *ngIf="item.icon"></svg-icon>
+            {{item.label}}
+        </a>
+
+        <a *ngIf="item.type === 'page'" [routerLink]="'/pages/' + item.action" [ngClass]="toSnakeCase(item.label)" routerLinkActive="active">
+            <svg-icon [name]="item.icon" *ngIf="item.icon"></svg-icon>
+            {{item.label}}
+        </a>
+    </ng-container>
+</div>
+
+<ng-content></ng-content>

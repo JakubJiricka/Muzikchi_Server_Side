@@ -1,0 +1,173 @@
+@import "../../../../scss/variables";
+
+account-settings {
+  display: block;
+  height: 100%;
+  width: 100%;
+  flex: 1 1 auto;
+  background-color: inherit;
+
+  > .scroll-container {
+    height: 100%;
+    position: relative;
+    overflow: auto;
+  }
+
+  .content {
+    height: 100%;
+    max-width: 1280px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+  > .header {
+    font-size: 3.5rem;
+    margin: 25px 0;
+    font-weight: 300;
+  }
+
+    .panels {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px;
+    }
+
+    .panel {
+      box-shadow: none;
+      border: 1px solid $wp-border-color-200;
+      width: calc(50% - 30px);
+      margin: 15px;
+      padding: 15px;
+      background-color: $wp-nav-sidebar-bg-color;
+
+      &.social-login-panel {
+        .info {
+          margin-bottom: 35px;
+        }
+      }
+
+      .panel-header {
+        background-color: transparent;
+        font-size: 1.8rem;
+        font-weight: 300;
+        padding: 0 0 10px 0;
+      }
+
+      .panel-body {
+        padding: 25px 0 0;
+        min-height: 268px;
+      }
+
+      .panel-footer {
+        background-color: transparent;
+        padding: 10px 0 0 0;
+        margin-top: 35px;
+      }
+
+      .input-inline {
+        display: flex;
+        margin-bottom: 26px;
+        align-items: center;
+        position: relative;
+
+        > label {
+          flex: 0 0 30%;
+          min-width: 200px;
+          line-height: 42px;
+          vertical-align: middle;
+        }
+
+        > input, select {
+          flex: 1 1 auto;
+          height: 42px;
+          border-radius: 3px;
+          background-color: $login-page-input-bg-color;
+          border-color: transparent;
+          color: inherit;
+        }
+
+        > .error {
+          color: $danger-bg-color;
+          font-size: 1.3rem;
+          position: absolute;
+          bottom: -20px;
+          right: 0;
+        }
+      }
+
+      .avatar-input {
+        display: flex;
+
+        > img {
+          flex: 0 0 90px;
+          width: 90px;
+          height: 90px;
+          object-fit: cover;
+        }
+
+        > .avatar-actions-container {
+          flex: 1 1 auto;
+          margin-left: 15px;
+          max-width: 130px;
+
+          > .info {
+            color: $wp-text-color-300;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+          }
+
+          > button {
+            display: block;
+            margin-bottom: 10px;
+          }
+
+          > .avatar-upload-button {
+            background-color: $wp-bg-color-200;
+            color: $wp-text-color-200;
+          }
+
+          > .avatar-remove-button {
+            color: $link-color;
+            font-size: 1.3rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    .logout-button-container {
+      padding: 20px 0 15px;
+      display: none;
+      text-align: right;
+
+      .logout-button > svg-icon {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+    @media only screen and (max-width: $tablet) {
+      .logout-button-container {
+        display: block;
+      }
+      
+      .panels {
+        display: block;
+
+        .panel {
+          width: auto;
+        }
+
+        .input-inline {
+          display: block;
+
+          > input, > select {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

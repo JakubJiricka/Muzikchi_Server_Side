@@ -1,0 +1,91 @@
+@import "../../../scss/variables";
+
+dropdown {
+  display: block;
+  cursor: pointer;
+
+  > svg-icon {
+    display: block;
+  }
+
+  &.dropdown-open .dropdown-menu.transformed {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+  }
+
+  .dropdown-menu {
+    transform-origin: left top;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $panel-background-color;
+    box-shadow: $dropdown-box-shadow;
+    width: $dropdown-width;
+    border-radius: $dropdown-border-radius;
+    z-index: 11;
+    max-height: $dropdown-max-height;
+    overflow: auto;
+    padding: 10px 0;
+    transition: transform .2s cubic-bezier(0.25, 0.8, 0.25, 1), opacity .2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    pointer-events: none;
+    visibility: hidden;
+
+    &.transformed {
+      transform: scale(0.3);
+    }
+
+    &.indent {
+      .dropdown-item {
+        padding: 0 24px 0 48px;
+      }
+    }
+
+    .dropdown-item {
+      display: block;
+      position: relative;
+      width: 100%;
+      padding: 0 16px;
+      margin: 0 auto;
+      letter-spacing: .01em;
+      color: #6A6A6A;
+      text-align: left;
+      cursor: pointer;
+      overflow: hidden;
+      font-size: 1.5rem;
+      font-weight: 400;
+      text-transform: none;
+      height: 36px;
+      line-height: 36px;
+
+      > .text {
+        flex-grow: 1;
+      }
+
+      > .alt-text {
+        flex-grow: 0;
+        margin: 0 8px;
+        align-self: flex-end;
+      }
+
+      > svg-icon {
+        color: $icon-color-dark;
+        position: absolute;
+        top: 7px;
+        left: 16px;
+        width: 21px;
+        height: 21px;
+      }
+
+      &.active {
+        font-weight: 500;
+      }
+
+      &:hover, &.focused {
+        background-color: $dropdown-item-hover-bg-color;
+      }
+    }
+  }
+}

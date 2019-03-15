@@ -1,0 +1,35 @@
+@import "../../../../scss/variables";
+
+user-library {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  flex: 1 1 auto;
+
+  > .nav {
+    display: flex;
+    padding: 10px 0;
+    color: $wp-text-color-300;
+    background-color: $wp-bg-color-400;
+    border-bottom: 1px solid $wp-border-color-200;
+
+    > .nav-item {
+      display: block;
+      flex: 1 1 auto;
+      text-align: center;
+      color: inherit;
+      font-size: 1.1rem;
+
+      &.active {
+        color: $wp-text-color-100;
+      }
+
+      > svg-icon {
+        display: block;
+        margin: 0 auto 5px;
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+}

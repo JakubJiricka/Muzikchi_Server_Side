@@ -1,0 +1,25 @@
+@import "../../../../scss/variables";
+
+lyrics-modal.modal {
+  > .modal-content {
+    background-color: $wp-bg-color-400;
+    color: $wp-text-color-200;
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    height: 95%;
+    width: 50%;
+
+    @media only screen and (max-width: $tablet) {
+      width: 90%;
+    }
+
+    > .modal-header {
+      color: inherit;
+
+      > .close-button {
+        color: inherit;
+      }
+    }
+  }
+}

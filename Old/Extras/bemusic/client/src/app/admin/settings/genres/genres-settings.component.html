@@ -1,0 +1,22 @@
+<div class="header">
+    <div class="title" trans>Genre</div>
+    <div class="subtitle" trans>Genres to display on homepage. If left empty, most popular genres will be used.</div>
+</div>
+
+<form class="body many-inputs" (submit)="saveSettings()" ngNativeValidate>
+    <div class="input-container">
+        <input type="text" enterKeybind (blur)="addGenre()" [(ngModel)]="genre" name="genre" placeholder="+Genre Name" trans-placeholder>
+        <div class="genres tags">
+            <div class="genre tag" *ngFor="let genre of genres">
+                <span>{{genre}}</span>
+                <button type="button" class="no-style" (click)="removeGenre(genre)">
+                    <svg-icon name="close"></svg-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button class="button primary update-button" type="submit" trans>Update</button>
+</form>
+
+<loading-indicator [isVisible]="loading" class="overlay"></loading-indicator>

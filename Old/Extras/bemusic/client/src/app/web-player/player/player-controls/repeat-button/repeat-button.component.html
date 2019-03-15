@@ -1,0 +1,7 @@
+<button class="player-action no-style repeat-button" *ngIf="!player.getState().repeatingOne" (click)="player.toggleRepeatMode()" [class.active]="player.getState().repeating" tooltip="Repeat">
+    <svg-icon name="repeat"></svg-icon>
+</button>
+
+<button class="player-action no-style repeat-button active" *ngIf="player.getState().repeatingOne" (click)="player.toggleRepeatMode()" tooltip="Repeat One">
+    <svg-icon name="repeat-one"></svg-icon>
+</button>

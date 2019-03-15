@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'BYekan';
+	src: url('../fonts/BYekan.eot');
+	src: url('../fonts/BYekan.woff') format('woff'), url('../fonts/BYekan.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+#wpbody,h1,h2,h3,h4,h5,h6 {
+	font-family: BYekan, serif !important;
+}

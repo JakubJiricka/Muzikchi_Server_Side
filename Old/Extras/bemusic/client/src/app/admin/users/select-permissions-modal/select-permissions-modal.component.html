@@ -1,0 +1,26 @@
+<div class="backdrop"></div>
+
+<div class="modal-content" customScrollbar>
+    <div class="modal-header">
+        <h2 class="modal-title" trans>Select Permissions</h2>
+        <button type="button" (click)="close()" class="close-button no-style icon-button">
+            <svg-icon name="close"></svg-icon>
+        </button>
+    </div>
+
+    <div class="permissions-group" *ngFor="let group of allPermissions | mapToIterable">
+        <div class="group-name">{{group.key}}</div>
+        <div class="permissions">
+            <div class="permission" *ngFor="let permission of group.value" [class.disabled]="isPermissionDisabled(permission)">
+                <input type="checkbox" class="pretty-checkbox" id="{{permission}}"
+                       (change)="toggleSelectedPermission(permission)" [checked]="isPermissionSelected(permission)">
+                <label for="{{permission}}">{{permission}}</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons right">
+        <button (click)="close()" type="button" class="button cancel" trans>Cancel</button>
+        <button type="submit" class="button primary submit-button" (click)="confirm()" trans>Select</button>
+    </div>
+</div>
